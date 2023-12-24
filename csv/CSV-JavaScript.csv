@@ -1,0 +1,76 @@
+,
+"<script src=""scripts.js""></script>",
+,
+,
+,
+Variables,"Variables are containers for storing data values, allowing you to name & store values for later"
+let variableName = value;,declares a variable
+Data Types,Data types define the type of data that a variable can hold
+String,"a sequence of characters placed between single or double quotes. (ex. ""Hello, World!"")"
+Number,"numeric data type, representing integers or floating-point numbers"
+Boolean,"represents either true or false, often used for conditions"
+Array,"an ordered collection of values, accessible by index. Arrays can hold different data types"
+Object,"a collection of key-value pairs, allowing you to store and retrieve data in a structured way"
+Operators,Operators perform operations on variables and values. They are symbols that represent computations
+"Arithmetic: +, -, *, /, %","perform basic mathematical operations like addition (+), subtraction (-), multiplication (*), division (/), and modulus (%)"
+"Comparison: ==, ===, !=, !==, >, <, >=, <=","used to compare values. Examples include equal to (==), strict equal to (===), not equal to (!=), 
+not strictly equal to (!==), greater than (>), less than (<), greater than or equal to (>=), and less than or equal to (<=)"
+"Logical: &&, ||, !","perform logical operations. && represents logical AND, || represents logical OR, and ! represents logical NOT"
+Conditional Statements,Conditional statements allow you to execute different code based on specified conditions
+if (condition) { /* Code */ },code to execute if condition is true
+else if (anotherCondition) { /* Code */ },code to execute if anotherCondition is true
+else { /* Code */ },code to execute if none of the conditions are true
+Loops,Loops are used to repeatedly execute a block of code
+for (var i = 0; i < length; i++) { /* Code */ },for loop: control flow statement in JavaScript that allows you to execute a block of code repeatedly
+while (condition) { /* Code */ },while loop: another type of control flow statement that repeats a block of code while a specified condition is true
+Functions,Functions are reusable blocks of code that can be called with different inputs
+"function functionName(parameter1, parameter2) { /* Code */ }",defines a reusable block of JS code
+ return result; ,return statement
+Event Handling,Event handling allows you to respond to user interactions with your web page
+element.onclick = function() { /* Code */ };,directly assigns an event handler that executes contained code when the element is clicked
+"element.addEventListener('event', function() { /* Code */ });",assigns a function to the event that allows more flexibility than directly assigning an event handler
+DOM Manipulation,DOM manipulation involves interacting with the Document Object Model to dynamically change elements on a web page
+document.getElementById('elementId');,retrieves an HTML element from the document using its unique ID
+document.querySelector('selector');,retrieves the first HTML element that matches the specified CSS selector
+document.createElement('element');,creates a new HTML element
+parentElement.appendChild(childElement);,appends a child element to a parent element in the HTML document
+Arrays,Arrays are used to store and manipulate lists of items
+"var array = [element1, element2, element3];",declares a variable named array with three elements
+array.push(newElement);,adds an element to the end
+array.pop();,removes the last element
+array.shift();,removes the first element
+array.unshift(newElement);,adds an element to the beginning
+Objects,Objects allow you to group related data and functionality
+"var object = { key: value, anotherKey: anotherValue };",groups related data using key-value pairs
+Classes,"Classes provide a way to create reusable, object-oriented code"
+"class ClassName { constructor(parameter) 
+{ this.property = parameter; } method() { /* Code */ } }",defines a blueprint for creating objects with shared properties and methods
+ES6+ Features,
+"const addNumbers = (a, b) => a + b;","These are a concise way to write function expressions, often used for shorter and more readable syntax."
+"const name = ""John""; const greeting = `Hello, ${name}!`;","Allow embedded expressions in string literals, making it easier to concatenate variables with strings."
+"const person = { name: ""Alice"", age: 30 }; 
+const { name, age } = person;",This feature enables you to extract values from objects or arrays and assign them to variables in a more concise way.
+"const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4, 5];","Used for spreading elements of an array or object into another array or object, or gathering elements into a single array or object."
+Error Handling,
+,
+,
+,
+,
+,
+,
+Error Handling: Briefly mention error handling with try...catch blocks and the importance of handling errors in code.,
+,
+"Handling errors is a crucial aspect of writing robust code. The try...catch block allows you to execute a block of code and catch any errors that may occur during its execution. This ensures that even if an error occurs, your application doesn't break entirely, and you have the opportunity to handle the error gracefully.",
+,
+"Async/Await: Introduce the async/await syntax, which is a modern way of handling asynchronous code in a more readable and synchronous-like manner.",
+,
+"Async/await is a powerful feature in modern JavaScript for handling asynchronous operations. It provides a more sequential and readable syntax compared to traditional callback functions or promises. The async keyword is used to define a function as asynchronous, and await is used to pause the execution until a promise is settled.",
+,
+"Callback Functions: Explain the concept of callback functions, as they are frequently used in JavaScript, especially in asynchronous operations.",
+,
+Callback functions are functions passed as arguments to other functions. They are commonly used in asynchronous operations to ensure that certain code executes only after a specific operation is completed. Callbacks are essential for maintaining the order of execution in asynchronous JavaScript.,
+,
+LocalStorage and SessionStorage: Include a brief mention of client-side storage options like localStorage and sessionStorage.,
+,
+"LocalStorage and sessionStorage are client-side storage options in web browsers. They allow you to store key-value pairs locally on the user's browser. The main difference is that localStorage persists even after the browser is closed, while sessionStorage is cleared when the session ends.",

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Code</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js"></script>
+    <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
+    <style>
+        body {
+            padding-bottom: 50px; /* Adds padding to the bottom of the page */
+        }
+
+        .table-container {
+            display: block; /* Use block instead of flex to allow natural width */
+            margin: 0 auto; /* Center the table container */
+            overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
+            padding: 20px; /* Remove padding if you don't need it */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: black;
+            margin: 0;
+            font-family: 'lato', Times, serif;
+            border-spacing: 2px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            font-weight: bold; /* Make header text bold */
+        }
+        td {
+            white-space: nowrap; /* Keep content on a single line */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add an ellipsis to clipped content */
+            max-width: 150px; /* Set a max-width to control cell width */
+        }
+        
+        table tr td:first-child {
+           text-align: right; /* Aligns text to the right */
+        }
+
+        .section-header {
+            color: white;
+            font-weight: bold;
+            background-color: #36454F;
+            font-size: 1em;
+        }
+
+        .light-red {
+        background-color: #ffd8d8; /* A fainter shade of red */
+        }
+        
+        .light-orange {
+        background-color: #fde9d9;
+        }
+
+        .light-yellow {
+            background-color: #fff9cc;
+        }
+
+        .light-green {
+            background-color: #eef5ea;
+        }
+
+        .light-blue {
+            background-color: #e1eaf8;
+        }
+
+        .light-purple {
+            background-color: #ede7f6;
+        }
+            </style>
+        </div>
+        </head>
+<body>
+    <header>
+            <h1 class="title-matrix-code">Matrix Code</h1>
+            <nav class="tabs">
+                <a class="tab" href="index">Home</a>
+                <a class="tab" href="html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript"><i class="fab fa-js"></i>JavaScript</a>
+            </nav>
+        </header>    
+    <br>
+    <br>
+    <br>
+    <div class="header-with-image-css">
+        <img src="/images/CSS.png" alt="CSS Icon" class="iconClass" />
+        <h1 class="table-title">CSS Fundamentals</h1>
+    </div>
+    <br>
+    <div class="table-container">
+    <table>
+        <tr class="section-header">
+            <td>Basic Tags</td>
+            <td>Define webpage structure</td>
+        </tr>
+        <tr class="light-red">
+            <td>&lt;style&gt;</td>
+            <td>opening tag for CSS code</td>
+        </tr>
+        <tr class="light-red">
+            <td>&lt;/style&gt;</td>
+            <td>closing tag for CSS code</td>
+        </tr>
+        <tr class="section-header">
+            <td>Selectors</td>
+            <td>Patterns that target and style HTML elements in a CSS document</td>
+        </tr>
+        <tr class="light-orange">
+            <td>&lt;selector&gt;</td>
+            <td>selects HTML elements for styling</td>
+        </tr>
+        <tr class="light-orange">
+            <td>#id-selector</td>
+            <td>selects an element by its ID</td>
+        </tr>
+        <tr class="light-orange">
+            <td>.class-selector</td>
+            <td>selects elements with a specific class</td>
+        </tr>
+        <tr class="light-orange">
+            <td>:hover:</td>
+            <td>selects and styles an element when hovered</td>
+        </tr>
+        <tr class="light-orange">
+            <td>:before:</td>
+            <td>inserts content before an element</td>
+        </tr>
+        <tr class="light-orange">
+            <td>:after:</td>
+            <td>inserts content after an element</td>
+        </tr>
+        <tr class="light-orange">
+            <td>"example1, example2 "</td>
+            <td>selects multiple elements</td>
+        </tr>
+        <tr class="light-orange">
+            <td>example1 example2 </td>
+            <td>selects a nested element</td>
+        </tr>
+        <tr class="light-orange">
+            <td>example1 > example2</td>
+            <td>selects a direct child element</td>
+        </tr>
+        <tr class="light-orange">
+            <td>example1 + example2 </td>
+            <td>selects an element directly following a specified element</td>
+        </tr>
+        <tr class="section-header">
+            <td>Properties and Values</td>
+            <td>Defines styling & how these attributes should be applied</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>font-family: value</td>
+            <td>sets the font family</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>font-size: value</td>
+            <td>sets the font size</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>line-height: value</td>
+            <td>sets the line height of a line of text</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>text-decoration: value</td>
+            <td>sets text decoration (ex. underline, line-through)</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>background-image: value</td>
+            <td>sets a background image</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>position: value</td>
+            <td>sets the positioning method</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>z-index: value</td>
+            <td>sets the stacking order</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>color: value</td>
+            <td>sets the text color</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>background-color: value</td>
+            <td>sets the background color</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>margin: value</td>
+            <td>sets the margin</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>padding: value</td>
+            <td>sets the padding</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>border: value</td>
+            <td>sets the border</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>text-align: value</td>
+            <td>sets the text alignment</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>font-weight: value</td>
+            <td>sets the font font weight</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>display: value</td>
+            <td>sets the display property</td>
+        </tr>
+        <tr class="section-header">
+            <td>Box Model</td>
+            <td>Conceptual layout structure for HTML elements</td>
+        </tr>    
+        <tr class="light-green">
+            <td>width: value</td>
+            <td>sets the width</td>
+        </tr>
+        <tr class="light-green">
+            <td>height: value</td>
+            <td>sets the height</td>
+        </tr>
+        <tr class="light-green">
+            <td>margin: value</td>
+            <td>sets the margin</td>
+        </tr>
+        <tr class="light-green">
+            <td>padding: value</td>
+            <td>sets the padding</td>
+        </tr>
+        <tr class="light-green">
+            <td>box-sizing: value</td>
+            <td>sets how width and height are calculated</td>
+        </tr>
+        <tr class="light-green">
+            <td>overflow: value</td>
+            <td>sets how content that overflows is handled</td>
+        </tr>
+        <tr class="section-header">
+            <td>Flexbox</td>
+            <td>Layout model that helps align elements</td>
+        </tr>
+        <tr class="light-blue">
+            <td>display: flex</td>
+            <td>enables flexbox layout</td>
+        </tr>
+        <tr class="light-blue">
+            <td>flex-direction: value</td>
+            <td>sets the direction of the flex container</td>
+        </tr>
+        <tr class="light-blue">
+            <td>flex-wrap: value</td>
+            <td>controls wether flex items wrap</td>
+        </tr>
+        <tr class="light-blue">
+            <td>justify-content: value</td>
+            <td>aligns items on the main axis</td>
+        </tr>
+        <tr class="light-blue">
+            <td>align-items: value</td>
+            <td>aligns items on the cross axis</td>
+        </tr>
+        <tr class="light-blue">
+            <td>flex: value</td>
+            <td>specifies the flexibility of a flex item</td>
+        </tr>
+        <tr class="light-blue">
+            <td>align-self: value</td>
+            <td>allows default alignment to be overridden</td>
+        </tr>
+        <tr class="light-blue">
+            <td>flex:grow</td>
+            <td>controls item's ability to expand</td>
+        </tr>
+        <tr class="light-blue">
+            <td>flex:shrink</td>
+            <td>controls item's ability to contract</td>
+        </tr>
+        <tr class="light-blue">
+            <td>align-content</td>
+            <td>aligns content inside a flex or grid container</td>
+        </tr>
+        <tr class="section-header">
+            <td>Grid</td>
+            <td>Grid-based layout system for web design</td>
+        </tr>
+        <tr class="light-purple">
+            <td>display: grid</td>
+            <td>enables grid layout</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-column</td>
+            <td>specifies a grid's horizontal placement</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-row</td>
+            <td>specifies a grid's vertical placement</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-template areas</td>
+            <td>assigns names to grid areas, to easier define layout</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-template-rows: value</td>
+            <td>defines size and structure of rows</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-template-columns: value</td>
+            <td>defines size and structure of columns</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-gap: value</td>
+            <td>creates a target location within a document</td>
+        </tr>
+        <tr class="light-purple">
+            <td>grid-area</td>
+            <td>sets the gap between rows and columns</td>
+        </tr>
+        <tr class="section-header">
+            <td>Pseudo-Classes</td>
+            <td>Targets special states of elements for styling with user interactions</td>
+        </tr>
+        <tr class="light-red">
+            <td>:nth-child(n)</td>
+            <td>selects the nth child of its parent</td>
+        </tr>
+        <tr class="light-red">
+            <td>:first-child</td>
+            <td>selects the first child of an element</td>
+        </tr>
+        <tr class="light-red">
+            <td>:last-child</td>
+            <td>selects the last child of its parent</td>
+        </tr>
+        <tr class="light-red">
+            <td>:nth-of-type(n)</td>
+            <td>selects the nth child of its type</td>
+        </tr>
+        <tr class="light-red">
+            <td>:last-of-type</td>
+            <td>selects the last child of its type</td>
+        </tr>
+        <tr class="light-red">
+            <td>:not(selector)</td>
+            <td>selects all elements that do not match a specific selector</td>
+        </tr>
+        <tr class="section-header">
+            <td>Media Queries</td>
+            <td>helps style webpages and allows for responsive design</td>
+        </tr>
+        <tr class="light-orange">
+            <td>@media</td>
+            <td>declares rule for styles to be applied under specific conditions</td>
+        </tr>
+        <tr class="light-orange">
+            <td>@media Screen/Print/All</td>
+            <td>specifies the type of media the styles are intended</td>
+        </tr>
+        <tr class="light-orange">
+            <td>(orientation: landscape)</td>
+            <td>specifies conditions based on orientation</td>
+        </tr>
+        <tr class="light-orange">
+            <td>(min-resolution: value (pi)</td>
+            <td>Specifies conditions based on resolution</td>
+        </tr>
+        <tr class="light-orange">
+            <td>max-width: value (px)</td>
+            <td>sets the maximum width for a specific style to apply</td>
+        </tr>
+        <tr class="light-orange">
+            <td>min-width: value (px)</td>
+            <td>sets the minimum width for a specific style to apply</td>
+        </tr>
+        <tr class="section-header">
+            <td>Transitions</td>
+            <td>Specifies how a CSS property should transition from one state to another</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>color: value</td>
+            <td>transitioning the color of text or background</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>background-color</td>
+            <td>transitioning the background color of an element</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>opacity</td>
+            <td>transitioning the opacity of an element, making it fade in or out</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>width/height</td>
+            <td>transitioning the dimensions of an element</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>transform</td>
+            <td>transitioning transformations like scaling, rotating, or translating</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>font size</td>
+            <td>transitioning the size of text</td>
+        </tr>
+        <tr class="section-header">
+            <td>Animations</td>
+            <td>Applies a keyframe animation to an element</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-name</td>
+            <td>specifies the name of the keyframe animation</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-duration</td>
+            <td>sets the duration of the animation</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-timing-function</td>
+            <td>defines the timing function that controls the pace of the animation</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-delay</td>
+            <td>specifies the delay before the animation starts</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-iteration-count</td>
+            <td>sets the number of times the animation should repeat</td>
+        </tr>
+        <tr class="light-green">
+            <td>animation-direction</td>
+            <td>defines whether the animation should play in alternate directions</td>
+        </tr>
+        <tr class="section-header">
+            <td>Units</td>
+            <td>Units of measurement for length and size in CSS</td>
+        </tr>
+        <tr class="light-blue">
+            <td>px</td>
+            <td>pixels</td>
+        </tr>
+        <tr class="light-blue">
+            <td>%</td>
+            <td>percentage</td>
+        </tr>
+        <tr class="light-blue">
+            <td>em</td>
+            <td>relative to parent element's font-size</td>
+        </tr>
+        <tr class="light-blue">
+            <td>rem</td>
+            <td>relative to root element's font-size</td>
+        </tr>
+        <tr class="light-blue">
+            <td>vw</td>
+            <td>1% of viewport width</td>
+        </tr>
+        <tr class="light-blue">
+            <td>vh</td>
+            <td>1% of viewport height</td>
+        </tr>
+        <tr class="light-blue">
+            <td>vmin</td>
+            <td>smallest of vs and vh units</td>
+        </tr>
+        <tr class="light-blue">
+            <td>vmax</td>
+            <td>largest of vw and vh units</td>
+        </tr>
+        <tr class="section-header">
+            <td>Positioning</td>
+            <td>Controls element placement and stacking context</td>
+        </tr>
+        <tr class="light-purple">
+            <td>top, right, bottom, left: value</td>
+            <td>offsets for positioned elements</td>
+        </tr>
+        <tr class="light-purple">
+            <td>float: value</td>
+            <td>floats an element to the left or right</td>
+        </tr>
+        <tr class="light-purple">
+            <td>clear: value</td>
+            <td>clears the floated elements on one or both sides</td>
+        </tr>
+        <tr class="light-purple">
+            <td>position: relative</td>
+            <td>relative to normal document flow</td>
+        </tr>
+        <tr class="light-purple">
+            <td>position: absolute</td>
+            <td>relative to nearest positioned ancestor</td>
+        </tr>
+        <tr class="light-purple">
+            <td>position: fixed</td>
+            <td>relative to viewport, remains in fixed position</td>
+        </tr>
+        <tr class="section-header">
+            <td>Transform: value</td>
+            <td>Applies 2D or 3D transformations to elements</td>
+        </tr>
+        <tr class="light-red">
+            <td>transform: value:</td>
+            <td>applies a 2D or 3D transformation to an element</td>
+        </tr>
+        <tr class="light-red">
+            <td>transition: transform value:</td>
+            <td>specifies how transformations should transition</td>
+        </tr>
+        <tr class="section-header">
+            <td>Typography</td>
+            <td>Manages text appearance and spacing</td>
+        </tr>
+        <tr class="light-orange">
+            <td>letter-spacing: value</td>
+            <td>sets the spacing between characters</td>
+        </tr>
+        <tr class="light-orange">
+            <td>text-transform: value</td>
+            <td>controls the capitalization of text</td>
+        </tr>
+        <tr class="light-orange">
+            <td>white-space: value</td>
+            <td>specifies how white space inside an element is handled</td>
+        </tr>
+        <tr class="section-header">
+            <td>Lists</td>
+            <td>Defines styles for list item markers</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>list-style-type: value</td>
+            <td>specifies the type of list item marker</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>list-style-image: value</td>
+            <td>sets the image to be used as the list item marker</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>list-style-position: value</td>
+            <td>specifies the position of the list item marker</td>
+        </tr>
+        <tr class="section-header">
+            <td>Selectors</td>
+            <td>styles elements based on theri state</td>
+        </tr>
+        <tr class="light-green">
+            <td>:visited</td>
+            <td>selects and styles visited links</td>
+        </tr>
+        <tr class="light-green">
+            <td>:focus</td>
+            <td>selects and styles an element that has focus</td>
+        </tr>
+        <tr class="light-green">
+            <td>:empty</td>
+            <td>selects and styles an element that has no children</td>
+        </tr>
+        <tr class="section-header">
+            <td>Transitions and Animations</td>
+            <td>Manages smooth changes to CSS properties</td>
+        </tr>
+        <tr class="light-blue">
+            <td>transition-property: value</td>
+            <td>name(s) of the CSS properties to which transitions should be applied.</td>
+        </tr>
+        <tr class="light-blue">
+            <td>transition-duration: value</td>
+            <td>specifies the duration over which transitions should occur.</td>
+        </tr>
+        <tr class="light-blue">
+            <td>transition-timing-function: value</td>
+            <td>specifies the speed curve of the transition effect.</td>
+        </tr>
+        <tr class="light-blue">
+            <td>transition-delay: value</td>
+            <td>defines when the transition effect will start.</td>
+        </tr>
+        <tr class="section-header">
+            <td>Misc</td>
+            <td>Miscellaneous information</td>
+        </tr>
+        <tr class="light-purple">
+            <td>/* content */</td>
+            <td>add notes to your code that isn't displayed in the browser</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+,
+"<!DOCTYPE html>
+<html>
+<body>",
+,
+,
+,
+Structural Tags,Fundamental HTML elements used to structure and define the content of a web page
+< >,opening tag
+< / >,closing tag
+<!DOCTYPE html>,used at the beginning of html documents to set file type
+<html> </html>,creates an HTML document
+<head> </head>,sets off the title & other info that isn't displayed (meta tags are placed here)
+<body> </body>,sets off the visible portion of the document
+<title> </title>,"puts name of the document in the title bar; when bookmarking pages, this is what is bookmarked"
+Semantic Tags,Adds meaning to content for better structure and accessibility
+<header> </header>,header of a section or document
+<nav> </nav>,navigation menue
+<main> </main>,the main content of the document
+<section> </section>,generic section of the document
+<article> </article>,self-cotained piece of content
+<aside> </aside>,content that is related to the content around it
+<footer> </footer>,the footer of a section or a page
+Meta Tags,Elements that provide metadata about a web page - placed in <head>
+"<meta charset=""UTF-8"">",sets a single-line text box for picking a color
+"<meta name=""viewport"">",controls how content is displayed on different devices
+"<meta name=""author"" content=""Author Name"">",specified the author of the page
+Formatting,Formatting in HTML involves using tags to apply various styles and emphasis to text
+<p> </p>,creates a new paragraph
+<br>,inserts a line break (carriage return)
+<blockquote> </blockquote>,puts content in a quote - indents text from both sides
+<div> </div>,used to format block content with CSS
+<span> </span>,used to format inline content with CSS
+"<p class=""important"">This is an important paragraph.</p>","groups multiple HTML elements together, allowing them to be styled collectively"
+"<div id=""header"">This is the header</div>",provides a unique identifier for a specific HTML element
+Text Tags,Text tags include elements used for structuring and displaying text content on a webpage
+<pre> </pre>,creates preformatted text
+<h1> </h1> --> <h6> </h6>,"creates headlines -- H1=largest, H6=smallest"
+<tt> </tt>,creates typewriter-style text
+<code> </code>,"used to define source code, usually monospace"
+<cite> </cite>,"creates a citation, usually processed in italics"
+<address> </address>,"creates address section, usually processed in italics"
+<em> </em>,emphasizes a word (usually processed in italics)
+<strong> </strong>,emphasizes a word (usually processed in bold)
+<u> </u>,underlined text
+<s> </s>,strikethrough text
+<b> </b>,Creates bold text (should use <strong> instead)
+<i> </i>,Creates italicized text (should use <em> instead)
+<font size=?> </font>,Sets size of font - 1 to 7 (should use CSS instead)
+<font color=?> </font>,Sets font color (should use CSS instead)
+<font face=?> </font>,Defines the font used (should use CSS instead)
+Links,"Links are created with the <a> (anchor) tag, allowing users to navigate to other pages or resources"
+"<a href=""URL"">clickable text</a>",creates a hyperlink to an external page
+"<a href=""#EXAMPLE"">clickable text</a>",creates a hyperlink within the page
+"<a href=""mailto:EMAIL_ADDRESS"">clickable text</a>",creates a hyperlink to an email address
+"<a name=""EXAMPLE"">",creates a target location within a document
+"<a href=""#EXAMPLE"">clickable text</a>",creates a link to that target location
+"<button aria-label=""Close"">X</button>",provides an accessible label for an element when a visible label is not present or sufficient
+"<a href=""URL"" target=""_blank"">Visit URL in a new tab</a>",Specifies where to open the linked document (Blank used for new tab/window)
+"<a href=""URL"" title=""Visit URL"">Link with a title</a>","provides a title for the link, often displayed as a  tooltip"
+Lists,Lists in HTML are used to organize and structure content
+<ul> </ul>,creates an unordered list (ex. bullet point)
+"<ul style=""list-style-type: circle;"">",creates an unordered list with circle hallow circle points (default is standard bullet points)
+<ol> </ol>,creates an ordered list 
+"<ol> type=""A"" </ol>",creates an ordered list with uppercase letters
+"<ol> type=""I"" </ol>",creates an ordered list with roman numerals
+<ol start=?> </ol>,creates an ordered list starting at a specified value
+<li> </li>,encompasses each list item
+<dl> </dl>,creates a definition list 
+<dt>,precedes eachdefintion term
+<dd>,precedes eachdefintion
+Graphical elements,Graphical elements in HTML are used to incorporate visual content into web pages
+"<body style=""background-color:COLOUR;"">",sets background to specific colour
+<hr>,inserts a horizontal rule
+<hr size=?>,sets size (height) of horizontal rule
+<hr width=?>,sets width of rule (as a % or absolute pixel length)
+<hr noshade>,creates a horizontal rule without a shadow
+"<img src=""URL"" />",adds image; it is a separate file located at the URL
+"<img src=""URL"" align=?>",aligns image left/right/center/bottom/top/middle (CSS)
+"<img src=""URL"" border=?>","sets border of image, in pixels"
+"<img src=""URL"" height=?>","sets height of image, in pixels"
+"<img src=""URL"" width=?>","sets width of image, in pixels"
+"<img src=""URL"" alt=?>",sets alternative text for accessibility and displays if the image cannot be loaded
+Tables (use only for data layout - use CSS for page layout),"Tables are created using the <table>, <tr>, <td>, and <th> tags to organize data into rows and columns"
+<table> </table>,creates a table
+<tr> </tr>,sets off each row in a table
+<td> </td>,sets off each cell in a row
+<th> </th>,"sets off the table header (a normal cell with bold, centered text)"
+Table Attributes (only use for email newsletters),Table attributes used to customize the appearance and spacing of HTML tables
+<table border=?>,sets the width of the border around table cells
+<table cellspacing=?>,sets amount of space between table cells
+<table cellpadding=?>,sets amount of space between a cell's border and its contents
+<table width=?>,sets width of the table in pixels or as a percentage
+<tr align=?>,sets alignment for cells within the row (left/center/right)
+<td align=?>,sets alignment for cells (left/center/right)
+<tr valign=?>,sets vertical alignment for cells within the row (top/middle/bottom)
+<td valign=?>,sets vertical alignment for cell (top/middle/bottom)
+<td rowspan=?>,sets number of rows a cell should span (default=1)
+<td colspan=?>,sets number of columns a cell should span
+<td nowrap>,prevents lines within a cell from being broken to fit
+Forms,Forms in HTML are used to collect and submit user input
+<form> </form>,defines a form
+<select multiple name=? size=?> </select>,creates a scrolling menu - size sets the number of menu items visible before user needs to scroll
+<select name=?> </select>,creates a pulldown menu
+<option>,sets off each menu item
+<label>,provides a label for items in forms to improve accessability
+"<textarea name=? cols=""x"" rows=""y""></textarea>",creates a text box area. Columns set the width; rows set the height
+"<input type=""checkbox"" name=? value=?>",creates a checkbox
+"<input type=""checkbox"" name=? value=? checked>",creates a checkbox which is pre-checked
+"<input type=""radio"" name=? value=?>",creates a radio button
+"<input type=""radio"" name=? value=? checked>",creates a radio button which is pre-checked
+"<input type=""text"" name=? size=?>","creates a one-line text area. Size sets length, in characters"
+"<input type=""submit"" value=?>",creates a submit button. Value sets the text in the submit button
+"<input type=""image"" name=? src=? border=? alt=?>",creates a submit button using an image
+"<input type=""reset"">",creates a reset button
+"(<input type=""password"">)",creates a password
+"(<input type=""file"">)",creeates a file input field in a form
+"(<input type=""hidden"">)",creates a hidden input field within a form (invisible on front-end)
+<fieldset> </fieldset>,contains a group of related form elements
+<legend> </legend>,provides a title or caption for the group of forms
+Input Tag Attributes ,Tag attributes provide additional information about HTML elements
+"<input type=""email"" name=?>",sets a single-line textbox for email addresses
+"<input type=""url"" name=?>",sets a single-line textbox for URLs
+"<input type=""number"" name=?>",sets a single-line textbox for a number
+"<input type=""range"" name=?>",sets a single-line text box for a range of numbers
+"<input type=""date/month/week/time"" name=?>",sets a single-line text box with a calendar showing the date/month/week/time
+"<input type=""search"" name=?>",sets a single-line text box for searching
+"<input type=""color"" name=?>",sets a single-line text box for picking a color
+HTML Entities,represents reserved characters without HTML confusing it with other code
+&lt;,Represents the less-than sign (<) in HTML.
+&gt;,Represents the greater-than sign (>) in HTML.
+&amp;,epresents the ampersand (&) in HTML.
+&quot;,"Represents a double quotation mark ("") in HTML."
+&apos;,Represents an apostrophe (') in HTML.
+&nbsp;,Represents a non-breaking space in HTML.
+Misc,
+<!-- Comment -->,adds a comment for developers that is not visible on the web page
+,
+,
+,
+,
+,
+,
+,
+,

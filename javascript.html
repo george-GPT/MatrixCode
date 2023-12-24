@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Code</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js"></script>
+    <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
+    <style>
+        body {
+            padding-bottom: 50px; /* Adds padding to the bottom of the page */
+        }
+
+        .table-container {
+            display: block; /* Use block instead of flex to allow natural width */
+            margin: 0 auto; /* Center the table container */
+            overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
+            padding: 20px; /* Remove padding if you don't need it */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: black;
+            margin: 0;
+            border-spacing: 2px 0;
+            font-family: 'lato', Times, serif;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            font-weight: bold; /* Make header text bold */
+        }
+        td {
+            white-space: normal; /* Keep content on a single line */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add an ellipsis to clipped content */
+            max-width: 150px; /* Set a max-width to control cell width */     
+        }    
+        
+        table tr td:first-child {
+           text-align: right; /* Aligns text to the right */
+        }
+
+        .section-header {
+            color: white;
+            font-weight: bold;
+            background-color: #36454F;
+            font-size: 1em;
+        }
+
+        .light-red {
+            background-color: #f4cccc;
+        /* Add any other styling you want for this class */
+        }
+
+        .light-orange {
+        background-color: #fce5cd;
+        }
+
+        .light-yellow {
+            background-color: #fff2cc;
+        }
+
+        .light-green {
+            background-color: #d9ead3;
+        }
+
+        .light-blue {
+            background-color: #c9daf8;
+        }
+
+        .light-purple {
+            background-color: #d9d2e9;
+        }
+            </style>
+        </div>
+        </head>
+<body>
+    <header>
+            <h1 class="title-matrix-code">Matrix Code</h1>
+            <nav class="tabs">
+                <a class="tab" href="index">Home</a>
+                <a class="tab" href="html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript"><i class="fab fa-js"></i>JavaScript</a>
+            </nav>
+        </header>    
+    <br>
+    <br>
+    <br>
+    <div class="header-with-image-js glowing-text">
+        <img src="/images/JavaScript.png" alt="JS Icon" class="iconClass" />
+        <h1 class="table-title">JavaScript Fundamentals</h1>
+    </div>
+<br>
+    <div class="table-container">
+    <table>
+    <tr class="section-header">
+            <td>Variables</td>
+            <td>Containers for storing data values</td>
+        </tr>
+        <tr class="light-red">
+            <td>let variableName = value;</td>
+            <td>declares a value that can be changed</td>
+        </tr>
+        <tr class="light-red">
+            <td>const variableName = value;</td>
+            <td>declares a value that is constant</td>
+        </tr>
+        <tr class="light-red">
+            <td>var variableName = value;</td>
+            <td>declares a value that can be changed (outdated)</td>
+        </tr>
+        <tr class="section-header">
+            <td>Data Types</td>
+            <td>Containers for storing data values</td>
+        </tr>
+        <tr class="light-orange">
+            <td>string</td>
+            <td>a sequence of characters placed between quotes</td>
+        </tr>
+        <tr class="light-orange">
+            <td>number</td>
+            <td>numeric data type</td>
+        </tr>
+        <tr class="light-orange">
+            <td>boolean</td>
+            <td>represents true or false</td>
+        </tr>
+        <tr class="light-orange">
+            <td>array</td>
+            <td>ordered collection of values</td>
+        </tr>
+        <tr class="light-orange">
+            <td>object</td>
+            <td>collection of key-value pairs</td>
+        </tr>
+        <tr class="section-header">
+            <td>Operators</td>
+            <td>Symbols that represent computations</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>+ - * / % (arithmatic)</td>
+            <td>perform basic mathematical operations</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>==</td>
+            <td>equal to</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>===</td>
+            <td>strict equal to</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>!=</td>
+            <td>not equal to</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>!==</td>
+            <td>not strictly equal to</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>&lt;</td>
+            <td>less than</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>&gt;</td>
+            <td>greater than</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>&lt;=</td>
+            <td>less than or equal</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>&gt;=</td>        
+            <td>greater than or equal</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>&&</td>
+            <td>represents logical AND</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>||</td>
+            <td>represents logical OR</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>!</td>
+            <td>represents logical NOT</td>
+        </tr>
+        <tr class="section-header">
+            <td>Conditional Statements</td>
+            <td>Execute code based on specified conditions</td>
+        </tr>
+        <tr class="light-green">
+            <td>if (condition) codeHere</td>
+            <td>executes if condition is true</td>
+        </tr>
+        <tr class="light-green">
+            <td>else if(anotherCondition) codeHere</td>
+            <td>code to execute if anotherCondition is true</td>
+        </tr>
+        <tr class="light-green">
+            <td>else codeHere</td>
+            <td>code to execute if none of the conditions are true</td>
+        </tr>
+        <tr class="section-header">
+            <td>Loops</td>
+            <td>Loops are used to repeatedly execute a block of code</td>
+        </tr>
+        <tr class="light-blue">
+            <td>for (let VARIABLE = VALUE; VARIABLE <= VALUE; VALUE++)</td>
+            <td>exectues piece of code repeatedly</td>
+        </tr>
+        <tr class="light-blue">
+            <td>let while (CONDITION) codeHere</td>
+            <td>repeats block of code while specific condition is a true</td>
+        </tr>
+        <tr class="section-header">
+            <td>Functions</td>
+            <td>Reusable blocks that can be called upon</td>
+        </tr>
+        <tr class="light-purple">
+            <td>function functionName(parameter1, parameter2) {CODE}</td>
+            <td>defines a reusable block of JS code</td>
+        </tr>
+        <tr class="light-purple">
+            <td>return result;</td>
+            <td>return statement</td>
+        </tr>
+        <tr class="section-header">
+            <td>Event Handling</td>
+            <td>Event handling allows you to respond to user interactions with your web page</td>
+        </tr>
+        <tr class="light-red">
+            <td>element.onclick = function() { /* Code */ };</td>
+            <td>directly assigns an event handler that executes contained code when the element is clicked</td>
+        </tr>
+        <tr class="light-red">
+            <td>element.addEventListener('event', function() { /* Code */ });</td>
+            <td>assigns a function to the event that allows more flexibility than directly assigning an event handler</td>
+        </tr>
+        <tr class="section-header">
+            <td>DOM Manipulation</td>
+            <td>DOM manipulation involves interacting with the Document Object Model to dynamically change elements on a web page</td>
+        </tr>
+        <tr class="light-orange">
+            <td>document.getElementById('elementId');</td>
+            <td>retrieves an HTML element from the document using its unique ID</td>
+        </tr>
+        <tr class="light-orange">
+            <td>document.querySelector('selector');</td>
+            <td>retrieves the first HTML element that matches the specified CSS selector</td>
+        </tr>
+        <tr class="light-orange">
+            <td>document.createElement('element');</td>
+            <td>creates a new HTML element</td>
+        </tr>
+        <tr class="light-orange">
+            <td>parentElement.appendChild(childElement);</td>
+            <td>appends a child element to a parent element in the HTML document</td>
+        </tr>
+        <tr class="section-header">
+            <td>Arrays</td>
+            <td>Arrays are used to store and manipulate lists of items</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>var array = [element1, element2, element3];</td>
+            <td>declares a variable named array with three elements</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>array.push(newElement);</td>
+            <td>adds an element to the end</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>array.pop();</td>
+            <td>removes the last element</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>array.shift();</td>
+            <td>removes the first element</td>
+        </tr>
+        <tr class="light-yellow">
+            <td>array.unshift(newElement);</td>
+            <td>adds an element to the beginning</td>
+        </tr>
+        <tr class="section-header">
+            <td>Objects</td>
+            <td>Objects allow you to group related data and functionality</td>
+        </tr>
+        <tr class="light-green">
+            <td>let object = { key: value, anotherKey: anotherValue };</td>
+            <td>groups related data using key-value pairs</td>
+        </tr>
+        <tr class="light-green">
+            <td>object.key;</td>
+            <td>accesses the value of the key property</td>
+        </tr>   
+        <tr class="light-green">
+            <td>object.key = newValue;</td>
+            <td>changes the value of the key property</td>
+        </tr>
+        <tr class="light-green">
+            <td>object.newKey = value;</td>
+            <td>adds a new key-value pair</td>
+        </tr>
+        <tr class="light-green">
+            <td>delete object.key;</td>
+            <td>deletes the key-value pair</td>
+        </tr>
+        <tr class="section-header">
+            <td>Classes</td>
+            <td>Classes provide a way to create reusable, object-oriented code</td>
+        </tr>
+        <tr class="light-blue">
+            <td>class ClassName { constructor(parameter) { this.property = parameter; } method() { /* Code */ } }</td>
+            <td>defines a blueprint for creating objects with shared properties and methods</td>
+        </tr>
+        <tr class="section-header">
+            <td>ES6+ Features</td>
+            <td>Significant update to JavaScript in 2015</td>
+        </tr>
+        <tr class="light-purple">
+            <td>const addNumbers = (a, b) => a + b;</td>
+            <td>these are a concise way to write function expressions, often used for shorter and more readable syntax</td>
+        </tr>
+        <tr class="light-purple">
+            <td>const name = "John"; const greeting = `Hello, ${name}!`;</td>
+            <td>allow embedded expressions in string literals, making it easier to concatenate variables with strings</td>
+        </tr>
+        <tr class="light-purple">
+            <td>const person = { name: "Alice", age: 30 }; const { name, age } = person;</td>
+            <td>enables you to extract values from objects or arrays and assign them to variables in a more concise way</td>
+        </tr>
+        <tr class="light-purple">
+            <td>const numbers = [1, 2, 3]; const newNumbers = [...numbers, 4, 5];</td>
+            <td>Used for spreading elements into another array or object, or gathering elements into a single array or object</td>
+        </tr>
+        <tr class="section-header">
+            <td>Error Handling</td>
+            <td>Managing and responding to code errors</td>
+        </tr>
+        <tr class="light-red">
+            <td>try { /* code */ } catch (error) { /* handle error */ }</td>
+            <td>attempts code, handles error if it occurs</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
