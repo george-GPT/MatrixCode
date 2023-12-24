@@ -1,4 +1,4 @@
-# Front-End Web Development Essentials
+# Web Development Fundamentals: A Beginner's Toolkit
 This repository hosts a website designed as a beginner-friendly guide to front-end web development, providing a comprehensive introduction to the foundational technologies that shape the web: HTML, CSS, and JavaScript.
 
 ## Overview
