@@ -13,8 +13,7 @@ The website includes:
 
 **JavaScript Page:** Interactive and dynamic features are the focus of this section. It breaks down the core concepts of JavaScript, such as variables, functions, events, DOM manipulation, and how JS enables real-time user interactions on the web.
 
-**Purpose
-**
+**Purpose**
 The primary goal of this project is educational. It serves as a resource for newcomers to quickly understand and apply basic concepts in front-end web development. It's also a testament to my learning journey, capturing my progress and understanding as I delve deeper into web development.
 
 **Navigation**
