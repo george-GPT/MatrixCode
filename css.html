@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Code</title>
     <link rel="icon" href="/favicon/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <script src="script.js"></script>
     <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
-    <style>
-        body {
+    <script src="prism.js"></script>
+    <style>    
+    body {
             padding-bottom: 50px; /* Adds padding to the bottom of the page */
         }
 
@@ -86,23 +88,29 @@
         </div>
         </head>
 <body>
+    <div class="nav-menu-title">Navigation Menu</div>
+    <div class="card-navigation">
+        <a href="#cssFundamentalsSection" class="nav-card">CSS fundamentals</a>
+        <a href="#additionalExamplesSection" class="nav-card">Additional examples of CSS code</a>
+    </div>
+</div>
     <header>
-            <h1 class="title-matrix-code">Matrix Code</h1>
+        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index">Home</a>
-                <a class="tab" href="html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript"><i class="fab fa-js"></i>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
             </nav>
         </header>    
     <br>
     <br>
     <br>
+    <div id="cssFundamentalsSection" class="content-section"></div>
     <div class="header-with-image-css">
         <img src="/images/CSS.png" alt="CSS Icon" class="iconClass" />
         <h1 class="table-title">CSS Fundamentals</h1>
     </div>
-    <br>
     <div class="table-container">
     <table>
         <tr class="section-header">
@@ -286,11 +294,11 @@
             <td>allows default alignment to be overridden</td>
         </tr>
         <tr class="light-blue">
-            <td>flex:grow</td>
+            <td>flex: grow</td>
             <td>controls item's ability to expand</td>
         </tr>
         <tr class="light-blue">
-            <td>flex:shrink</td>
+            <td>flex: shrink</td>
             <td>controls item's ability to contract</td>
         </tr>
         <tr class="light-blue">
@@ -590,8 +598,8 @@
             <td>defines when the transition effect will start.</td>
         </tr>
         <tr class="section-header">
-            <td>Misc</td>
-            <td>Miscellaneous information</td>
+            <td>CSS Comments</td>
+            <td></td>
         </tr>
         <tr class="light-purple">
             <td>/* content */</td>
@@ -599,5 +607,69 @@
         </tr>
     </table>
 </div>
+<br>
+<br>
+<br>
+<br>
+<section id="additionalExamplesSection">
+<h1 class="centered-table-title">Additional Examples of CSS Code</h1>
+<br>
+<div class="table-container Left-Align-table">
+    <table>
+        <tbody>
+            <tr class="section-header"><td><strong>Example of a basic CSS tag</strong></td></tr>
+            <tr class="light-red"><td>body { background-color: #f7f7f7; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a selector</strong></td></tr>
+            <tr class="light-orange"><td>.className { color: blue; }</td></tr>
+            
+            <tr class="section-header"><td><strong>example of a CSS property/value</strong></td></tr>
+            <tr class="light-yellow"><td>h1 { font-size: 2em; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of box model</strong></td></tr>
+            <tr class="light-green"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of flexbox</strong></td></tr>
+            <tr class="light-blue"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of grid</strong></td></tr>
+            <tr class="light-purple"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a pseudo-class</strong></td></tr>
+            <tr class="light-red"><td>a:hover { color: green; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a media queries</strong></td></tr>
+            <tr class="light-orange"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a transition</strong></td></tr>
+            <tr class="light-yellow"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="light-green"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a unit</strong></td></tr>
+            <tr class="light-blue"><td>.unit { margin: 5vh 10vw; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of positioning</strong></td></tr>
+            <tr class="light-purple"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of transform</strong></td></tr>
+            <tr class="light-red"><td>.rotate { transform: rotate(45deg); }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of typography</strong></td></tr>
+            <tr class="light-orange"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
+            <tr class="light-yellow"><td>ul { list-style-type: square; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="light-green"><td>.animate { animation: fadeIn 2s; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a CSS Comment</strong></td></tr>
+            <tr class="light-blue"><td>/* This is a comment in CSS */</td></tr>
+        </tbody>
+    </table>
+</div>
+</section>
 </body>
 </html>

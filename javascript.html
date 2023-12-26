@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Code</title>
     <link rel="icon" href="/favicon/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <script src="script.js"></script>
     <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
-    <style>
-        body {
+    <script src="prism.js"></script>
+    <style>   
+    body {
             padding-bottom: 50px; /* Adds padding to the bottom of the page */
         }
 
@@ -83,27 +85,32 @@
         .light-purple {
             background-color: #d9d2e9;
         }
-            </style>
+        </style>
         </div>
         </head>
 <body>
+    <div class="nav-menu-title">Navigation Menu</div>
+    <div class="card-navigation">
+        <a href="#jsFundamentalsSection" class="nav-card">JavaScript fundamentals</a>
+        <a href="#additionalExamplesSection" class="nav-card">Additional examples of JavaScript code</a>
+    </div>
     <header>
-            <h1 class="title-matrix-code">Matrix Code</h1>
+        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index">Home</a>
-                <a class="tab" href="html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript"><i class="fab fa-js"></i>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
             </nav>
         </header>    
     <br>
     <br>
     <br>
+    <div id="jsFundamentalsSection" class="content-section"></div>
     <div class="header-with-image-js glowing-text">
         <img src="/images/JavaScript.png" alt="JS Icon" class="iconClass" />
         <h1 class="table-title">JavaScript Fundamentals</h1>
     </div>
-<br>
     <div class="table-container">
     <table>
     <tr class="section-header">
@@ -354,7 +361,87 @@
             <td>try { /* code */ } catch (error) { /* handle error */ }</td>
             <td>attempts code, handles error if it occurs</td>
         </tr>
+        <tr class="section-header">
+            <td>JavaScript Comments</td>
+            <td>Managing and responding to code errors</td>
+        </tr>
+        <tr class="light-orange">
+            <td>// comment here </td>
+            <td>single line comment</td>
+        </tr>
+        <tr class="light-orange">
+            <td>/* comment here */</td>
+            <td>multi-line comment</td>
     </table>
 </div>
+<br>
+<br>
+<br>
+<br>
+<section id="additionalExamplesSection">
+<h1 class="centered-table-title">Additional Examples of JavaScript Code</h1>
+<br>    
+<div class="table-container Left-Align-table">
+    <table>
+        <tbody>
+        <!-- Example of a variable -->
+        <tr class="section-header"><td><strong>Example of a bariable</strong></td></tr>
+        <tr class="light-red"><td>let userName = 'John';</td></tr>
+
+        <!-- Example of a data type -->
+        <tr class="section-header"><td><strong>Example of a data type</strong></td></tr>
+        <tr class="light-orange"><td>let age = 30; // Number data type</td></tr>
+
+        <!-- Example of an operator -->
+        <tr class="section-header"><td><strong>Example of an operator</strong></td></tr>
+        <tr class="light-yellow"><td>let isAdult = (age >= 18); // Comparison operator</td></tr>
+
+        <!-- Example of a conditional statement -->
+        <tr class="section-header"><td><strong>Example of a conditional statement</strong></td></tr>
+        <tr class="light-green"><td>if (isAdult) { console.log(userName + ' is an adult.'); }</td></tr>
+
+        <!-- Example of a loop -->
+        <tr class="section-header"><td><strong>Example of a loop</strong></td></tr>
+        <tr class="light-blue"><td>let toDoList = ['shop', 'email', 'clean'];<br>toDoList.forEach(function(task) { console.log(userName + ' needs to ' + task + '.'); });</td></tr>
+
+        <!-- Example of a function -->
+        <tr class="section-header"><td><strong>Example of a function</strong></td></tr>
+        <tr class="light-purple"><td>function displayTask(task) { console.log(userName + ' needs to ' + task + '.'); }</td></tr>
+
+        <!-- Example of event handling -->
+        <tr class="section-header"><td><strong>Example of event handling</strong></td></tr>
+        <tr class="light-red"><td>// Assuming there is a button element with id 'myButton' in the HTML<br>document.getElementById('myButton').addEventListener('click', function() { console.log(userName + ' clicked the button.'); });</td></tr>
+
+        <!-- Example of DOM manipulation -->
+        <tr class="section-header"><td><strong>Example of DOM manipulation</strong></td></tr>
+        <tr class="light-orange"><td>// Assuming there is a div element with id 'welcomeMessage' in the HTML<br>document.getElementById('welcomeMessage').textContent = 'Welcome, ' + userName + '!';</td></tr>
+
+        <!-- Example of an array -->
+        <tr class="section-header"><td><strong>Example of an array</strong></td></tr>
+        <tr class="light-yellow"><td>let tasksCompleted = 0;<br>toDoList.push('exercise'); // Adds a new task</td></tr>
+
+        <!-- Example of an object -->
+        <tr class="section-header"><td><strong>Example of an object</strong></td></tr>
+        <tr class="light-green"><td>let user = { name: 'John', age: 30, tasksCompleted: 0 };</td></tr>
+
+        <!-- Example of a class -->
+        <tr class="section-header"><td><strong>Example of a class</strong></td></tr>
+        <tr class="light-blue"><td>class User {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>    this.tasksCompleted = 0;<br>  }<br>}<br>let userJohn = new User('John', 30);</td></tr>
+
+        <!-- Example of an ES6 feature -->
+        <tr class="section-header"><td><strong>Example of an ES6 feature</strong></td></tr>
+        <tr class="light-purple"><td>let greeting = `Hello, ${user.name}! You have ${user.tasksCompleted} tasks completed.`;</td></tr>
+
+        <!-- Example of error handling -->
+        <tr class="section-header"><td><strong>Example of error handling</strong></td></tr>
+        <tr class="light-red"><td>try {<br>  completeTask(user, 'email');<br>} catch (error) {<br>  console.error('Error completing task: ' + error.message);<br>}</td></tr>
+
+        <!-- Example of a single-line JavaScript comment -->
+        <tr class="section-header"><td><strong>Example of a single-Line javaScript comment</strong></td></tr>
+        <tr class="light-orange"><td>// this is a single-line comment in JavaScript</td></tr>
+        </tbody>
+    </table>
+</div>
+</section>
 </body>
 </html>

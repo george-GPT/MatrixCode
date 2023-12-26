@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Code</title>
     <link rel="icon" href="/favicon/favicon-32x32.png">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <script src="script.js"></script>
     <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
+    <script src="prism.js"></script>
 </head>
 <body>
     <header>
-        <h1 class="title-matrix-code">Matrix Code</h1>
+        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
         <nav class="tabs">
-            <a class="tab" href="index">Home</a>
-            <a class="tab" href="html"><i class="fab fa-html5"></i>HTML</a>
-            <a class="tab" href="css"><i class="fab fa-css3-alt"></i>CSS</a>
-            <a class="tab" href="javascript"><i class="fab fa-js"></i>JavaScript</a>
+            <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+            <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+            <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
         </nav>
     </header>
-    <br>
     <br>
     <div class="intro-section">
         <h1 class="title">Introduction to Front-End Website Development</h1><br>
@@ -33,19 +34,19 @@
     <br>
     <br>
     <div class="tech-container">
-        <div class="tech-card">
+        <div class="tech-card" id="html-card" data-tooltip="Learn about HTML">
             <img src="images/HTML.png" alt="HTML Image">
             <h3>HTML</h3>
             <p>HTML is the backbone of web content. It defines the structure with essential elements like headings, paragraphs, and links. It ensures content is organized and web pages are navigable for a seamless user experience.</p>
         </div>
     
-        <div class="tech-card">
+        <div class="tech-card" id="css-card" data-tooltip="Discover CSS">
             <img src="images/CSS.png" alt="CSS Image">
             <h3>CSS</h3>
             <p>CSS takes HTML to the next level, providing the stylistic touch to web design. It's responsible for the layout, colors, and fonts that make web pages aesthetically pleasing and functionally responsive.</p>
         </div>
     
-        <div class="tech-card">
+        <div class="tech-card" id="js-card" data-tooltip="Explore JavaScript">
             <img src="images/JavaScript.png" alt="JavaScript Image">
             <h3>JavaScript</h3>
             <p>JavaScript brings life to web pages. It enables interactive features and dynamic content changes that react to user interactions, thereby significantly enhancing the overall functionality and user experience of the site.</p>
