@@ -121,6 +121,7 @@ header {
     width: 95%;
     border-radius: 25px;
     overflow: hidden;
+    
 }
 
 header::before {
@@ -662,6 +663,11 @@ p {
     list-style-position: inside;
 }
 
+/* Increase the size of the "far fa-circle-up" icon */
+.nav-card:first-child i.far.fa-circle-up {
+    font-size: 24px; /* Adjust the font size as needed */
+    padding-left: 5%;
+}
 
 /* Override PrismJS background */
 pre[class*="language-"], code[class*="language-"] {
@@ -849,5 +855,31 @@ code[class*="language-"] strong {
 
     .main-content {
         padding-left: 0; /* Reset padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .title-matrix-code {
+        font-size: 36px; /* Adjust the font size for smaller screens */
+        text-align: center; /* Center the title */
+        margin-top: 20px; /* Add space at the top if needed */
+        margin-bottom: 20px; /* Add space at the bottom if needed */
+    }
+}
+
+@media (max-width: 768px) {
+    .title-matrix-code {
+        font-size: 36px; /* Adjust the font size for smaller screens */
+        text-align: center; /* Center the title */
+        margin-top: 20px; /* Add space at the top if needed */
+        margin-bottom: 20px; /* Add space at the bottom if needed */
+    }
+}
+
+@media (max-width: 768px) {
+    .tab {
+        font-size: 16px; /* Adjust the tab font size for smaller screens */
+        margin: 5px 0; /* Add space between vertically stacked tabs */
+        padding: 8px 12px; /* Adjust padding for tabs */
     }
 }
