@@ -66,39 +66,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var navTitle = document.querySelector('.nav-menu-title');
-    var navMenu = document.querySelector('.card-navigation');
-    var table = document.querySelector('.table-title').nextElementSibling; // Assuming the table follows the title
+    var navLinks = document.querySelectorAll('.nav-card');
+    var sections = document.querySelectorAll('.content-section');
 
-    function updateVerticalCenter() {
+    function updateActiveSection() {
         var scrollY = window.scrollY;
-        var viewportCenter = window.innerHeight / 2;
-        var tableRect = table.getBoundingClientRect();
+        
+        sections.forEach(function(section) {
+            var sectionId = section.getAttribute('id');
+            var sectionTop = section.offsetTop;
+            var sectionHeight = section.offsetHeight;
 
-        // Calculate the top position for the navMenu and navTitle
-        var navTopPosition = Math.max(viewportCenter, scrollY + tableRect.top);
-
-        // Apply the styles to navMenu and navTitle to keep them centered
-        navMenu.style.position = 'fixed';
-        navMenu.style.top = '50%';
-        navMenu.style.transform = 'translateY(-50%)';
-        navTitle.style.position = 'fixed';
-        navTitle.style.top = '50%';
-        navTitle.style.transform = 'translateY(-50%)';
-
-        // Adjust the maximum allowed top position based on the table's top position
-        if (scrollY < tableRect.top + window.scrollY) {
-            navMenu.style.top = `${navTopPosition}px`;
-            navMenu.style.transform = 'none';
-            navTitle.style.top = `${navTopPosition - navTitle.offsetHeight}px`; // 10px for a little space above nav cards
-            navTitle.style.transform = 'none';
-        }
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(function(link) {
+                    var dataSection = link.getAttribute('data-section');
+                    if (dataSection === sectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
     }
 
-    // Update position on scroll and resize
-    window.addEventListener('scroll', updateVerticalCenter);
-    window.addEventListener('resize', updateVerticalCenter);
+    // Function to scroll to the top of the page
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    // Set initial position
-    updateVerticalCenter();
+    // Add event listener for the "Top of the Page" navigation item
+    var topOfPageLink = document.querySelector('.nav-card[data-section="topofpage"]');
+    topOfPageLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default behavior of the anchor link
+        scrollToTop(); // Scroll to the top of the page
+    });
+
+    // Update active section on scroll
+    window.addEventListener('scroll', updateActiveSection);
+
+    // Set initial active section
+    updateActiveSection();
 });

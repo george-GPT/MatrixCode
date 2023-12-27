@@ -31,10 +31,11 @@
             margin: 0;
             border-spacing: 2px 0;
             font-family: 'lato', Times, serif;
+            border: 1px solid black;
         }
 
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid black;
             padding: 8px 12px;
             text-align: left;
         }
@@ -52,6 +53,7 @@
         
         table tr td:first-child {
            text-align: right; /* Aligns text to the right */
+           border: 1px solid black;
         }
 
         .section-header {
@@ -59,6 +61,7 @@
             font-weight: bold;
             background-color: #36454F;
             font-size: 1em;
+            border: 1px solid #ccc;
         }
 
         .light-red {
@@ -91,22 +94,24 @@
 <body>
     <div class="nav-menu-title">Navigation Menu</div>
     <div class="card-navigation">
-        <a href="#jsFundamentalsSection" class="nav-card">JavaScript fundamentals</a>
-        <a href="#additionalExamplesSection" class="nav-card">Additional examples of JavaScript code</a>
+        <a href="#topofpage" class="nav-card" data-section="topofpage">Top of the page <i class="far fa-circle-up"></i></a>
+        <a href="#jsFundamentalsSection" class="nav-card" data-section="jsFundamentalsSection">JavaScript fundamentals</a>
+        <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional examples of JavaScript code</a>
     </div>
+<section id="topofpage"></section>
     <header>
         <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i> HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
             </nav>
         </header>    
     <br>
     <br>
     <br>
-    <div id="jsFundamentalsSection" class="content-section"></div>
+    <div id="jsFundamentalsSection" class="content-section">
     <div class="header-with-image-js glowing-text">
         <img src="/images/JavaScript.png" alt="JS Icon" class="iconClass" />
         <h1 class="table-title">JavaScript Fundamentals</h1>
@@ -378,14 +383,14 @@
 <br>
 <br>
 <br>
-<section id="additionalExamplesSection">
+<section id="additionalExamplesSection" class="content-section">
 <h1 class="centered-table-title">Additional Examples of JavaScript Code</h1>
 <br>    
 <div class="table-container Left-Align-table">
     <table>
         <tbody>
         <!-- Example of a variable -->
-        <tr class="section-header"><td><strong>Example of a bariable</strong></td></tr>
+        <tr class="section-header"><td><strong>Example of a variable</strong></td></tr>
         <tr class="light-red"><td>let userName = 'John';</td></tr>
 
         <!-- Example of a data type -->

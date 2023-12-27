@@ -38,27 +38,33 @@
             border: 1px solid #ccc;
             padding: 8px 12px;
             text-align: left;
+            border: 1px solid black;
         }
 
         th {
             background-color: #f9f9f9;
             font-weight: bold; /* Make header text bold */
+            
         }
         td {
             white-space: nowrap; /* Keep content on a single line */
             overflow: hidden; /* Hide overflow */
             text-overflow: ellipsis; /* Add an ellipsis to clipped content */
             max-width: 250px; /* Set a max-width to control cell width */
+            border: 1px solid black;
         }
         
         table tr td:first-child {
            text-align: right; /* Aligns text to the right */
+           border: 1px solid black;
         }
         .section-header {
             color: white;
             font-weight: bold;
             background-color: #36454F;
             font-size: 1em;
+            border: 1px solid #ccc;
+            
         }
 
         .light-red {
@@ -90,23 +96,24 @@
 <body>
     <div class="nav-menu-title">Navigation Menu</div>
     <div class="card-navigation">
-        <a href="#htmlFundamentalsSection" class="nav-card">HTML fundamentals</a>
-        <a href="#additionalExamplesSection" class="nav-card">Additional examples of HTML code</a>
+        <a href="#topofpage" class="nav-card" data-section="topofpage">Top of the page <i class="far fa-circle-up"></i></a>
+        <a href="#htmlFundamentalsSection" class="nav-card" data-section="htmlFundamentalsSection">HTML fundamentals</a>
+        <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional examples of HTML code</a>
     </div>
 </div>
+<section id="topofpage"></section>
     <header>
         <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i> HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
             </nav>
         </header>    
     <br>
     <br>
     <br>  <!-- Main content -->
-    <div nav-menu-title>
     <div id="htmlFundamentalsSection" class="content-section">
     <div class="header-with-image-html">
         <img src="/images/HTML.png" alt="HTML Icon" class="iconClass"/>
@@ -572,15 +579,15 @@
     </table>
 </div>
 </section>
+<section id="additionalExamplesSection" class="content-section">
 <br>
 <br>
 <br>
 <br>
-<section id="additionalExamplesSection">
 <h1 class="centered-table-title">Additional Examples of HTML Code</h1>
 <br>    
     <div class="table-container Left-Align-table">
-        <table>
+        <table >
             <tbody>
                 <tr class="section-header"><td><strong>Example of a structural tag</strong></td></tr>
                 <tr class="light-red"><td>&lt;div&gt;This is a division tag&lt;/div&gt;</td></tr>

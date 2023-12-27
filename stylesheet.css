@@ -90,7 +90,7 @@ button:hover, .button-like:hover {
 }
 
 body {
-    background-color: #f7f7f7;
+    background-color: #dbd5e2;
     color: #333; /* A darker shade for better readability */
     font-size: 18px;
     font-family: "OpenSans Regular", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
@@ -98,7 +98,6 @@ body {
     max-width: 1200px; /* Max width to control content width */
     margin: 0 auto; /* Center content on the page */
     padding: 20px; /* Uniform padding */
-    margin-bottom: 50px;
     background-attachment: fixed;
 }
 
@@ -113,13 +112,12 @@ header {
     justify-content: center; /* Align children to the center of the container */
     align-items: center; /* Center children horizontally */
     position: relative;
-    padding-top: 10px; /* Reduced padding at the top */
     padding-bottom: 10px; /* Reduced padding at the bottom */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 30px;
     width: 95%;
     border-radius: 25px;
     overflow: hidden;
@@ -160,6 +158,20 @@ header::after {
     padding: 10px;
 }
 
+.introduction-card {
+    background-color: #ffffff; /* or any color you prefer */
+    border-radius: 10px; /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* a subtle shadow */
+    border: 1px solid black; 
+    padding: 20px; /* space inside the card */
+    margin: 15px 0; /* space outside the card */
+    max-width: 800px; /* maximum width of the card */
+    margin-left: auto; /* centering the card */
+    margin-right: auto;
+    font-family: 'OpenSans-Regular', sans-serif; /* keeping the font consistent with the body */
+}
+
+
 .intro-section {
     width: 95%; /* Same as header to maintain the alignment */
     margin-left: auto; /* Centers the content */
@@ -186,7 +198,7 @@ header::after {
     text-align: left; /* Justify the introduction paragraph */
     align-items: left;
     max-width: 75%; /* Control the width of the paragraph */ /* Center the paragraph */
-    
+    line-height: 1.6;
   }
   
 .light-red {
@@ -347,7 +359,7 @@ h2 {
 .tech-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 22px;
     justify-content: center;
     align-items: start;
     margin-top: 1.5rem;
@@ -357,6 +369,7 @@ h2 {
 .tech-card {
     background: #fff;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    border: 1px solid black; 
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
@@ -376,7 +389,8 @@ h2 {
 }
   
 .tech-card p {
-    color: #666;
+    color: #333;
+    line-height: 1.6;
 }
 
 .tech-card {
@@ -392,7 +406,7 @@ h2 {
     background-color: black;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 10px;
     padding: 5px 0;
     position: absolute;
     z-index: 1;
@@ -569,14 +583,14 @@ p {
 
 .card-navigation {
     position: fixed;
-    left: 5%; /* Adjust this value to place it horizontally where you want */
+    left: 5%; /* Adjust this value to place it horizontally where you w ant */
     z-index: 100; /* Ensure it's above other content */
-    padding-top: 725px;
+    padding-top: 800px;
 }
 
 .nav-card {
     background-color: #fff; /* Card background color */
-    width: 242px; /* Width of the cards */
+    width: 260px; /* Width of the cards */
     display: block; /* Stack cards vertically */
     text-decoration: none; /* Remove underline from links */
     color: #1a1a1a; /* Text color */
@@ -598,9 +612,12 @@ p {
 }
 
 .nav-card.active {
-    border-left: 4px solid #007bff; /* Blue bar for active state */
-    background: linear-gradient(to bottom right, #e9ecef, #dee2e6); /* Different gradient for active */
-}
+        border-left: 4px solid #007bff; /* Blue bar for active state */
+        background: linear-gradient(to bottom right, #e9ecef, #dee2e6); /* Different gradient for active */
+        font-weight: bold; /* Bold text for active link */
+        color: #3089e7; /* Change to the desired link color */
+    }
+    
 
 .nav-menu-title {
     opacity: 0.85;
@@ -610,15 +627,41 @@ p {
     font-weight: bold; /* Font weight for the title */
     text-align: center; /* Center the text */
     position: fixed; /* Fixed position to stay in place during scroll */
-    top: 20%; /* Position it above the nav cards, adjust 40px based on your actual title height */
+    top: 10%; /* Position it above the nav cards, adjust 40px based on your actual title height */
     left: 11.7%; /* Center horizontally */
     transform: translateX(-50%); /* Align center */
     z-index: 101; /* Ensure it's above the nav cards */
     background: none; /* Background color for the title */
-    padding-top: 445px; /* Padding around the text */
+    padding-top: 470px; /* Padding around the text */
     margin-bottom: 0px; /* Space between title and nav cards */
     width: 11.7%; /* Width of the title to fit the nav cards */
 }
+
+/* Style for the active section */
+.active-section {
+    background-color: #f2f2f2; /* Change to the desired highlight color */
+}
+
+/* Style for the active navigation link */
+.active-nav-link {
+    color: #3089e7; /* Change to the desired link color */
+    font-weight: bold;
+}
+
+.intro-section ul {
+    /* Remove the default padding on the left which causes the indentation */
+    padding-left: 0;
+}
+
+.intro-section li {
+    /* Add padding or margin to the left to align with the rest of the text */
+    padding-left: 40px; /* Adjust this value as needed to align with your other text */
+    /* Use 'text-indent' if you want to indent the first line of each list item */
+    text-indent: -20px;
+    /* Optionally, set the list-style-position to 'inside' if you want the bullet points to be within the flow of the text */
+    list-style-position: inside;
+}
+
 
 /* Override PrismJS background */
 pre[class*="language-"], code[class*="language-"] {
@@ -706,5 +749,105 @@ code[class*="language-"] strong {
         top: 23.5%;
         transform: translate(-50%, -50%);
         left: calc((100% - 1500px) / 2); /* Adjust based on your content width */
+    }
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .title-matrix-code {
+        /* Reduce title size for mobile */
+        font-size: 36px; 
+        /* Center the title */
+        text-align: center; 
+        margin-top: 20px; /* Add space at the top if needed */
+    }
+
+    .tabs {
+        /* Adjust the navigation tabs for mobile */
+        position: relative; /* or static, depending on your layout */
+        flex-direction: column; /* Stack tabs vertically */
+        align-items: center; /* Center the tabs */
+        padding: 10px 0; /* Adjust padding as needed */
+    }
+
+    .tab {
+        /* Adjust individual tab styling for mobile */
+        font-size: 18px; /* Smaller font size for tabs */
+        margin: 5px 0; /* Add space between vertically stacked tabs */
+        padding: 10px; /* Adjust padding as needed */
+    }
+
+    header {
+        /* Adjust the header container for mobile */
+        padding: 20px 0; /* Adjust padding as needed */
+        height: auto; /* Let the header height be dynamic */
+        /* Other styling adjustments for the header if necessary */
+    }
+    /* Add responsive adjustments for any other elements inside the header */
+}
+
+@media (max-width: 768px) {
+    .tech-container {
+        grid-template-columns: 1fr; /* Stacks cards in a single column on small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-navigation {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-card {
+        width: auto;
+        flex-grow: 1;
+        padding: 10px;
+        border-right: 1px solid #ccc; /* Add a border between items */
+        border-radius: 0; /* Remove rounded corners for mobile */
+    }
+
+    .nav-card:last-child {
+        border-right: none; /* Remove right border from the last item */
+    }
+
+    .main-content {
+        padding-left: 0; /* Reset padding for mobile */
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-navigation {
+        position: fixed; /* Fixed positioning for larger screens */
+        top: 21.5%;
+        transform: translateY(-50%);
+        left: calc((100% - 1740px) / 2); /* Adjust based on your content width */
+    }
+
+    .nav-menu-title {
+        position: fixed; /* Fixed positioning for larger screens */
+        top: 23.5%;
+        transform: translate(-50%, -50%);
+        left: calc((100% - 1500px) / 2); /* Adjust based on your content width */
+    }
+
+    .main-content {
+        padding-left: 300px; /* Adjust based on your nav card width */
+    }
+}
+
+@media (max-width: 1024px) {
+    .card-navigation {
+        display: none; /* Hide the nav cards on smaller screens */
+    }
+
+    .nav-menu-title {
+        display: none; /* Hide the nav title on smaller screens */
+    }
+
+    .main-content {
+        padding-left: 0; /* Reset padding for smaller screens */
     }
 }

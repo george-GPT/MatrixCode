@@ -31,10 +31,11 @@
             margin: 0;
             font-family: 'lato', Times, serif;
             border-spacing: 2px 0;
+            border: 1px solid black;
         }
 
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid black;
             padding: 8px 12px;
             text-align: left;
         }
@@ -52,6 +53,7 @@
         
         table tr td:first-child {
            text-align: right; /* Aligns text to the right */
+           border: 1px solid black;
         }
 
         .section-header {
@@ -59,6 +61,7 @@
             font-weight: bold;
             background-color: #36454F;
             font-size: 1em;
+            border: 1px solid #ccc;
         }
 
         .light-red {
@@ -90,23 +93,25 @@
 <body>
     <div class="nav-menu-title">Navigation Menu</div>
     <div class="card-navigation">
-        <a href="#cssFundamentalsSection" class="nav-card">CSS fundamentals</a>
-        <a href="#additionalExamplesSection" class="nav-card">Additional examples of CSS code</a>
+        <a href="#topofpage" class="nav-card" data-section="topofpage">Top of the page <i class="far fa-circle-up"></i></a>
+        <a href="#cssFundamentalsSection" class="nav-card" data-section="cssFundamentalsSection">CSS fundamentals</a>
+        <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional examples of CSS code</a>
     </div>
 </div>
+<section id="topofpage"></section>
     <header>
         <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i> HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i> CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
             </nav>
         </header>    
     <br>
     <br>
     <br>
-    <div id="cssFundamentalsSection" class="content-section"></div>
+    <div id="cssFundamentalsSection" class="content-section">
     <div class="header-with-image-css">
         <img src="/images/CSS.png" alt="CSS Icon" class="iconClass" />
         <h1 class="table-title">CSS Fundamentals</h1>
@@ -607,11 +612,11 @@
         </tr>
     </table>
 </div>
+<section id="additionalExamplesSection" class="content-section">
 <br>
 <br>
 <br>
 <br>
-<section id="additionalExamplesSection">
 <h1 class="centered-table-title">Additional Examples of CSS Code</h1>
 <br>
 <div class="table-container Left-Align-table">
