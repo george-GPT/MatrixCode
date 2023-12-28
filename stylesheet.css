@@ -118,7 +118,6 @@ header {
     margin-right: auto;
     margin-top: 0px;
     margin-bottom: 30px;
-    width: 95%;
     border-radius: 25px;
     overflow: hidden;
     
@@ -783,123 +782,134 @@ code[class*="language-"] strong {
     100% { opacity: 1; }
 }
     
-/* Responsive styles for mobile */
+
 @media (max-width: 768px) {
     .title-matrix-code {
-        /* Reduce title size for mobile */
-        font-size: 30px; 
-        /* Center the title *//* Add space at the top if needed */
+        font-size: 2.1875rem;
+        padding: 0;
+        margin: 0;
     }
 
-    /* Responsive styles for mobile */
-    @media (max-width: 768px) {
-        .title-matrix-code {
-            font-size: 30px; /* Reduce title size for mobile */
-            padding: 0;
-            margin: 0;
-        }
+    .tabs {
+        position: relative;
+        top: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.3125rem 0;
+        min-height: 3.125rem;
+        overflow: auto;
+    }
     
-        .tabs {
-            position: relative; /* or static, depending on your layout */
-            top: 0; /* Reset top position */
-            flex-direction: row; /* Stack tabs horizontally */
-            flex-wrap: wrap; /* Allow tabs to wrap onto a new line if necessary */
-            justify-content: center; /* Center the tabs horizontally */
-            align-items: center; /* Center the tabs vertically */
-            padding: 5px 0; /* Adjust padding as needed */
-            min-height: 50px; /* Ensure tabs container is always visible */
-            overflow: visible; /* Make sure all tabs are always visible */
-        }
-        
-        .tab {
-            font-size: 20px; /* Smaller font size for tabs */
-            padding: 8px 16px; /* Increase padding for better touch targets */
-            margin: 4px; /* Adjust spacing between tabs */
-            border-radius: 5px; /* Add rounded corners for a button-like appearance */
-        }
+    .tab {
+        font-size: 1.75rem;
+        padding: 0.25rem 0.5rem;
+        margin: 0.125rem;
+    }
 
     header {
-        height: auto; /* Let the header height be dynamic */
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: auto;
     }
 
     .card-navigation {
         top: auto;
         bottom: 0;
         left: 0;
+        right: 0;
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
+        position: fixed;
+        align-items: stretch;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     .nav-card {
-        width: auto;
-        flex-grow: 1;
-        border-right: 1px solid #ccc; /* Add a border between items */
-        border-radius: 0; /* Remove rounded corners for mobile */
+        width: 100%;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0;
+        padding: 0.0625rem;
     }
 
+
     .nav-card:last-child {
-        border-right: none; /* Remove right border from the last item */
+        border-right: none;
     }
 
     .main-content {
-        padding-left: 0; /* Reset padding for mobile */
-    }
-  
-    
-    .tech-container {
-        grid-template-columns: 1fr; /* Stacks cards in a single column on small screens */
+        padding-left: 0;
     }
 
+    .tech-container {
+        grid-template-columns: 1fr;
+    }
 
     .nav-menu-title {
         display: none;
     }
 
-    .table {
-        overflow-x: auto; /* Enables horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    .table, .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .table-container{
-        overflow-x: auto; /* Enables horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
-    }
-    
     .row {
-        flex-direction: column; /* Stack columns vertically on small screens */
+        flex-direction: column;
     }
 
     .footer-col {
-        margin-bottom: 10px; /* Space between stacked columns */
-        flex: none; /* Disable flex on mobile to stack them */
-        max-width: none; /* Allow columns to take full width */
+        margin-bottom: 10px;
+        flex: none;
+        max-width: none;
     }
 
-}
-
-@media (max-width: 768px) {
     #sidebar {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
         height: auto;
-        padding: 15px 0; /* Adjust padding for smaller screens */
+        padding: 15px 0;
+    }
+    .table-title, .centered-table-title, .Left-Align-table-title, .section-headertwo {
+        font-size: 24px; /* Smaller font size */
+        margin-left:10px; /* Smaller margin */
+    }
+    .header-with-image-html h2, .header-with-image-css h2, .header-with-image-js h2 {
+        font-size: 20px; /* Smaller font size */
+    }
+    
+    .iconClass {
+        width: 30px; /* Smaller image width */
+        height: auto; /* Keep the aspect ratio of the image */
+    }
+    .header-with-image-js {
+        justify-content: center; /* Center the items horizontally */
     }
 
-    .nav-card {
-        width: 70%; /* Adjust width on smaller screens */
-    }
 }
 
 @media (max-width: 480px) {
     .nav-card {
-        width: 95%; /* Further adjust width for very small screens */
+        width: 100%;
     }
+
     .tab {
-        font-size: 16px; /* Even smaller font size for very small screens */
-        padding: 6px 12px; /* Further reduce padding */
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
     }
-    
+
     .tabs {
-        flex-direction: column; /* Stack tabs vertically on the smallest screens */
+        flex-direction: row;
     }
 }

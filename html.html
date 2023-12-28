@@ -54,8 +54,11 @@
         }
         
         table tr td:first-child {
-           text-align: right; /* Aligns text to the right */
-           border: 1px solid black;
+            text-align: right; /* Aligns text to the right */
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip;
         }
         .section-header {
             color: white;
