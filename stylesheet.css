@@ -840,8 +840,8 @@ code[class*="language-"] strong {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        margin: 0;
-        padding: 0.0625rem;
+        margin: 0.2rem 0;
+        padding: 0.5rem;
     }
 
 
@@ -906,7 +906,8 @@ code[class*="language-"] strong {
 
     .tab {
         font-size: 0.875rem;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem; 
+        margin: 0.125rem;
     }
 
     .tabs {
