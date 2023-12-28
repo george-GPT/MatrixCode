@@ -12,9 +12,10 @@
     <script src="script.js"></script>
     <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
     <script src="prism.js"></script>
-    <style>   
-    body {
-            padding-bottom: 50px; /* Adds padding to the bottom of the page */
+    <style>
+        body {
+            padding-bottom: 50px;
+            padding-left: 15px; /* Adds padding to the bottom of the page */
         }
 
         .table-container {
@@ -31,66 +32,88 @@
             margin: 0;
             border-spacing: 2px 0;
             font-family: 'lato', Times, serif;
-            border: 1px solid black;
         }
 
         th, td {
-            border: 1px solid black;
             padding: 8px 12px;
             text-align: left;
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
         }
+    
 
         th {
             background-color: #f9f9f9;
             font-weight: bold; /* Make header text bold */
+            
         }
         td {
-            white-space: normal; /* Keep content on a single line */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add an ellipsis to clipped content */
-            max-width: 150px; /* Set a max-width to control cell width */     
-        }    
+            max-width: 250px; /* Set a max-width to control cell width */
+        }
         
         table tr td:first-child {
            text-align: right; /* Aligns text to the right */
            border: 1px solid black;
         }
-
         .section-header {
             color: white;
             font-weight: bold;
             background-color: #333;
             font-size: 1em;
-            border: 1px solid #dddddd;
+            border: 1px solid #ccc;
+            
         }
+
         .light-red {
-    background-color: #f8e0e0; /* Lighter shade of red */
-}
+        background-color: #ffd8d8; /* A fainter shade of red */
+        }
+        
+        .light-orange {
+        background-color: #fde9d9;
+        }
 
-.light-orange {
-    background-color: #fde7d0; /* Lighter shade of orange */
-}
+        .light-yellow {
+            background-color: #fff9cc;
+        }
 
-.light-yellow {
-    background-color: #fff8dc; /* Lighter shade of yellow */
-}
+        .light-green {
+            background-color: #eef5ea;
+        }
 
-.light-green {
-    background-color: #e8f2e8; /* Lighter shade of green */
-}
+        .light-blue {
+            background-color: #e1eaf8;
+        }
 
-.light-blue {
-    background-color: #e0ebfd; /* Lighter shade of blue */
-}
+        .light-purple {
+            background-color: #ede7f6;
+        }
 
-.light-purple {
-    background-color: #ebe4f2; /* Lighter shade of purple */
-}
+        @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
+        .table-container {
+            width: 130%; /* Set the table container to 120% width */
+            margin-left: -10%; /* Center the table container with negative margins */
+            margin-right: -10%;
+        }
 
+        table {
+            width: auto; /* Allow table to exceed the width of the table container */
+        }
+
+        th, td {
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+            max-width: none; /* Remove max-width to allow content to determine cell width */
+        }
+
+        .section-header, .light-red, .light-orange, .light-yellow, .light-green, .light-blue, .light-purple {
+            /* Apply a style that ensures the background extends to the edge of the screen */
+            /* This is assuming you want to maintain the styles for each class on smaller screens */
+        }
+        }
         </style>
-        </div>
-        </head>
-<body>
     <div id="sidebar" class="nav-menu">
         <div class="nav-menu-title">Navigation Menu</div>
         <div class="card-navigation">
@@ -98,7 +121,7 @@
                 Top of the Page 
                 <i class="far fa-circle-up"></i>
             </a>
-            <a href="#htmlFundamentalsSection" class="nav-card" data-section="jsFundamentalsSection">JS Fundamentals</a>
+            <a href="#jsFundamentalsSection" class="nav-card" data-section="jsFundamentalsSection">JS Fundamentals</a>
             <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional Examples of JS Code</a>
         </div>
     </div>
@@ -106,20 +129,20 @@
     <header>
         <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i> HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i> CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i><br>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i><br>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i><br>JavaScript</a>
             </nav>
         </header>    
-    <br>
     <br>
     <br>
     <div id="jsFundamentalsSection" class="content-section">
     <div class="header-with-image-js glowing-text">
         <img src="/images/JavaScript.png" alt="JS Icon" class="iconClass" />
-        <h1 class="table-title">JavaScript Fundamentals</h1>
+        <h2 class="table-title">JavaScript Fundamentals</h2>
     </div>
+    <br>
     <div class="table-container">
     <table>
     <tr class="section-header">
@@ -388,7 +411,7 @@
 <br>
 <br>
 <section id="additionalExamplesSection" class="content-section">
-<h1 class="centered-table-title">Additional Examples of JavaScript Code</h1>
+<h2 class="centered-table-title">Additional Examples of JavaScript Code</h2>
 <br>    
 <div class="table-container Left-Align-table">
     <table>

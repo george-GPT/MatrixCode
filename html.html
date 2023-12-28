@@ -35,11 +35,14 @@
         }
 
         th, td {
-            border: 1px solid #ccc;
             padding: 8px 12px;
             text-align: left;
             border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
         }
+    
 
         th {
             background-color: #f9f9f9;
@@ -47,11 +50,7 @@
             
         }
         td {
-            white-space: nowrap; /* Keep content on a single line */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Add an ellipsis to clipped content */
             max-width: 250px; /* Set a max-width to control cell width */
-            border: 1px solid black;
         }
         
         table tr td:first-child {
@@ -90,7 +89,31 @@
         .light-purple {
             background-color: #ede7f6;
         }
-            </style>
+
+        @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
+        .table-container {
+            width: 130%; /* Set the table container to 120% width */
+            margin-left: -10%; /* Center the table container with negative margins */
+            margin-right: -10%;
+        }
+
+        table {
+            width: auto; /* Allow table to exceed the width of the table container */
+        }
+
+        th, td {
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+            max-width: none; /* Remove max-width to allow content to determine cell width */
+        }
+
+        .section-header, .light-red, .light-orange, .light-yellow, .light-green, .light-blue, .light-purple {
+            /* Apply a style that ensures the background extends to the edge of the screen */
+            /* This is assuming you want to maintain the styles for each class on smaller screens */
+        }
+        }
+        </style>
         </div>
         </head>
 <body>
@@ -110,20 +133,20 @@
     <header>
         <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i> HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i> CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i> JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i><br>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i><br>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i><br>JavaScript</a>
             </nav>
         </header>    
-    <br>
     <br>
     <br>  <!-- Main content -->
     <div id="htmlFundamentalsSection" class="content-section">
     <div class="header-with-image-html">
         <img src="/images/HTML.png" alt="HTML Icon" class="iconClass"/>
-        <h1 class="table-title">HTML Fundamentals</h1>
+        <h2 class="table-title">HTML Fundamentals</h2>
     </div>
+    <br>
     <div class="table-container">
     <table>
         <tr class="section-header">
@@ -587,7 +610,7 @@
 <br>
 <br>
 <br>
-<h1 class="centered-table-title">Additional Examples of HTML Code</h1>
+<h2 class="centered-table-title">Additional Examples of HTML Code</h2>
 <br>    
     <div class="table-container Left-Align-table">
         <table >

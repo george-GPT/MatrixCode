@@ -90,14 +90,14 @@ button:hover, .button-like:hover {
 }
 
 body {
-    background-color: #e8ecef;
+    background-color: #f3f2f7;
     color: #333; /* A darker shade for better readability */
     font-size: 18px;
     font-family: "OpenSans Regular", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
     line-height: 1.5; /* Improved line spacing for readability */
     max-width: 1200px; /* Max width to control content width */
     margin: 0 auto; /* Center content on the page */
-    padding: 20px; /* Uniform padding */
+    padding: 18px; /* Uniform padding */
     background-attachment: fixed;
 }
 
@@ -106,7 +106,7 @@ header {
     background-color: #333;
     background-size: cover;
     background-position: center;
-    height: 230px; /* Adjust the height as needed */
+    height: 250px; /* Adjust the height as needed */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Align children to the center of the container */
@@ -232,25 +232,6 @@ header::after {
     position: relative;
 }
 
-.demo-wrap:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 1;
-    width: 100%;
-    height: 100%;
-    background-image: url(/images/MatrixSubtle.png);
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-}
-
-.demo-content {
-    position: relative;
-}
-
 .container-for-image {
     text-align: left; /* This will align the images inside to the left */
 }
@@ -266,18 +247,17 @@ header::after {
 
 .tabs {
     display: flex;          /* Enables flexbox layout */
-    justify-content: space-around; /* Centers items horizontally */
+    justify-content: center; /* Centers items horizontally */
     align-items: center;     /* Aligns items vertically */
     text-align: center;
     position: absolute;      /* Position the nav at the bottom of the header */
-    top: 130px;
+    top: 120px;
     bottom: 0px;               /* Align to the bottom */
     left: 0;
     right: 0;
-    padding: 30px 0;        /* Padding at top and bottom */
+    padding: 10px 0;        /* Padding at top and bottom */
     background: none;       /* Remove background */
-    z-index: 2;
-    margin: 0; /* Add relative positioning */     
+    z-index: 2;    
 }
 
 .tab {
@@ -291,9 +271,10 @@ header::after {
     padding: 10px 20px; /* Add padding to increase clickable area */
     font-family: 'Lato', monospace;
     font-weight: bold;
-    font-size: 36px; /* Adjust as needed */
+    font-size: 35px; /* Adjust as needed */
     display: inline-block; /* Align tabs in a line */
-    margin: 0 25px;
+    margin: 5px 44px;
+    transition: all 0.2s ease; /* Smooth transition for the hover effect */
 }
 
 .tab:hover {
@@ -336,10 +317,10 @@ h1, h2, h3, p {
         0 0 4px #439243, /* Green glow larger radius */
         0 0 6px #439243, /* Green glow even larger radius */
         0 0 8px #439243; /* Green glow largest radius */
-    font-size: 78px; /* Adjust as needed */
+    font-size: 80px; /* Adjust as needed */
     z-index: 2;
     margin-top: 0px; /* Remove bottom margin to vertically center */
-    margin-bottom: 74px;
+    margin-bottom: 115px;
     position: relative; /* Ensure the text is above the ::before overlay */
 }
 
@@ -482,7 +463,7 @@ p {
     font-weight: bold;
     color: #333;
     font-size: 36px; /* Adjust the font size as needed */
-    margin-left: 50px; /* And any other styles you want to apply */
+    margin-left: 20px; /* And any other styles you want to apply */
 }
 
 .centered-table-title {
@@ -522,27 +503,47 @@ p {
 .header-with-image-html {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
-    justify-content: flex-start; /* Align items to the start of the container */
-    margin-left: 20px;
+    justify-content: center; /* Align items to the center horizontally */
+    gap: 0;
 }
+
+.header-with-image-html h2 {
+    margin-top: 0; /* Removes the top margin from the h2 element */
+    margin-bottom: 0; /* Removes the bottom margin from the h2 element */
+    /* Optionally, you can add some top margin to align it with the icon if needed */
+}
+
 
 .header-with-image-css {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
-    justify-content: flex-start; /* Align items to the start of the container */
-    margin-left: 20px;
+    justify-content: center; /* Align items to the center of the container */
 }
+
+.header-with-image-css h2 {
+    margin-top: 0; /* Removes the top margin from the h2 element */
+    margin-bottom: 0; /* Removes the bottom margin from the h2 element */
+    /* Optionally, you can add some top margin to align it with the icon if needed */
+}
+
 
 .header-with-image-js {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
-    justify-content: flex-start; /* Align items to the start of the container */
-    margin-left: 20px;
+    justify-content: center; /* Align items to the center of the container */
 }
 
+.header-with-image-js h2 {
+    margin-top: 0; /* Removes the top margin from the h2 element */
+    margin-bottom: 0; /* Removes the bottom margin from the h2 element */
+    /* Optionally, you can add some top margin to align it with the icon if needed */
+}
+
+
 .iconClass {
-    width: 60px; /* Adjust the width as necessary */
+    width: 52px; /* Adjust the width as necessary */
     height: auto; /* Keep the aspect ratio of the image */
+    margin: 0px;
 }
 
 .centered-table table {
@@ -786,28 +787,39 @@ code[class*="language-"] strong {
 @media (max-width: 768px) {
     .title-matrix-code {
         /* Reduce title size for mobile */
-        font-size: 26px; 
-        /* Center the title */
-        text-align: center; 
-        margin-top: 20px; /* Add space at the top if needed */
+        font-size: 30px; 
+        /* Center the title *//* Add space at the top if needed */
     }
 
-    .tabs {
-        /* Adjust the navigation tabs for mobile */
-        position: relative; /* or static, depending on your layout */
-        flex-direction: row; /* Stack tabs horizontally */
-        align-items: center; /* Center the tabs */
-        padding: 5px 0; /* Adjust padding as needed */
-    }
-
-    .tab {
-        /* Adjust individual tab styling for mobile */
-        font-size: 15px; /* Smaller font size for tabs */
-    }
+    /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+        .title-matrix-code {
+            font-size: 30px; /* Reduce title size for mobile */
+            padding: 0;
+            margin: 0;
+        }
+    
+        .tabs {
+            position: relative; /* or static, depending on your layout */
+            top: 0; /* Reset top position */
+            flex-direction: row; /* Stack tabs horizontally */
+            flex-wrap: wrap; /* Allow tabs to wrap onto a new line if necessary */
+            justify-content: center; /* Center the tabs horizontally */
+            align-items: center; /* Center the tabs vertically */
+            padding: 5px 0; /* Adjust padding as needed */
+            min-height: 50px; /* Ensure tabs container is always visible */
+            overflow: visible; /* Make sure all tabs are always visible */
+        }
+        
+        .tab {
+            font-size: 20px; /* Smaller font size for tabs */
+            padding: 8px 16px; /* Increase padding for better touch targets */
+            margin: 4px; /* Adjust spacing between tabs */
+            border-radius: 5px; /* Add rounded corners for a button-like appearance */
+        }
 
     header {
         height: auto; /* Let the header height be dynamic */
-        /* Other styling adjustments for the header if necessary */
     }
 
     .card-navigation {
@@ -874,12 +886,20 @@ code[class*="language-"] strong {
     }
 
     .nav-card {
-        width: 80%; /* Adjust width on smaller screens */
+        width: 70%; /* Adjust width on smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .nav-card {
         width: 95%; /* Further adjust width for very small screens */
+    }
+    .tab {
+        font-size: 16px; /* Even smaller font size for very small screens */
+        padding: 6px 12px; /* Further reduce padding */
+    }
+    
+    .tabs {
+        flex-direction: column; /* Stack tabs vertically on the smallest screens */
     }
 }
