@@ -118,7 +118,7 @@ header {
     margin-right: auto;
     margin-top: 0px;
     margin-bottom: 30px;
-    border-radius: 25px;
+    border-radius: 35px;
     overflow: hidden;
     
 }
@@ -187,17 +187,16 @@ header::after {
     border: 1px solid black; 
     padding: 20px; /* space inside the card */
     margin: 15px 0; /* space outside the card */
-    max-width: 800px; /* maximum width of the card */
+    /* max-width: 800px; */ /* removed to allow the card to shrink to the width of its content */
     margin-left: auto; /* centering the card */
     margin-right: auto;
     font-family: 'OpenSans-Regular', sans-serif; /* keeping the font consistent with the body */
+    display: block; /* added to allow the card to shrink to the width of its content */
 }
 
 
 .intro-section {
-    width: 95%; /* Same as header to maintain the alignment */
-    margin-left: auto; /* Centers the content */
-    margin-right: auto;
+    width: 100%; /* Same as header to maintain the alignment */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto; /* Centers the content */
@@ -205,7 +204,7 @@ header::after {
 
 
 .intro-section h1 {
-    width: 98%; /* Same as header to maintain the alignment */
+    width: auto; /* Same as header to maintain the alignment */
     margin-left: auto; /* Centers the content */
     margin-right: auto;
     max-width: 1200px;
@@ -215,11 +214,11 @@ header::after {
 
 
 .intro-section p {
-    width: 95%;
+    width: auto;
     padding-left: 15px;
     text-align: left; /* Justify the introduction paragraph */
     align-items: left;
-    max-width: 75%; /* Control the width of the paragraph */ /* Center the paragraph */
+    max-width: 100%; /* Control the width of the paragraph */ /* Center the paragraph */
     line-height: 1.6;
     color: #333;
   }
@@ -363,7 +362,7 @@ h2 {
 .tech-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 24px;
     justify-content: center;
     align-items: start;
     margin-top: 1.5rem;
@@ -383,7 +382,7 @@ h2 {
 }
 
 .tech-card img {
-    width: 80px;
+    width: 100px;
     height: auto;
     margin-bottom: 1rem;
 }
@@ -411,7 +410,7 @@ h2 {
     color: #fff;
     text-align: center;
     border-radius: 10px;
-    padding: 5px 0;
+    padding: 10px 0;
     position: absolute;
     z-index: 1;
     bottom: 100%;
