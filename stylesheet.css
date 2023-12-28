@@ -158,6 +158,28 @@ header::after {
     padding: 10px;
 }
 
+.bg-dark.bg-gradient {
+    position: relative;
+    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
+    overflow: hidden;
+}
+
+.bg-dark.bg-gradient::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/MatrixSubtle.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    opacity: 0.1; /* Adjust opacity to your preference */
+    z-index: 1;
+}
+
+
 .introduction-card {
     background-color: #ffffff; /* or any color you prefer */
     border-radius: 10px; /* rounded corners */
@@ -590,11 +612,29 @@ p {
     left: 0;
     width: 260px; /* Width of the sidebar */
     height: 100%;
-    background-color: #333; /* Transparent background */
+    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     z-index: 1000; /* High z-index to ensure it stays above other content */
     padding-top: 100px; /* Top padding - adjust as needed */
     overflow-y: auto; /* Enable vertical scrolling for long menus */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+#sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
+    background-image: url('images/MatrixSubtle.png'); /* Replace with your image path */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    opacity: 0.2; /* Adjust opacity to your preference */
+    z-index: -1;
+    pointer-events: none; /* Ensures clicks are passed through to elements below */
 }
 
 /* Navigation Menu Title */
@@ -808,11 +848,18 @@ code[class*="language-"] strong {
         margin: 0.125rem;
     }
 
+    body {
+        margin: 0;
+        padding:0;
+    }
+    
     header {
         width: 100%;
-        padding: 0;
+        padding-top: 1rem;
         margin: 0;
+        top: 0;
         height: auto;
+        position: relative;
     }
 
     .card-navigation {
