@@ -1,0 +1,14 @@
+{
+    "liveServer.settings.root": "E:\\Desktop\\MatrixCode",
+    "liveServer.settings.port": 5500,
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.open": true,
+    "liveServer.settings.ignoreFiles": [
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass"
+    ],
+    "liveServer.settings.file": "index.html",
+    "liveServer.settings.wait": 100,
+    "editor.fontSize": 14
+}

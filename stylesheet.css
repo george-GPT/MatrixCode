@@ -1,4 +1,32 @@
 @font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Lato';
     src: url('/fonts/Lato-Regular.ttf') format('truetype');
     font-weight: 300; /* Light */
@@ -68,7 +96,6 @@
 }
 
 /* ... continue for each Roboto Condensed variant */
-
 * {
     box-sizing: border-box; /* Better box sizing model */
     margin: 0; /* Reset margins */
@@ -89,68 +116,53 @@ button:hover, .button-like:hover {
     color: #FFFFF0;
 }
 
+
+h1, h2 {
+    color: #f6f6f6; /* Dark color for headings */
+    margin-top: 0;
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600; /* SemiBold for headings */
+    line-height: 1.5; /* Improved line spacing for readability */
+}
+
+p {
+    color: #f6f6f6; /* Dark color for paragraph text */
+    margin-top: 0;
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400; /* Regular weight for paragraph text */
+    line-height: 1.5; /* Consistent line spacing for readability */
+    text-align: left;
+    padding-left: 0;
+}
+
 body {
-    background-color: #f3f2f7;
-    color: #333; /* A darker shade for better readability */
-    font-size: 18px;
-    font-family: "OpenSans Regular", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
+    background-color: rgba(17, 17, 17, 17);
+    color: #f6f6f6; /* A darker shade for better readability */
+    font-size: 17px;
+    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
     line-height: 1.5; /* Improved line spacing for readability */
     max-width: 1200px; /* Max width to control content width */
     margin: 0 auto; /* Center content on the page */
-    padding: 18px; /* Uniform padding */
+    padding: 0px; /* Uniform padding */
     background-attachment: fixed;
 }
 
-header {
-    /*background-image: url(/images/MatrixSubtle.png);*/
-    background-color: #333;
-    background-size: cover;
-    background-position: center;
-    height: 250px; /* Adjust the height as needed */
+Header {
+    background-image: url(/images/Color-logo-with-background.png);
+    background-size: contain; /* Scale the image as large as possible while maintaining aspect ratio */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    min-height: 260px; /* Adjust the height as needed */
     display: flex;
     flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Align children to the center of the container */
+    justify-content: space-between; /* Align children to the center of the container */
     align-items: center; /* Center children horizontally */
     position: relative;
-    padding-bottom: 10px; /* Reduced padding at the bottom */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    border-radius: 35px;
-    overflow: hidden;
-    
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; 
-    background-color: rgba(0, 0, 0, 0.5); /* Increase to 50% for more darkness */
-    z-index: -1;
-    border radius: 25px;
-}
-
-header::after {
-    content: '';
-    position: absolute;
-    top: 0px; /* Position the pseudo-element outside of the header */
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: -1; /* Position it behind the header content */
-    border: 1px solid #78c978; /* A solid border for the glow effect */
-    box-shadow:
-        0 0 2px #78c978, /* Green glow */
-        0 0 4px #78c978, /* Green glow larger radius */
-        0 0 6px #78c978, /* Green glow even larger radius */ 
-        0 0 8px #78c978; /* Green glow largest radius */
-    pointer-events: none; /* Prevent the pseudo-element from blocking clicks */
-    border radius: 25px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .header-column {
@@ -158,40 +170,18 @@ header::after {
     padding: 10px;
 }
 
-.bg-dark.bg-gradient {
-    position: relative;
-    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
-    overflow: hidden;
-}
-
-.bg-dark.bg-gradient::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('images/MatrixSubtle.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    opacity: 0.1; /* Adjust opacity to your preference */
-    z-index: 1;
-}
-
-
 .introduction-card {
-    background-color: #ffffff; /* or any color you prefer */
-    border-radius: 10px; /* rounded corners */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* a subtle shadow */
-    border: 1px solid black; 
+    background-color: #f6f6f6; /* or any color you prefer */
+    border-radius: 8px; /* rounded corners */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1); /* a subtle shadow */
     padding: 20px; /* space inside the card */
     margin: 15px 0; /* space outside the card */
-    /* max-width: 800px; */ /* removed to allow the card to shrink to the width of its content */
     margin-left: auto; /* centering the card */
     margin-right: auto;
     font-family: 'OpenSans-Regular', sans-serif; /* keeping the font consistent with the body */
     display: block; /* added to allow the card to shrink to the width of its content */
+    color: rgba(17, 17, 17, 17);
+
 }
 
 
@@ -200,16 +190,17 @@ header::after {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto; /* Centers the content */
+    color: rgba(17, 17, 17, 17);
 }
 
-
-.intro-section h1 {
+.intro-section h2 {
     width: auto; /* Same as header to maintain the alignment */
     margin-left: auto; /* Centers the content */
     margin-right: auto;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto; /* Centers the content */
+    color: rgba(17, 17, 17, 17);
 }
 
 
@@ -220,9 +211,13 @@ header::after {
     align-items: left;
     max-width: 100%; /* Control the width of the paragraph */ /* Center the paragraph */
     line-height: 1.6;
-    color: #333;
+    color: rgba(17, 17, 17, 17);
   }
   
+.intro-section body {
+    color: rgba(17, 17, 17, 17);
+}
+
 .light-red {
     background-color: #f4cccc;
     /* Add any other styling you want for this class */
@@ -266,83 +261,54 @@ header::after {
 }
 
 .tabs {
-    display: flex;          /* Enables flexbox layout */
-    justify-content: center; /* Centers items horizontally */
-    align-items: center;     /* Aligns items vertically */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: absolute;      /* Position the nav at the bottom of the header */
-    top: 120px;
-    bottom: 0px;               /* Align to the bottom */
-    left: 0;
-    right: 0;
-    padding: 10px 0;        /* Padding at top and bottom */
-    background: none;       /* Remove background */
-    z-index: 2;    
+    position: relative;
+    padding: 10px 0;
+    z-index: 2;
+    top: 15.5rem; /* Add a top margin to push the tabs down */
+    margin-top: 1rem;
 }
 
 .tab {
-    color: #f7f7f7; /* off white */
-    text-shadow:
-        0 0 2px #439243, /* Green glow */
-        0 0 4px #439243, /* Green glow larger radius */
-        0 0 6px #439243,
-        0 0 8px #439243; /* Green glow even larger radius */
+    color: #f6f6f6; /* off white */
     text-decoration: none; /* Remove underline from links */
-    padding: 10px 20px; /* Add padding to increase clickable area */
-    font-family: 'Lato', monospace;
-    font-weight: bold;
+    padding: 8px 16px; /* Add padding to increase clickable area */
+    font-family: 'Poppins', monospace;
+    font-weight: 500;
+    text-transform: uppercase;
     font-size: 35px; /* Adjust as needed */
-    display: inline-block; /* Align tabs in a line */
-    margin: 5px 44px;
+    display: flex; 
+    align-items: center;/* Align tabs in a line */
+    justify-content: center;
+    margin: 0px 20px;
     transition: all 0.2s ease; /* Smooth transition for the hover effect */
 }
 
-.tab:hover {
-    text-decoration: none; /* Remove underline on hover */
-    background-color: transparent; /* Optional: Add hover effect */
-    color: #ccffbd;
-    text-shadow:
-        0 0 2px #47a347
-        0 0 4px #439243, /* Green glow larger radius */
-        0 0 6px #439243,
-        0 0 8px #439243;/* Green glow even larger radius */
-    transform: scale(1.1); /* Slightly enlarge the tab */
-    transition: all 0.2s ease; /* Smooth transition for the hover effect */
+.tab i {
+    margin-right: 7px; /* Add some space between icon and text */
 }
+
+.tab:hover, .tab.active {
+    color: #ccffbd; /* Highlight color on hover and for the active tab */
+    transform: translateY(-2px); /* Slightly raise the tab on hover */
+  }
 
 nav a, .tab {
-    color: #f7f7f7
+    color: #f6f6f6;
 }
 
 nav.tabs {
     width: 100%; /* Full width to center tabs properly */
     text-align: center; /* Center the tab links */
     background: none; /* Remove background */
-    padding: 10px 0; /* Padding at top and bottom */
+    padding: 10px 20px; /* Add horizontal padding */
     z-index: 2;
 }
 
-h1, h2, h3, p {
-    color: #333; /* Dark color for headings */
-    margin-top: 0;
-    font-family: "Lato", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
-    line-height: 1.5; /* Improved line spacing for readability */
-}
-
-.title-matrix-code {
-    font-family: 'Lato';
-    color: #f7f7f7; 
-    text-shadow:
-        0 0 2px #439243, /* Green glow */
-        0 0 4px #439243, /* Green glow larger radius */
-        0 0 6px #439243, /* Green glow even larger radius */
-        0 0 8px #439243; /* Green glow largest radius */
-    font-size: 80px; /* Adjust as needed */
-    z-index: 2;
-    margin-top: 0px; /* Remove bottom margin to vertically center */
-    margin-bottom: 115px;
-    position: relative; /* Ensure the text is above the ::before overlay */
-}
 
 html {
     overflow-y: scroll;
@@ -367,10 +333,11 @@ h2 {
     align-items: start;
     margin-top: 1.5rem;
     border-radius: 20px;
+    color: rgba(17, 17, 17, 17);
   }
 
 .tech-card {
-    background: #fff;
+    background: #f6f6f6;
     box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
     border: 1px solid black; 
     border-radius: 8px;
@@ -379,6 +346,8 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer; /* Change cursor to indicate clickable */
+    position: relative; /* Positioning context for the tooltip */
 }
 
 .tech-card img {
@@ -396,32 +365,30 @@ h2 {
     line-height: 1.6;
 }
 
-.tech-card {
-    cursor: pointer; /* Change cursor to indicate clickable */
-    position: relative; /* Positioning context for the tooltip */
-}
-
 .tech-card::after {
     content: attr(data-tooltip); /* Use the data attribute for the tooltip */
     visibility: hidden;
     opacity: 0;
     width: 120px;
-    background-color: black;
-    color: #fff;
+    background-color: #2a2a2a; /* A dark grey that stands out against the white card but is subtler against the black background */
+    color: #f6f6f6; /* Pure white for high contrast and readability */
     text-align: center;
-    border-radius: 10px;
+    border-radius: 6px; /* Slightly reduced border-radius for a modern look */
     padding: 10px 0;
     position: absolute;
     z-index: 1;
     bottom: 100%;
     left: 50%;
     margin-left: -60px; /* Center the tooltip */
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, visibility 0.3s; /* Add visibility to the transition for a cleaner toggle effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* A subtle shadow for depth */
+    font-size: 0.875rem; /* A smaller font size for a more sophisticated look */
+    line-height: 1.4; /* Improve readability */
 }
 
 .tech-card:hover::after {
     visibility: visible;
-    opacity: 1;
+    opacity: 1; /* Show the tooltip on hover */
 }
 
 .tech-header img {
@@ -445,16 +412,57 @@ h2 {
     
 }
 
-/* Style your paragraphs as needed */
-p {
-    margin: 0 0 20px 0;
-    font-size: 18px; /* This makes the paragraph text size 16px as requested */
-    color: #000000;
-    line-height: 1.5;
-    text-align: left;
-    padding-left: 0;
-    /* Add any additional styling for paragraphs here */
-}
+
+.list-group-item {
+    border: 1px solid #d3d3d3;
+    border-bottom: 3px solid #bbb;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    width: 100%;
+    margin-right: 2.5%; /* Add space between the buttons */
+    text-align: center;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url('images/vector2.jpg');
+    background-size: cover;
+    background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 50%, #ededed 100%);
+    text-decoration: none;
+  }
+  
+  .list-group {
+    display: flex; /* Use flex display to place items horizontally */
+    flex-direction: row; /* Arrange items in a row */
+    max-width: 800px;
+    margin: 20px auto;
+    justify-content: center; /* Center-align the items horizontally */
+  }
+  
+  .list-group-item.disabled {
+    color: #cccccc;
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  
+  .list-group-item:hover {
+    background-color: #e2e6ea;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .list-group-item.active {
+    background-color: #007bff;
+    border-color: #0056b3;
+    color: #fff;
+  }
+  
+
 
 /* Adding a class for the section that holds HTML, CSS, JS overviews */
 .section-overview {
@@ -479,26 +487,27 @@ p {
         background-color: #333;
 }
 .table-title {
-    font-family: "Lato", sans-serif; /* Your chosen font family */
+    font-family: "Poppins", sans-serif; /* Your chosen font family */
     font-weight: bold;
-    color: #333;
+    color: #f6f6f6;
     font-size: 36px; /* Adjust the font size as needed */
     margin-left: 20px; /* And any other styles you want to apply */
 }
 
 .centered-table-title {
-    font-family:"Lato";
+    font-family:"Poppins";
     text-align: center;
     font-weight: bold;
     font-size: 36px;
-    color:#333
+    color: rgba(17, 17, 17, 17);
+    }
 }
 
 .Left-Align-table-title {
-    font-family:"Lato";
+    font-family:"Poppins";
     text-align: left;
     font-weight: bold;
-    color:#333
+    color:rgba(17, 17, 17, 17);
 }
 
 .Left-Align-table table {
@@ -523,21 +532,24 @@ p {
 .header-with-image-html {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
+    margin-bottom: 20px;
     justify-content: center; /* Align items to the center horizontally */
     gap: 0;
+    scale: 2;
 }
 
 .header-with-image-html h2 {
     margin-top: 0; /* Removes the top margin from the h2 element */
     margin-bottom: 0; /* Removes the bottom margin from the h2 element */
-    /* Optionally, you can add some top margin to align it with the icon if needed */
+    
+  
 }
-
 
 .header-with-image-css {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
     justify-content: center; /* Align items to the center of the container */
+    scale: 2;
 }
 
 .header-with-image-css h2 {
@@ -551,6 +563,7 @@ p {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
     justify-content: center; /* Align items to the center of the container */
+    scale: 2;
 }
 
 .header-with-image-js h2 {
@@ -563,7 +576,7 @@ p {
 .iconClass {
     width: 52px; /* Adjust the width as necessary */
     height: auto; /* Keep the aspect ratio of the image */
-    margin: 0px;
+    margin: 10px;
 }
 
 .centered-table table {
@@ -589,7 +602,6 @@ p {
     font-weight: bold; /* This will make the text bold */
     font-size: 1em;
     text-align: center; /* You can adjust the size as needed */
-    
 }
 
 /* If there is a specific class or nth-child rule that targets columns, override them as well */
@@ -604,91 +616,49 @@ p {
     text-align: left; /* Override any specific alignment for the first and second column */
 }
 
-/* Sidebar Navigation */
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px; /* Width of the sidebar */
-    height: 100%;
-    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    z-index: 1000; /* High z-index to ensure it stays above other content */
-    padding-top: 100px; /* Top padding - adjust as needed */
-    overflow-y: auto; /* Enable vertical scrolling for long menus */
-    overflow-x: hidden; /* Hide horizontal overflow */
-}
-
-#sidebar::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(51, 51, 51, 1); /* Solid color with opacity */
-    background-image: url('images/MatrixSubtle.png'); /* Replace with your image path */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    opacity: 0.2; /* Adjust opacity to your preference */
-    z-index: -1;
-    pointer-events: none; /* Ensures clicks are passed through to elements below */
-}
-
-/* Navigation Menu Title */
-.nav-menu-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    color: #f7f7f7; /* Dark color for contrast */
-    margin-bottom: 20px; /* Space between title and links */
-    padding: 0 15px; /* Horizontal padding */
-}
-
-/* Navigation Cards */
+/* Navigation Bar */
 .card-navigation {
+    position: absolute;
+    top: 300px; /* Adjust this value to move the navigation bar lower */
+    left: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Arrange the buttons horizontally */
+    justify-content: center; /* Distribute space evenly around the buttons */
+    padding: 20px 0;
+    width: 100%; /* Full width to ensure responsiveness */
 }
 
 .nav-card {
-    background-color: #fff; /* Maintain background for individual cards */
-    width: 90%; /* Relative width for better responsiveness */
-    margin-bottom: 10px;
-    padding: 15px 20px;
+    background-color: #f6f6f6;
+    margin: 10px 290px; /* Reduced horizontal margin for spacing between buttons */
+    padding: 15px 20px; /* Decrease horizontal padding to make buttons less wide */
     text-decoration: none;
     color: #1a1a1a;
     text-align: center;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px black #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-
+    text-align: center; /* Center the text within the buttons */
+    font-family: 'Poppins', sans-serif;
 }
 
 .nav-card:hover, .nav-card:focus {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .nav-card.active {
-    background-color: #007bff; /* Blue background for active state */
-    color: #fff; /* White text for better visibility */
-    font-weight: bold; /* Bold text for active link */
-}
-
-/* Style for the active section */
-.active-section {
-    background-color: #f2f2f2; /* Change to the desired highlight color */
-}
-
-/* Style for the active navigation link */
-.active-nav-link {
-    color: #3089e7; /* Change to the desired link color */
+    background-color: #007bff;
+    color: #f6f6f6;
     font-weight: bold;
+    border-color: #0056b3; /* Darker border color for the active button */
 }
+
+.active-section {
+    background-color: #f6f6f6;;
+}
+
 
 .intro-section ul {
     /* Remove the default padding on the left which causes the indentation */
@@ -737,6 +707,11 @@ code[class*="language-"] strong {
     text-decoration: none !important; /* Remove if there's any decoration */
 }
 
+
+strong {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* This will use Poppins-Bold for strong emphasis */
+}
 
 .footer {
     color: #7e858b; /* Modern footer text color */
@@ -803,6 +778,18 @@ code[class*="language-"] strong {
     color: #0056b3; /* Color change on hover */
 }
 
+/* Horizontal Navigation CSS (for mobile and smaller screens) */
+.horizontal-nav {
+    display: none; /* Initially hidden, shown only when JavaScript toggles it */
+    /* Your styles for mobile navigation */
+    /* ... */
+  }
+
+.tech-container {
+    color: rgba(17, 17, 17, 17);
+}
+
+
 @-webkit-keyframes flicker { /* Safari and Chrome */
     0% { opacity: 1; }
     50% { opacity: 0.5; }
@@ -823,29 +810,13 @@ code[class*="language-"] strong {
     
 
 @media (max-width: 768px) {
-    .title-matrix-code {
-        font-size: 2.1875rem;
-        padding: 0;
-        margin: 0;
-    }
 
     .tabs {
-        position: relative;
-        top: 0;
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 0.3125rem 0;
-        min-height: 3.125rem;
-        overflow: auto;
-    }
-    
+        flex-direction: column; /* Stack tabs vertically on smaller screens */
+      }
     .tab {
-        font-size: 1.75rem;
-        padding: 0.25rem 0.5rem;
-        margin: 0.125rem;
-    }
+        margin: 5px 0; /* Adjust margin for stacked layout */
+      }
 
     body {
         margin: 0;
@@ -860,7 +831,19 @@ code[class*="language-"] strong {
         height: auto;
         position: relative;
     }
-
+    
+    .list-group-item {
+        /* Full-width list items for better mobile interaction */
+        width: 100%;
+        /* Reduce the size of the box-shadow for a flatter design on mobile */
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+     /* Adjust list group margin on smaller screens */
+     .list-group {
+        margin: 20px 15px;
+    }
+    
     .card-navigation {
         top: auto;
         bottom: 0;
@@ -870,7 +853,7 @@ code[class*="language-"] strong {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        position: fixed;
+        position: sticky;
         align-items: stretch;
         background: none;
         border: none;
@@ -921,11 +904,15 @@ code[class*="language-"] strong {
         flex: none;
         max-width: none;
     }
-
     #sidebar {
-        width: 100%;
-        height: auto;
-        padding: 15px 0;
+        display: none; /* Hide the sidebar on smaller screens */
+      }
+    
+    .horizontal-nav {
+        display: block; /* Show the horizontal navigation on smaller screens */
+        /* Your styles for mobile navigation */
+        /* ... */
+      }
     }
     .table-title, .centered-table-title, .Left-Align-table-title, .section-headertwo {
         font-size: 24px; /* Smaller font size */
@@ -958,5 +945,10 @@ code[class*="language-"] strong {
 
     .tabs {
         flex-direction: row;
+    }
+    
+    .list-group-item {
+        /* Even less shadow for a cleaner look on the smallest screens */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
 }

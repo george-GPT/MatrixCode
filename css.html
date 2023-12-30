@@ -89,6 +89,9 @@
         .light-purple {
             background-color: #ede7f6;
         }
+        .white {
+            background-color: #FAF9F6;
+        }
 
         @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
         .table-container {
@@ -117,36 +120,58 @@
         </div>
         </head>
 <body>
-    <div id="sidebar" class="nav-menu">
-        <div class="nav-menu-title">Navigation Menu</div>
-        <div class="card-navigation">
-            <a href="#topofpage" class="nav-card" data-section="topofpage">
-                Top of the Page 
-                <i class="far fa-circle-up"></i>
-            </a>
-            <a href="#cssFundamentalsSection" class="nav-card" data-section="cssFundamentalsSection">CSS Fundamentals</a>
-            <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional Examples of CSS Code</a>
+    <header style="background-image: url('/images/Color-logo-with-background.png');">
+        <nav class="tabs">
+            <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+            <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+            <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+        </nav>
+    </header>    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+    <br>
+    <br>
+    <div class="intro-section introduction-card">
+      <br>
+        <div class="header-with-image-css">
+            <h2 class="table-title"><i class="fab fa-css3-alt"></i> CSS Fundamentals</h2>H
         </div>
+        <br>
+        <p>
+        <br>
+        CSS, which stands for <strong>Cascading Style Sheets</strong>, is a language used to control the visual layout of HTML content on web pages.<br>
+        <br>
+        CSS determines how web elements appear on the screen. It controls everything from colors and fonts to spacing and positioning, ensuring that web pages adapt seamlessly to various devices and screen sizes for a consistent user experience.
+        <br>
+        <br>
+        CSS is a style sheet language. It's used to define the presentation and layout of a web page.    
+        <br> 
+        <br>   
+        </p>
     </div>
-    
+    <br>
+    <br>
+    <div class="list-group"> 
+        <a href="#cssCheatSheet" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
+        CSS Cheat Sheet
+    </a>
+    <a href="#additionalExamples" class="list-group-item list-group-item-action rounded-0"> <!-- Added rounded-0 class for a modern look -->
+        Additional Examples of CSS Code
+    </a>
 </div>
-<header class="bg-dark bg-gradient">
-        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
-            <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i><br>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i><br>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i><br>JavaScript</a>
-            </nav>
-        </header>    
-    <br>
-    <br>
-    <div id="cssFundamentalsSection" class="content-section">
-    <div class="header-with-image-css">
-        <img src="/images/CSS.png" alt="CSS Icon" class="iconClass" />
-        <h2 class="table-title">CSS Fundamentals</h2>
-    </div>
-    <br>
+<div id="cssCheatSheet" class="content-section"></div>
+<br>
+<br>
+<br>
+<div class="header-with-image-css">
+    <h2 class="table-title">CSS Cheat Sheet</h2>
+</div>
+<br>
     <div class="table-container">
     <table>
         <tr class="section-header">
@@ -643,66 +668,71 @@
         </tr>
     </table>
 </div>
-<section id="additionalExamplesSection" class="content-section">
+<section id="additionalExamples" class="content-section">
 <br>
 <br>
 <br>
 <br>
-<h2 class="centered-table-title">Additional Examples of CSS Code</h2>
 <br>
+<br>
+<br>
+<br>
+<div class="header-with-image-css">
+    <h3 class="table-title">Additional Examples of HTML Code</h3>
+</div>
 <div class="table-container Left-Align-table">
     <table>
         <tbody>
             <tr class="section-header"><td><strong>Example of a basic CSS tag</strong></td></tr>
-            <tr class="light-red"><td>body { background-color: #f7f7f7; }</td></tr>
+            <tr class="white"><td>body { background-color: #f7f7f7; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a selector</strong></td></tr>
-            <tr class="light-orange"><td>.className { color: blue; }</td></tr>
+            <tr class="white"><td>.className { color: blue; }</td></tr>
             
             <tr class="section-header"><td><strong>example of a CSS property/value</strong></td></tr>
-            <tr class="light-yellow"><td>h1 { font-size: 2em; }</td></tr>
+            <tr class="white"><td>h1 { font-size: 2em; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of box model</strong></td></tr>
-            <tr class="light-green"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
+            <tr class="white"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of flexbox</strong></td></tr>
-            <tr class="light-blue"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
+            <tr class="white"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of grid</strong></td></tr>
-            <tr class="light-purple"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
+            <tr class="white"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a pseudo-class</strong></td></tr>
-            <tr class="light-red"><td>a:hover { color: green; }</td></tr>
+            <tr class="white"><td>a:hover { color: green; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a media queries</strong></td></tr>
-            <tr class="light-orange"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
+            <tr class="white"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a transition</strong></td></tr>
-            <tr class="light-yellow"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
+            <tr class="white"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
-            <tr class="light-green"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
+            <tr class="white"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a unit</strong></td></tr>
-            <tr class="light-blue"><td>.unit { margin: 5vh 10vw; }</td></tr>
+            <tr class="white"><td>.unit { margin: 5vh 10vw; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of positioning</strong></td></tr>
-            <tr class="light-purple"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
+            <tr class="white"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of transform</strong></td></tr>
-            <tr class="light-red"><td>.rotate { transform: rotate(45deg); }</td></tr>
+            <tr class="white"><td>.rotate { transform: rotate(45deg); }</td></tr>
             
             <tr class="section-header"><td><strong>Example of typography</strong></td></tr>
-            <tr class="light-orange"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
+            <tr class="white"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
-            <tr class="light-yellow"><td>ul { list-style-type: square; }</td></tr>
+            <tr class="white"><td>ul { list-style-type: square; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
-            <tr class="light-green"><td>.animate { animation: fadeIn 2s; }</td></tr>
+            <tr class="white"><td>.animate { animation: fadeIn 2s; }</td></tr>
             
             <tr class="section-header"><td><strong>Example of a CSS Comment</strong></td></tr>
-            <tr class="light-blue"><td>/* This is a comment in CSS */</td></tr>
+            <tr class="white"><td>/* This is a comment in CSS */</td></tr>    
         </tbody>
     </table>
 </div>

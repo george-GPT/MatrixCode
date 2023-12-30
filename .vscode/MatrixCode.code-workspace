@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../MDBcss"
+		},
+		{
+			"path": "../../MDBimg"
+		},
+		{
+			"path": "../../MDBjs"
+		},
+		{
+			"path": "../../MDBsrc"
+		}
+	]

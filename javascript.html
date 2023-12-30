@@ -90,6 +90,10 @@
             background-color: #ede7f6;
         }
 
+        .white {
+            background-color: #FAF9F6;
+        }
+
         @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
         .table-container {
             width: 130%; /* Set the table container to 120% width */
@@ -114,33 +118,56 @@
         }
         }
         </style>
-    <div id="sidebar" class="nav-menu">
-        <div class="nav-menu-title">Navigation Menu</div>
-        <div class="card-navigation">
-            <a href="#topofpage" class="nav-card" data-section="topofpage">
-                Top of the Page 
-                <i class="far fa-circle-up"></i>
-            </a>
-            <a href="#jsFundamentalsSection" class="nav-card" data-section="jsFundamentalsSection">JS Fundamentals</a>
-            <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional Examples of JS Code</a>
-        </div>
-    </div>
-</div>
-<header class="bg-dark bg-gradient">
-        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
+<header style="background-image: url('/images/Color-logo-with-background.png');">
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i><br>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i><br>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i><br>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
             </nav>
         </header>    
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </div>
+        <br>
+        <br>
+        <div class="intro-section introduction-card">
+          <br>
+            <div class="header-with-image-js">
+                <h2 class="table-title"><i class="fab fa-js"></i> JS Fundamentals</h2>H
+            </div>
+            <br>
+            <p>
+            <br>
+            <strong>JavaScript</strong>, often abbreviated as JS, is a high-level, interpreted programming language that adds interactivity to web pages.<br> 
+            <br>
+                It allows for the creation of dynamic content, controls multimedia, animates images, and pretty much everything else that isn't related to the actual structure and style of the webpage.
+               <br>
+               <br> 
+                JavaScript is a scripting language. It's used to enhance the functionality of a website by adding interactivity and dynamism, making the user experience smoother and more intuitive.
+                <br>
+                <br>
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="list-group"> 
+            <a href="#jsCheatSheet" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
+            JS Cheat Sheet
+        </a>
+        <a href="#additionalExamples" class="list-group-item list-group-item-action rounded-0"> <!-- Added rounded-0 class for a modern look -->
+            Additional Examples of JS Code
+        </a>
+    </div>
+    <div id="jsCheatSheet" class="content-section"></div>
     <br>
     <br>
-    <div id="jsFundamentalsSection" class="content-section">
-    <div class="header-with-image-js glowing-text">
-        <img src="/images/JavaScript.png" alt="JS Icon" class="iconClass" />
-        <h2 class="table-title">JavaScript Fundamentals</h2>
+    <br>
+    <div class="header-with-image-js">
+        <h2 class="table-title">JS Cheat Sheet</h2>
     </div>
     <br>
     <div class="table-container">
@@ -410,67 +437,71 @@
 <br>
 <br>
 <br>
-<section id="additionalExamplesSection" class="content-section">
-<h2 class="centered-table-title">Additional Examples of JavaScript Code</h2>
+<br>
+<br>
+<section id="additionalExamples" class="content-section">
+    <div class="header-with-image-js">
+        <h3 class="table-title">Additional Examples of JS Code</h3>
+    </div>
 <br>    
 <div class="table-container Left-Align-table">
     <table>
         <tbody>
-        <!-- Example of a variable -->
-        <tr class="section-header"><td><strong>Example of a variable</strong></td></tr>
-        <tr class="light-red"><td>let userName = 'John';</td></tr>
-
-        <!-- Example of a data type -->
-        <tr class="section-header"><td><strong>Example of a data type</strong></td></tr>
-        <tr class="light-orange"><td>let age = 30; // Number data type</td></tr>
-
-        <!-- Example of an operator -->
-        <tr class="section-header"><td><strong>Example of an operator</strong></td></tr>
-        <tr class="light-yellow"><td>let isAdult = (age >= 18); // Comparison operator</td></tr>
-
-        <!-- Example of a conditional statement -->
-        <tr class="section-header"><td><strong>Example of a conditional statement</strong></td></tr>
-        <tr class="light-green"><td>if (isAdult) { console.log(userName + ' is an adult.'); }</td></tr>
-
-        <!-- Example of a loop -->
-        <tr class="section-header"><td><strong>Example of a loop</strong></td></tr>
-        <tr class="light-blue"><td>let toDoList = ['shop', 'email', 'clean'];<br>toDoList.forEach(function(task) { console.log(userName + ' needs to ' + task + '.'); });</td></tr>
-
-        <!-- Example of a function -->
-        <tr class="section-header"><td><strong>Example of a function</strong></td></tr>
-        <tr class="light-purple"><td>function displayTask(task) { console.log(userName + ' needs to ' + task + '.'); }</td></tr>
-
-        <!-- Example of event handling -->
-        <tr class="section-header"><td><strong>Example of event handling</strong></td></tr>
-        <tr class="light-red"><td>// Assuming there is a button element with id 'myButton' in the HTML<br>document.getElementById('myButton').addEventListener('click', function() { console.log(userName + ' clicked the button.'); });</td></tr>
-
-        <!-- Example of DOM manipulation -->
-        <tr class="section-header"><td><strong>Example of DOM manipulation</strong></td></tr>
-        <tr class="light-orange"><td>// Assuming there is a div element with id 'welcomeMessage' in the HTML<br>document.getElementById('welcomeMessage').textContent = 'Welcome, ' + userName + '!';</td></tr>
-
-        <!-- Example of an array -->
-        <tr class="section-header"><td><strong>Example of an array</strong></td></tr>
-        <tr class="light-yellow"><td>let tasksCompleted = 0;<br>toDoList.push('exercise'); // Adds a new task</td></tr>
-
-        <!-- Example of an object -->
-        <tr class="section-header"><td><strong>Example of an object</strong></td></tr>
-        <tr class="light-green"><td>let user = { name: 'John', age: 30, tasksCompleted: 0 };</td></tr>
-
-        <!-- Example of a class -->
-        <tr class="section-header"><td><strong>Example of a class</strong></td></tr>
-        <tr class="light-blue"><td>class User {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>    this.tasksCompleted = 0;<br>  }<br>}<br>let userJohn = new User('John', 30);</td></tr>
-
-        <!-- Example of an ES6 feature -->
-        <tr class="section-header"><td><strong>Example of an ES6 feature</strong></td></tr>
-        <tr class="light-purple"><td>let greeting = `Hello, ${user.name}! You have ${user.tasksCompleted} tasks completed.`;</td></tr>
-
-        <!-- Example of error handling -->
-        <tr class="section-header"><td><strong>Example of error handling</strong></td></tr>
-        <tr class="light-red"><td>try {<br>  completeTask(user, 'email');<br>} catch (error) {<br>  console.error('Error completing task: ' + error.message);<br>}</td></tr>
-
-        <!-- Example of a single-line JavaScript comment -->
-        <tr class="section-header"><td><strong>Example of a single-Line javaScript comment</strong></td></tr>
-        <tr class="light-orange"><td>// this is a single-line comment in JavaScript</td></tr>
+            <!-- Example of a variable -->
+            <tr class="section-header"><td><strong>Example of a variable</strong></td></tr>
+            <tr class="white"><td>let userName = 'John';</td></tr>
+        
+            <!-- Example of a data type -->
+            <tr class="section-header"><td><strong>Example of a data type</strong></td></tr>
+            <tr class="white"><td>let age = 30; // Number data type</td></tr>
+        
+            <!-- Example of an operator -->
+            <tr class="section-header"><td><strong>Example of an operator</strong></td></tr>
+            <tr class="white"><td>let isAdult = (age >= 18); // Comparison operator</td></tr>
+        
+            <!-- Example of a conditional statement -->
+            <tr class="section-header"><td><strong>Example of a conditional statement</strong></td></tr>
+            <tr class="white"><td>if (isAdult) { console.log(userName + ' is an adult.'); }</td></tr>
+        
+            <!-- Example of a loop -->
+            <tr class="section-header"><td><strong>Example of a loop</strong></td></tr>
+            <tr class="white"><td>let toDoList = ['shop', 'email', 'clean'];<br>toDoList.forEach(function(task) { console.log(userName + ' needs to ' + task + '.'); });</td></tr>
+        
+            <!-- Example of a function -->
+            <tr class="section-header"><td><strong>Example of a function</strong></td></tr>
+            <tr class="white"><td>function displayTask(task) { console.log(userName + ' needs to ' + task + '.'); }</td></tr>
+        
+            <!-- Example of event handling -->
+            <tr class="section-header"><td><strong>Example of event handling</strong></td></tr>
+            <tr class="white"><td>// Assuming there is a button element with id 'myButton' in the HTML<br>document.getElementById('myButton').addEventListener('click', function() { console.log(userName + ' clicked the button.'); });</td></tr>
+        
+            <!-- Example of DOM manipulation -->
+            <tr class="section-header"><td><strong>Example of DOM manipulation</strong></td></tr>
+            <tr class="white"><td>// Assuming there is a div element with id 'welcomeMessage' in the HTML<br>document.getElementById('welcomeMessage').textContent = 'Welcome, ' + userName + '!';</td></tr>
+        
+            <!-- Example of an array -->
+            <tr class="section-header"><td><strong>Example of an array</strong></td></tr>
+            <tr class="white"><td>let tasksCompleted = 0;<br>toDoList.push('exercise'); // Adds a new task</td></tr>
+        
+            <!-- Example of an object -->
+            <tr class="section-header"><td><strong>Example of an object</strong></td></tr>
+            <tr class="white"><td>let user = { name: 'John', age: 30, tasksCompleted: 0 };</td></tr>
+        
+            <!-- Example of a class -->
+            <tr class="section-header"><td><strong>Example of a class</strong></td></tr>
+            <tr class="white"><td>class User {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>    this.tasksCompleted = 0;<br>  }<br>}<br>let userJohn = new User('John', 30);</td></tr>
+        
+            <!-- Example of an ES6 feature -->
+            <tr class="section-header"><td><strong>Example of an ES6 feature</strong></td></tr>
+            <tr class="white"><td>let greeting = `Hello, ${user.name}! You have ${user.tasksCompleted} tasks completed.`;</td></tr>
+        
+            <!-- Example of error handling -->
+            <tr class="section-header"><td><strong>Example of error handling</strong></td></tr>
+            <tr class="white"><td>try {<br>  completeTask(user, 'email');<br>} catch (error) {<br>  console.error('Error completing task: ' + error.message);<br>}</td></tr>
+        
+            <!-- Example of a single-line JavaScript comment -->
+            <tr class="section-header"><td><strong>Example of a single-Line javaScript comment</strong></td></tr>
+            <tr class="white"><td>// this is a single-line comment in JavaScript</td></tr>
         </tbody>
     </table>
 </div>

@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Code</title>
     <link rel="icon" href="/favicon/favicon-32x32.png">
-    <link rel="stylesheet" href="/mdbootstrap/css/mdb.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="prism.css">
     <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
     <script src="prism.js"></script>
     <script src="script.js"></script>
-    <script type="text/javascript" src="/mdbootstrap/js/mdb.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
             padding-bottom: 50px;
@@ -45,7 +45,7 @@
     
 
         th {
-            background-color: #f9f9f9;
+            background-color: #f6f6f6;
             font-weight: bold; /* Make header text bold */
             
         }
@@ -92,6 +92,9 @@
         .light-purple {
             background-color: #ede7f6;
         }
+        .white {
+            background-color: #FAF9F6;
+        }
 
         @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
         .table-container {
@@ -117,39 +120,55 @@
         }
         }
         </style>
-        </div>
         </head>
 <body>
-    <div id="sidebar" class="nav-menu">
-        <div class="nav-menu-title">Navigation Menu</div>
-        <div class="card-navigation">
-            <a href="#topofpage" class="nav-card" data-section="topofpage">
-                Top of the Page 
-                <i class="far fa-circle-up"></i>
-            </a>
-            <a href="#htmlFundamentalsSection" class="nav-card" data-section="htmlFundamentalsSection">HTML Fundamentals</a>
-            <a href="#additionalExamplesSection" class="nav-card" data-section="additionalExamplesSection">Additional Examples of HTML Code</a>
-        </div>
-    </div>
-    
-</div>
-    <header class="bg-dark bg-gradient">
-        <h1 class="title-matrix-code" id="matrix-title" data-text="Matrix Code">Matrix Code</h1>
+    <header style="background-image: url('/images/Color-logo-with-background.png');">
             <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i><br>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i><br>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i><br>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i><br>JavaScript</a>
+                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
+                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
+                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
             </nav>
         </header>    
-    <br>
-    <br>  <!-- Main content -->
-    <div id="htmlFundamentalsSection" class="content-section">
-    <div class="header-with-image-html">
-        <img src="/images/HTML.png" alt="HTML Icon" class="iconClass"/>
-        <h2 class="table-title">HTML Fundamentals</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="intro-section introduction-card">
+          <br>
+            <div class="header-with-image-html">
+                <h2 class="table-title"><i class="fab fa-html5"></i> HTML Fundamentals</h2>H
+            </div>
+            <br>
+            <p>
+                HTML, which stands for <strong>Hyper Text Markup Language</strong>. It is the standard markup language used to create web pages.<br> 
+                <br>
+                It's designed to describe the structure of a web page semantically, with a series of elements that instruct the browser on how to display the content. These elements act as labels for pieces of content, indicating whether something is a heading, a paragraph, a link, or another type of content.<br> 
+                <br>
+                HTML is a markup language. It's used to describe the content of a web page.
+                <br>
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="list-group"> 
+            <a href="#htmlCheatSheet" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
+            HTML Cheat Sheet
+        </a>
+        <a href="#additionalExamples" class="list-group-item list-group-item-action rounded-0"> <!-- Added rounded-0 class for a modern look -->
+            Additional Examples of HTML Code
+        </a>
     </div>
+    <div id="htmlCheatSheet" class="content-section"></div>
     <br>
+    <br>
+    <br>
+    <div class="header-with-image-html">
+        <h2 class="table-title">HTML Cheat Sheet</h2>
+    </div>
     <div class="table-container">
     <table>
         <tr class="section-header">
@@ -608,58 +627,63 @@
     </table>
 </div>
 </section>
-<section id="additionalExamplesSection" class="content-section">
+<section id="additionalExamples" class="content-section">
 <br>
 <br>
 <br>
 <br>
-<h2 class="centered-table-title">Additional Examples of HTML Code</h2>
-<br>    
+<br>
+<br>
+<br>
+<br>
+<div class="header-with-image-html">
+    <h3 class="table-title">Additional Examples of HTML Code</h3>
+</div>    
     <div class="table-container Left-Align-table">
         <table >
             <tbody>
                 <tr class="section-header"><td><strong>Example of a structural tag</strong></td></tr>
-                <tr class="light-red"><td>&lt;div&gt;This is a division tag&lt;/div&gt;</td></tr>
+                <tr class="white"><td>&lt;div&gt;This is a division tag&lt;/div&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a semantic tag</strong></td></tr>
-                <tr class="light-orange"><td>&lt;article&gt;This is an article tag&lt;/article&gt;</td></tr>
+                <tr class="white"><td>&lt;article&gt;This is an article tag&lt;/article&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a meta tag</strong></td></tr>
-                <tr class="light-yellow"><td>&lt;meta name="description" content="This is a description of the webpage"&gt;</td></tr>
+                <tr class="white"><td>&lt;meta name="description" content="This is a description of the webpage"&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of formatting</strong></td></tr>
-                <tr class="light-green"><td>&lt;b&gt;This is bold text&lt;/b&gt;</td></tr>
+                <tr class="white"><td>&lt;b&gt;This is bold text&lt;/b&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a text tag</strong></td></tr>
-                <tr class="light-blue"><td>&lt;p&gt;This is a paragraph tag&lt;/p&gt;</td></tr>
+                <tr class="white"><td>&lt;p&gt;This is a paragraph tag&lt;/p&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a link</strong></td></tr>
-                <tr class="light-purple"><td>&lt;a href="https://www.example.com"&gt;This is a link tag&lt;/a&gt;</td></tr>
+                <tr class="white"><td>&lt;a href="https://www.example.com"&gt;This is a link tag&lt;/a&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
-                <tr class="light-red"><td>&lt;ul&gt;&lt;li&gt;This is a list item in an unordered list&lt;/li&gt;&lt;/ul&gt;</td></tr>
+                <tr class="white"><td>&lt;ul&gt;&lt;li&gt;This is a list item in an unordered list&lt;/li&gt;&lt;/ul&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a graphical element</strong></td></tr>
-                <tr class="light-orange"><td>&lt;img src="image.jpg" alt="This is an image tag"&gt;</td></tr>
+                <tr class="white"><td>&lt;img src="image.jpg" alt="This is an image tag"&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a table</strong></td></tr>
-                <tr class="light-yellow"><td>&lt;table&gt;&lt;tr&gt;&lt;td&gt;This is a cell in a table&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td></tr>
+                <tr class="white"><td>&lt;table&gt;&lt;tr&gt;&lt;td&gt;This is a cell in a table&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a table attribute</strong></td></tr>
-                <tr class="light-green"><td>&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;This is a cell in a table with a border&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td></tr>
+                <tr class="white"><td>&lt;table border="1"&gt;&lt;tr&gt;&lt;td&gt;This is a cell in a table with a border&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of a form</strong></td></tr>
-                <tr class="light-blue"><td>&lt;form action="/submit_form"&gt;&lt;input type="text" name="name"&gt;&lt;input type="submit" value="Submit"&gt;&lt;/form&gt;</td></tr>
+                <tr class="white"><td>&lt;form action="/submit_form"&gt;&lt;input type="text" name="name"&gt;&lt;input type="submit" value="Submit"&gt;&lt;/form&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of an input tag attribute</strong></td></tr>
-                <tr class="light-purple"><td>&lt;input type="text" name="name" required&gt;</td></tr>
+                <tr class="white"><td>&lt;input type="text" name="name" required&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of an HTML entity</strong></td></tr>
-                <tr class="light-red"><td>&lt;p&gt;This is a paragraph with a non-breaking space &amp;nbsp; entity&lt;/p&gt;</td></tr>
+                <tr class="white"><td>&lt;p&gt;This is a paragraph with a non-breaking space &amp;nbsp; entity&lt;/p&gt;</td></tr>
                 
                 <tr class="section-header"><td><strong>Example of an HTML comment</strong></td></tr>
-                <tr class="light-orange"><td>&lt;!-- This is a comment --&gt;</td></tr>
-            </tbody>
+                <tr class="white"><td>&lt;!-- This is a comment --&gt;</td></tr>
+                </tbody>
         </table>
     </div> 
 </section>
