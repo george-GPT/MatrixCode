@@ -811,11 +811,17 @@ strong {
 
 @media (max-width: 768px) {
 
+    .h1, .h2, .h3, h1, h2, h3 {
+        scale: 75%;
+    }
     .tabs {
         flex-direction: column; /* Stack tabs vertically on smaller screens */
+        top: 8.5rem;
       }
     .tab {
         margin: 5px 0; /* Adjust margin for stacked layout */
+        font-size: 20px;
+        padding: 5px 10px;
       }
 
     body {
