@@ -258,7 +258,7 @@ header {
 
 /* Add CSS for spacing using a spacer class */
 .headerSpacer {
-    height: 150px; /* Adjust the height as needed */
+    height: 140px; /* Adjust the height as needed */
 }
 
 
@@ -271,7 +271,7 @@ header {
     position: relative;
     padding: 10px 0;
     z-index: 2;
-    top: 16rem; /* Add a top margin to push the tabs down */
+    top: 16.8rem; /* Add a top margin to push the tabs down */
     
 }
 
