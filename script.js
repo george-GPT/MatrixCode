@@ -4,61 +4,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add event listener to the list-group div
     const listGroup = document.querySelector('.list-group');
-    
+    const listGroupItems = document.querySelectorAll('.list-group a');
+    const htmlCard = document.getElementById('html-card');
+    const cssCard = document.getElementById('css-card');
+    const jsCard = document.getElementById('js-card');
+
+    // Handle click on list-group items
     if (listGroup) {
         listGroup.addEventListener('click', function(event) {
-            // Check if the clicked element is a link
-            if (event.target.tagName === 'A') {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Get the target section's ID (e.g., #htmlCheatSheet)
-                var target = event.target.hash;
-
-                // Get the target element
-                var targetElement = document.querySelector(target);
-                if (targetElement) {
-                    // Calculate the target's position relative to the viewport
-                    var targetOffset = targetElement.getBoundingClientRect().top;
-
-                    // Calculate the current scroll position
-                    var scrollOffset = window.pageYOffset || document.documentElement.scrollTop;
-
-                    // Calculate the final scroll position
-                    var finalOffset = scrollOffset + targetOffset;
-
-                    // Use smooth scrolling using the scrollTo() method
-                    window.scrollTo({
-                        top: finalOffset,
-                        behavior: 'smooth'
-                    });
-                }
-            }
+            handleListGroupClick(event);
         });
     }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Fetch CSV data
-    fetchData();
-
-    // Add event listeners for the cards if they exist
-    const htmlCard = document.getElementById('html-card');
+    // Set click events for each card
     if (htmlCard) {
         htmlCard.addEventListener('click', () => redirectToUrl('https://matrixcode.ca/html.html'));
     }
-
-    const cssCard = document.getElementById('css-card');
     if (cssCard) {
         cssCard.addEventListener('click', () => redirectToUrl('https://matrixcode.ca/css.html'));
     }
-
-    const jsCard = document.getElementById('js-card');
     if (jsCard) {
         jsCard.addEventListener('click', () => redirectToUrl('https://matrixcode.ca/javascript.html'));
     }
+
+    // Attach event listeners for all items within the list-group
+    listGroupItems.forEach(function(item) {
+        item.addEventListener('click', function(event) {
+            handleListGroupItemClick(event, this);
+        });
+    });
 });
 
+function handleListGroupClick(event) {
+    if (event.target.tagName === 'A') {
+        event.preventDefault();
+        scrollToTarget(event.target.hash);
+    }
+}
+
+function handleListGroupItemClick(event, item) {
+    event.preventDefault();
+    scrollToTarget(item.hash);
+}
+
+function scrollToTarget(hash) {
+    const targetElement = document.querySelector(hash);
+    if (targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+}
 // Function to fetch CSV data from the PHP script and update csvData
 function fetchData() {
     fetch('/php/display_data.php') // Update the URL with the correct path to your PHP script

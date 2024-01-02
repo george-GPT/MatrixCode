@@ -147,7 +147,7 @@ body {
     background-attachment: fixed;
 }
 
-Header {
+header {
     background-image: url(/images/Color-logo-with-background.png);
     background-size: contain; /* Scale the image as large as possible while maintaining aspect ratio */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -188,28 +188,24 @@ Header {
 .intro-section {
     width: 100%; /* Same as header to maintain the alignment */
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto; /* Centers the content */
+    margin: 0 auto; /* Centers the content */
     color: rgba(17, 17, 17, 17);
 }
 
 .intro-section h2 {
     width: auto; /* Same as header to maintain the alignment */
-    margin-left: auto; /* Centers the content */
-    margin-right: auto;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto; /* Centers the content */
+    margin: 0 auto; /* Centers the content */
     color: rgba(17, 17, 17, 17);
 }
 
 
 .intro-section p {
     width: auto;
-    padding-left: 15px;
     text-align: left; /* Justify the introduction paragraph */
     align-items: left;
-    max-width: 100%; /* Control the width of the paragraph */ /* Center the paragraph */
+    max-width: 1200px; /* Control the width of the paragraph */ /* Center the paragraph */
+    margin: 0 auto; /* Centers the content */
     line-height: 1.6;
     color: rgba(17, 17, 17, 17);
   }
@@ -260,6 +256,12 @@ Header {
 
 }
 
+/* Add CSS for spacing using a spacer class */
+.headerSpacer {
+    height: 150px; /* Adjust the height as needed */
+}
+
+
 .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -269,8 +271,8 @@ Header {
     position: relative;
     padding: 10px 0;
     z-index: 2;
-    top: 15.5rem; /* Add a top margin to push the tabs down */
-    margin-top: 1rem;
+    top: 16rem; /* Add a top margin to push the tabs down */
+    
 }
 
 .tab {
@@ -414,8 +416,8 @@ h2 {
 
 
 .list-group-item {
-    border: 1px solid #d3d3d3;
-    border-bottom: 3px solid #bbb;
+    border: 1px solid #bbb;
+    border-bottom: 2px solid #999;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     width: 100%;
     margin-right: 2.5%; /* Add space between the buttons */
@@ -491,7 +493,6 @@ h2 {
     font-weight: bold;
     color: #f6f6f6;
     font-size: 36px; /* Adjust the font size as needed */
-    margin-left: 20px; /* And any other styles you want to apply */
 }
 
 .centered-table-title {
@@ -816,7 +817,7 @@ strong {
     }
     .tabs {
         flex-direction: column; /* Stack tabs vertically on smaller screens */
-        top: 8.5rem;
+        top: 9.8rem;
       }
     .tab {
         margin: 5px 0; /* Adjust margin for stacked layout */
