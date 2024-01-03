@@ -434,7 +434,7 @@ h2 {
     background-size: cover;
     background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 50%, #ededed 100%);
     text-decoration: none;
-  }
+}
   
   .list-group {
     display: flex; /* Use flex display to place items horizontally */
@@ -442,7 +442,7 @@ h2 {
     max-width: 800px;
     margin: 20px auto;
     justify-content: center; /* Center-align the items horizontally */
-  }
+}
   
   .list-group-item.disabled {
     color: #cccccc;
@@ -450,21 +450,20 @@ h2 {
     border: none;
     box-shadow: none;
     cursor: not-allowed;
-  }
+}
   
   .list-group-item:hover {
     background-color: #e2e6ea;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
-  }
+}
   
   .list-group-item.active {
     background-color: #007bff;
     border-color: #0056b3;
     color: #fff;
-  }
+}
   
-
 
 /* Adding a class for the section that holds HTML, CSS, JS overviews */
 .section-overview {
@@ -501,7 +500,6 @@ h2 {
     font-weight: bold;
     font-size: 36px;
     color: rgba(17, 17, 17, 17);
-    }
 }
 
 .Left-Align-table-title {
@@ -617,45 +615,6 @@ h2 {
     text-align: left; /* Override any specific alignment for the first and second column */
 }
 
-/* Navigation Bar */
-.card-navigation {
-    position: absolute;
-    top: 300px; /* Adjust this value to move the navigation bar lower */
-    left: 0;
-    display: flex;
-    flex-direction: row; /* Arrange the buttons horizontally */
-    justify-content: center; /* Distribute space evenly around the buttons */
-    padding: 20px 0;
-    width: 100%; /* Full width to ensure responsiveness */
-}
-
-.nav-card {
-    background-color: #f6f6f6;
-    margin: 10px 290px; /* Reduced horizontal margin for spacing between buttons */
-    padding: 15px 20px; /* Decrease horizontal padding to make buttons less wide */
-    text-decoration: none;
-    color: #1a1a1a;
-    text-align: center;
-    border: 2px black #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    text-align: center; /* Center the text within the buttons */
-    font-family: 'Poppins', sans-serif;
-}
-
-.nav-card:hover, .nav-card:focus {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.nav-card.active {
-    background-color: #007bff;
-    color: #f6f6f6;
-    font-weight: bold;
-    border-color: #0056b3; /* Darker border color for the active button */
-}
-
 .active-section {
     background-color: #f6f6f6;;
 }
@@ -673,17 +632,6 @@ h2 {
     text-indent: -20px;
     /* Optionally, set the list-style-position to 'inside' if you want the bullet points to be within the flow of the text */
     list-style-position: inside;
-}
-
-.nav-card i.far.fa-circle-up {
-    margin-left: 5px; /* Add some space between the text and the icon */
-    /* Adjust the size of the icon if needed */
-}
-
-/* Increase the size of the "far fa-circle-up" icon */
-.nav-card:first-child i.far.fa-circle-up {
-    font-size: 24px; /* Adjust the font size as needed */
-    padding-left: 5%;
 }
 
 /* Override PrismJS background */
@@ -714,12 +662,60 @@ strong {
     font-weight: 700; /* This will use Poppins-Bold for strong emphasis */
 }
 
-.footer {
-    color: #7e858b; /* Modern footer text color */
-    font-family: 'Lato', sans-serif; /* Change to your preferred font */
-    padding: 20px 0; /* Vertical padding only to allow more horizontal space */
-    text-align: center; /* Center align the text if it fits the design */
-    font-size: 11px; /* Smaller font size */
+footer {
+    background-color: rgba(17, 17, 17, 1);
+    color: #f6f6f6;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    opacity: .9;
+    font-size: .88em;
+    margin-top: 40px; /* Standardized top margin */
+    margin-bottom: 20px; /* Standardized bottom margin */
+}
+
+.footer-content {
+    margin-bottom: 20px; /* Standardized bottom margin, adjusted from 20px to match top margin */
+    margin-top: 40px; /* Standardized top margin, adjusted to match bottom margin */
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact-links a {
+    font-size: 0.9em;
+    color: #f6f6f6; /* Maintain 100% opacity for contact links */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* This section is for the copyright text */
+footer .copyright-section {
+    font-size: 0.80em;
+    color: rgba(246, 246, 246, 0.5); /* 50% opacity */
+    padding-top: 5px; /* Added padding to give space at the top */
+    margin-top: 10px; /* Added margin to give space from the main content */
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Remove any additional unnecessary styles */
+/* This style is redundant since we already have color with opacity in the .copyright-section */
+/* .copyright-section {
+    opacity: .5;
+} */
+
+/* Remove any additional unnecessary styles */
+.copyright-section {
+    opacity: .5;
 }
 
 .container {
@@ -733,50 +729,6 @@ strong {
     flex-wrap: wrap; /* Allow the footer content to wrap on small screens */
     justify-content: center; /* Center the columns for a more balanced look */
     align-items: flex-start; /* Align items to the top */
-}
-
-.footer-col {
-    padding: 0 15px; /* Padding for columns */
-    flex: 0 0 auto; /* Do not allow columns to grow and shrink as much */
-    width: auto; /* Let the content define the width */
-    max-width: 74%; /* Maximum width at 50% to allow text to extend horizontally */
-}
-
-.footer p {
-    color: #444;
-    font-size: 12px; /* Adjusted font size */
-    opacity: 0.9; /* Slightly transparent for subtlety */
-    text-align: left; /* Align text to the left for readability */
-    max-width: 100%; /* Allow paragraph to fill the column width */
-}
-
-.footer h5 {
-    font-size: 12px; /* Slightly larger font size for headers */
-    margin-top: 0; /* Remove top margin from heading */
-    margin-bottom: 10px; /* Space below heading */
-    text-align: left; /* Align title to the left */
-}
-
-.footer-links {
-    list-style: none; /* No bullets for links */
-    padding-left: 0; /* No padding on the left */
-    margin: 0; /* No margin for the list */
-    text-align: left; /* Align links to the left */
-}
-
-.footer-links li {
-    margin-bottom: 5px; /* Reduce space between list items */
-}
-
-.footer-links a {
-    color: #007bff; /* Link color */
-    text-decoration: none; /* No underline */
-    transition: color 0.3s ease; /* Transition for hover effect */
-    font-size: 12px; /* Match footer body text size */
-}
-
-.footer-links a:hover {
-    color: #0056b3; /* Color change on hover */
 }
 
 /* Horizontal Navigation CSS (for mobile and smaller screens) */
@@ -813,7 +765,7 @@ strong {
 @media (max-width: 768px) {
 
     .h1, .h2, .h3, h1, h2, h3 {
-        scale: 75%;
+        scale: 65%;
     }
     .tabs {
         flex-direction: column; /* Stack tabs vertically on smaller screens */
@@ -823,7 +775,7 @@ strong {
         margin: 5px 0; /* Adjust margin for stacked layout */
         font-size: 20px;
         padding: 5px 10px;
-      }
+    }
 
     body {
         margin: 0;
@@ -838,7 +790,11 @@ strong {
         height: auto;
         position: relative;
     }
-    
+
+    footer .row {
+        flex-direction: column;
+    }
+
     .list-group-item {
         /* Full-width list items for better mobile interaction */
         width: 100%;
@@ -880,7 +836,6 @@ strong {
         padding: 0.5rem;
     }
 
-
     .nav-card:last-child {
         border-right: none;
     }
@@ -906,11 +861,12 @@ strong {
         flex-direction: column;
     }
 
-    .footer-col {
-        margin-bottom: 10px;
-        flex: none;
-        max-width: none;
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
     #sidebar {
         display: none; /* Hide the sidebar on smaller screens */
       }
