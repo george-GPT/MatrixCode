@@ -708,12 +708,6 @@ footer p {
 }
 
 /* Remove any additional unnecessary styles */
-/* This style is redundant since we already have color with opacity in the .copyright-section */
-/* .copyright-section {
-    opacity: .5;
-} */
-
-/* Remove any additional unnecessary styles */
 .copyright-section {
     opacity: .5;
 }
@@ -742,6 +736,10 @@ footer p {
     color: rgba(17, 17, 17, 17);
 }
 
+body, footer {
+    margin-bottom: 0;
+    padding-bottom: 13px;
+}
 
 @-webkit-keyframes flicker { /* Safari and Chrome */
     0% { opacity: 1; }
