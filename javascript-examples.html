@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Code</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <script src="prism.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            padding-bottom: 50px;
+        }
+
+        .table-container {
+            display: block; /* Use block instead of flex to allow natural width */
+            margin: 0 auto; /* Center the table container */
+            overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: black;
+            margin: 0;
+            border-spacing: 2px 0;
+            font-family: 'lato', Times, serif;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+        }
+    
+
+        th {
+            background-color: #f6f6f6;
+            font-weight: bold; /* Make header text bold */
+            
+        }
+        td {
+            max-width: 250px; /* Set a max-width to control cell width */
+        }
+        
+        table tr td:first-child {
+            text-align: right; /* Aligns text to the right */
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip;
+        }
+        .section-header {
+            color: #f6f6f6;
+            font-weight: bold;
+            background-color: #333;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
+        }
+
+        .light-red {
+        background-color: #ffd8d8; /* A fainter shade of red */
+        }
+        
+        .light-orange {
+        background-color: #fde9d9;
+        }
+
+        .light-yellow {
+            background-color: #fff9cc;
+        }
+
+        .light-green {
+            background-color: #eef5ea;
+        }
+
+        .light-blue {
+            background-color: #e1eaf8;
+        }
+
+        .light-purple {
+            background-color: #ede7f6;
+        }
+        .white {
+            background-color: #f6f6f6;
+        }
+
+        @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
+        .table-container {
+            width: 130%; /* Set the table container to 120% width */
+            margin-left: -10%; /* Center the table container with negative margins */
+            margin-right: -10%;
+        }
+
+        table {
+            width: auto; /* Allow table to exceed the width of the table container */
+        }
+
+        th, td {
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+            max-width: none; /* Remove max-width to allow content to determine cell width */
+        }
+
+        .section-header, .light-red, .light-orange, .light-yellow, .light-green, .light-blue, .light-purple {
+            /* Apply a style that ensures the background extends to the edge of the screen */
+            /* This is assuming you want to maintain the styles for each class on smaller screens */
+        }
+        }
+        </style>
+        </head>
+<body>
+    <header style="background-image: url('/images/Color-logo-with-background.png');">
+        <nav class="tabs">
+            <!-- Home tab -->
+            <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            
+            <!-- HTML tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-html5"></i>HTML</a>
+                <div class="dropdown-content">
+                    <a href="html.html">HTML Basics</a>
+                    <a href="html-examples.html">HTML Examples</a>
+                </div>
+            </div>
+            
+            <!-- CSS tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-css3-alt"></i>CSS</a>
+                <div class="dropdown-content">
+                    <a href="css.html">CSS Basics</a>
+                    <a href="css-examples.html">CSS Examples</a>
+                </div>
+            </div>
+            
+            <!-- JavaScript tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-js"></i>JavaScript</a>
+                <div class="dropdown-content">
+                    <a href="javascript.html">JavaScript Basics</a>
+                    <a href="javascript-examples.html">JavaScript Examples</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <div class="headerSpacer"></div>
+</div>    
+<div class="table-container Left-Align-table">
+    <table >
+        <thead class="section-title">
+            <tr>
+                <tr class="section-header"></tr>
+                <th colspan="2"><i class="fa-solid fa-circle-info"></i> <strong>Examples of JavaScript</strong></th>
+            </tr>
+        </thead>               
+        <tbody>  
+        <div class="table-container Left-Align-table">
+                <tbody>
+                    <!-- Example of a variable -->
+                    <tr class="section-header"><td><strong>Example of a variable</strong></td></tr>
+                    <tr class="white"><td>let userName = 'John';</td></tr>
+                
+                    <!-- Example of a data type -->
+                    <tr class="section-header"><td><strong>Example of a data type</strong></td></tr>
+                    <tr class="white"><td>let age = 30; // Number data type</td></tr>
+                
+                    <!-- Example of an operator -->
+                    <tr class="section-header"><td><strong>Example of an operator</strong></td></tr>
+                    <tr class="white"><td>let isAdult = (age >= 18); // Comparison operator</td></tr>
+                
+                    <!-- Example of a conditional statement -->
+                    <tr class="section-header"><td><strong>Example of a conditional statement</strong></td></tr>
+                    <tr class="white"><td>if (isAdult) { console.log(userName + ' is an adult.'); }</td></tr>
+                
+                    <!-- Example of a loop -->
+                    <tr class="section-header"><td><strong>Example of a loop</strong></td></tr>
+                    <tr class="white"><td>let toDoList = ['shop', 'email', 'clean'];<br>toDoList.forEach(function(task) { console.log(userName + ' needs to ' + task + '.'); });</td></tr>
+                
+                    <!-- Example of a function -->
+                    <tr class="section-header"><td><strong>Example of a function</strong></td></tr>
+                    <tr class="white"><td>function displayTask(task) { console.log(userName + ' needs to ' + task + '.'); }</td></tr>
+                
+                    <!-- Example of event handling -->
+                    <tr class="section-header"><td><strong>Example of event handling</strong></td></tr>
+                    <tr class="white"><td>// Assuming there is a button element with id 'myButton' in the HTML<br>document.getElementById('myButton').addEventListener('click', function() { console.log(userName + ' clicked the button.'); });</td></tr>
+                
+                    <!-- Example of DOM manipulation -->
+                    <tr class="section-header"><td><strong>Example of DOM manipulation</strong></td></tr>
+                    <tr class="white"><td>// Assuming there is a div element with id 'welcomeMessage' in the HTML<br>document.getElementById('welcomeMessage').textContent = 'Welcome, ' + userName + '!';</td></tr>
+                
+                    <!-- Example of an array -->
+                    <tr class="section-header"><td><strong>Example of an array</strong></td></tr>
+                    <tr class="white"><td>let tasksCompleted = 0;<br>toDoList.push('exercise'); // Adds a new task</td></tr>
+                
+                    <!-- Example of an object -->
+                    <tr class="section-header"><td><strong>Example of an object</strong></td></tr>
+                    <tr class="white"><td>let user = { name: 'John', age: 30, tasksCompleted: 0 };</td></tr>
+                
+                    <!-- Example of a class -->
+                    <tr class="section-header"><td><strong>Example of a class</strong></td></tr>
+                    <tr class="white"><td>class User {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>    this.tasksCompleted = 0;<br>  }<br>}<br>let userJohn = new User('John', 30);</td></tr>
+                
+                    <!-- Example of an ES6 feature -->
+                    <tr class="section-header"><td><strong>Example of an ES6 feature</strong></td></tr>
+                    <tr class="white"><td>let greeting = `Hello, ${user.name}! You have ${user.tasksCompleted} tasks completed.`;</td></tr>
+                
+                    <!-- Example of error handling -->
+                    <tr class="section-header"><td><strong>Example of error handling</strong></td></tr>
+                    <tr class="white"><td>try {<br>  completeTask(user, 'email');<br>} catch (error) {<br>  console.error('Error completing task: ' + error.message);<br>}</td></tr>
+                
+                    <!-- Example of a single-line JavaScript comment -->
+                    <tr class="section-header"><td><strong>Example of a single-Line javaScript comment</strong></td></tr>
+                    <tr class="white"><td>// this is a single-line comment in JavaScript</td></tr>
+                </tbody>
+            </table>
+        </div>
+        </section>
+        <footer>
+            <div class="footer-content"
+                <p><img src="images/Color-logo-with-background.png" alt="Info Icon" style="width: 25%; height: auto;">
+                <br>
+                A concise repository for front-end development knowledge.</p>
+                <div class="contact-links">
+                    <a href="mailto:contact@matrixcode.ca"><i class="fa-solid fa-envelope"></i> Contact</a>
+                    <a href="https://github.com/george-GPT"><i class="fa-brands fa-github"> </i> GitHub</a>
+                </div>
+            </div>
+            <div class="copyright-section">
+                <p>© 2024 MATRIX CODE. All rights reserved.</p>
+            </div>
+        </footer>   
+        </body>
+        </html>
+        
+    

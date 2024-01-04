@@ -21,7 +21,6 @@
             display: block; /* Use block instead of flex to allow natural width */
             margin: 0 auto; /* Center the table container */
             overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
-            padding: 20px; /* Remove padding if you don't need it */
         }
 
         table {
@@ -62,6 +61,7 @@
             background-color: #333;
             font-size: 1em;
             border: 1px solid #ccc;
+            font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
             
         }
 
@@ -116,22 +116,47 @@
         }
         }
         </style>
-        </div>
         </head>
 <body>
+    <div id="topofpage" class="content-section"></div>
     <header style="background-image: url('/images/Color-logo-with-background.png');">
         <nav class="tabs">
+            <!-- Home tab -->
             <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-            <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-            <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+            
+            <!-- HTML tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-html5"></i>HTML</a>
+                <div class="dropdown-content">
+                    <a href="html.html">HTML Basics</a>
+                    <a href="html-examples.html">HTML Examples</a>
+                </div>
+            </div>
+            
+            <!-- CSS tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-css3-alt"></i>CSS</a>
+                <div class="dropdown-content">
+                    <a href="css.html">CSS Basics</a>
+                    <a href="css-examples.html">CSS Examples</a>
+                </div>
+            </div>
+            
+            <!-- JavaScript tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-js"></i>JavaScript</a>
+                <div class="dropdown-content">
+                    <a href="javascript.html">JavaScript Basics</a>
+                    <a href="javascript-examples.html">JavaScript Examples</a>
+                </div>
+            </div>
         </nav>
-    </header>    
+    </header>
     <div class="headerSpacer"></div>
     <div class="intro-section introduction-card">
       <br>
         <div class="header-with-image-css">
-            <h2 class="table-title"><i class="fab fa-css3-alt"></i> CSS Fundamentals</h2>H
+            <h2 class="table-title"><i class="fab fa-css3-alt"></i> CSS Basics</h2>
         </div>
         <br>
         <p>
@@ -147,26 +172,19 @@
         </p>
     </div>
     <br>
-    <br>
-    <div class="list-group"> 
-        <a href="#cssCheatSheet" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
-            <i class="fa-solid fa-computer-mouse"></i>  CSS Cheat Sheet
-        </a>
-    </a>
-    <a href="#additionalExamples" class="list-group-item list-group-item-action rounded-0"> <!-- Added rounded-0 class for a modern look -->
-        <i class="fa-solid fa-computer-mouse"></i>  Additional Examples of CSS Code
-    </a>
-</div>
 <div id="cssCheatSheet" class="content-section"></div>
 <br>
 <br>
 <br>
-<div class="header-with-image-css">
-    <h2 class="table-title">CSS Cheat Sheet</h2>
-</div>
-<br>
-    <div class="table-container">
+<div class="table-container">
     <table>
+        <thead class="section-title">
+            <tr>
+                <tr class="section-header"></tr>
+                <th colspan="2"><i class="fa-solid fa-circle-info"></i> <strong>Cheat Sheet</strong></th>
+            </tr>
+        </thead>               
+        <tbody>
         <tr class="section-header">
             <td>Basic Tags</td>
             <td>Define webpage structure</td>
@@ -662,74 +680,10 @@
     </table>
 </div>
 <br>
-<br>
-<br>
-<br>
-<br>
-<section id="additionalExamples" class="content-section"></section>
-<br>
-<br>
-<br>
-<div class="header-with-image-css">
-    <h3 class="table-title">Additional Examples of HTML Code</h3>
+<div class="list-group"> 
+    <a href="#topofpage" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>  Top of Page</a>
 </div>
-<div class="table-container Left-Align-table">
-    <table>
-        <tbody>
-            <tr class="section-header"><td><strong>Example of a basic CSS tag</strong></td></tr>
-            <tr class="white"><td>body { background-color: #f7f7f7; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a selector</strong></td></tr>
-            <tr class="white"><td>.className { color: blue; }</td></tr>
-            
-            <tr class="section-header"><td><strong>example of a CSS property/value</strong></td></tr>
-            <tr class="white"><td>h1 { font-size: 2em; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of box model</strong></td></tr>
-            <tr class="white"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of flexbox</strong></td></tr>
-            <tr class="white"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of grid</strong></td></tr>
-            <tr class="white"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a pseudo-class</strong></td></tr>
-            <tr class="white"><td>a:hover { color: green; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a media queries</strong></td></tr>
-            <tr class="white"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a transition</strong></td></tr>
-            <tr class="white"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
-            <tr class="white"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a unit</strong></td></tr>
-            <tr class="white"><td>.unit { margin: 5vh 10vw; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of positioning</strong></td></tr>
-            <tr class="white"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of transform</strong></td></tr>
-            <tr class="white"><td>.rotate { transform: rotate(45deg); }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of typography</strong></td></tr>
-            <tr class="white"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
-            <tr class="white"><td>ul { list-style-type: square; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
-            <tr class="white"><td>.animate { animation: fadeIn 2s; }</td></tr>
-            
-            <tr class="section-header"><td><strong>Example of a CSS Comment</strong></td></tr>
-            <tr class="white"><td>/* This is a comment in CSS */</td></tr>    
-        </tbody>
-    </table>
-</div>
-</section>
 <footer>
     <div class="footer-content"
         <p><img src="images/Color-logo-with-background.png" alt="Info Icon" style="width: 25%; height: auto;">

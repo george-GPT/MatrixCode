@@ -34,6 +34,13 @@
 }
 
 @font-face {
+    font-family: 'LatoBold';
+    src: url('/fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal; 
+}
+
+@font-face {
     font-family: 'ShareTechMono';
     src: url('/fonts/ShareTechMono-Regular.ttf') format('truetype');
     font-weight: 400; /* Normal */
@@ -120,7 +127,7 @@ button:hover, .button-like:hover {
 h1, h2 {
     color: #f6f6f6; /* Dark color for headings */
     margin-top: 0;
-    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    font-family: "OpenSansRegular", "Helvetica Neue", Arial, sans-serif;
     font-weight: 600; /* SemiBold for headings */
     line-height: 1.5; /* Improved line spacing for readability */
 }
@@ -128,7 +135,7 @@ h1, h2 {
 p {
     color: #f6f6f6; /* Dark color for paragraph text */
     margin-top: 0;
-    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+    font-family: "OpenSans-Regular", "Helvetica Neue", Arial, sans-serif;
     font-weight: 400; /* Regular weight for paragraph text */
     line-height: 1.5; /* Consistent line spacing for readability */
     text-align: left;
@@ -139,17 +146,17 @@ body {
     background-color: rgba(17, 17, 17, 17);
     color: #f6f6f6; /* A darker shade for better readability */
     font-size: 17px;
-    font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
+    font-family: "OpenSans-Regular", "Helvetica Neue", Arial, sans-serif; /* A modern font stack */
     line-height: 1.5; /* Improved line spacing for readability */
     max-width: 1200px; /* Max width to control content width */
     margin: 0 auto; /* Center content on the page */
-    padding: 0px; /* Uniform padding */
+    padding: auto; /* Uniform padding */
     background-attachment: fixed;
 }
 
 header {
     background-image: url(/images/Color-logo-with-background.png);
-    background-size: contain; /* Scale the image as large as possible while maintaining aspect ratio */
+    background-size: 85%; /* Scale the image as large as possible while maintaining aspect ratio */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
     min-height: 260px; /* Adjust the height as needed */
@@ -161,7 +168,7 @@ header {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
+    margin-top: 8px;
     padding-top: 0;
 }
 
@@ -169,6 +176,7 @@ header {
     flex-grow: 1;
     padding: 10px;
 }
+
 
 .introduction-card {
     background-color: #f6f6f6; /* or any color you prefer */
@@ -181,15 +189,17 @@ header {
     font-family: 'OpenSans-Regular', sans-serif; /* keeping the font consistent with the body */
     display: block; /* added to allow the card to shrink to the width of its content */
     color: rgba(17, 17, 17, 17);
+    box-sizing: border-box;
+    
 
 }
-
 
 .intro-section {
     width: 100%; /* Same as header to maintain the alignment */
     max-width: 1200px;
     margin: 0 auto; /* Centers the content */
     color: rgba(17, 17, 17, 17);
+    box-sizing: border-box;
 }
 
 .intro-section h2 {
@@ -201,7 +211,6 @@ header {
 
 
 .intro-section p {
-    width: auto;
     text-align: left; /* Justify the introduction paragraph */
     align-items: left;
     max-width: 1200px; /* Control the width of the paragraph */ /* Center the paragraph */
@@ -258,7 +267,7 @@ header {
 
 /* Add CSS for spacing using a spacer class */
 .headerSpacer {
-    height: 140px; /* Adjust the height as needed */
+    height: 130px; /* Adjust the height as needed */
 }
 
 
@@ -270,7 +279,7 @@ header {
     text-align: center;
     position: relative;
     padding: 10px 0;
-    z-index: 2;
+    z-index: 1;
     top: 16.8rem; /* Add a top margin to push the tabs down */
     
 }
@@ -279,10 +288,10 @@ header {
     color: #f6f6f6; /* off white */
     text-decoration: none; /* Remove underline from links */
     padding: 8px 16px; /* Add padding to increase clickable area */
-    font-family: 'Poppins', monospace;
+    font-family: 'LatoBold', monospace;
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 35px; /* Adjust as needed */
+    font-size: 32px; /* Adjust as needed */
     display: flex; 
     align-items: center;/* Align tabs in a line */
     justify-content: center;
@@ -296,8 +305,8 @@ header {
 
 .tab:hover, .tab.active {
     color: #ccffbd; /* Highlight color on hover and for the active tab */
-    transform: translateY(-2px); /* Slightly raise the tab on hover */
-  }
+    transform: translateY(-1px); /* Slightly raise the tab on hover */
+}
 
 nav a, .tab {
     color: #f6f6f6;
@@ -311,6 +320,42 @@ nav.tabs {
     z-index: 2;
 }
 
+
+.tab:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none; /* Hide the dropdown content by default */
+    position: absolute;
+    background-color: #333; /* Dark background to match the tab aesthetic */
+    min-width: 160px; /* Set a min-width if necessary */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Adds a shadow */
+    z-index: 1; /* Ensure it sits on top of other elements */
+    top: 100%; /* Position the dropdown below the tab item */
+}
+  
+.dropdown-content a {
+    color: #f6f6f6; /* Match the tab text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Lato', monospace;
+    text-transform: none;
+    border: 1px solid white;
+}
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd; /* Light background for hover */
+    color: #333; /* Dark text for contrast */
+}
+  
+.tab, .tab a {
+    text-decoration: none;
+}
 
 html {
     overflow-y: scroll;
@@ -360,6 +405,8 @@ h2 {
   
 .tech-card h3 {
     margin-bottom: 0.5rem;
+    font-family: "LatoBold";
+    font-size: 26px;
 }
   
 .tech-card p {
@@ -419,12 +466,12 @@ h2 {
     border: 1px solid #bbb;
     border-bottom: 2px solid #999;
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-    width: 100%;
+    width: 60%;
     margin-right: 2.5%; /* Add space between the buttons */
     text-align: center;
     padding: 10px 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Lato', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     color: #333;
@@ -436,7 +483,7 @@ h2 {
     text-decoration: none;
 }
   
-  .list-group {
+.list-group {
     display: flex; /* Use flex display to place items horizontally */
     flex-direction: row; /* Arrange items in a row */
     max-width: 800px;
@@ -444,7 +491,7 @@ h2 {
     justify-content: center; /* Center-align the items horizontally */
 }
   
-  .list-group-item.disabled {
+.list-group-item.disabled {
     color: #cccccc;
     background: none;
     border: none;
@@ -452,13 +499,13 @@ h2 {
     cursor: not-allowed;
 }
   
-  .list-group-item:hover {
+.list-group-item:hover {
     background-color: #e2e6ea;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
   
-  .list-group-item.active {
+.list-group-item.active {
     background-color: #007bff;
     border-color: #0056b3;
     color: #fff;
@@ -482,20 +529,32 @@ h2 {
     text-indent: 20px; /* Indent paragraphs for a classic look */
 }
 
-.section-header {
-        font-weight: bold; /* This will make the text bold */
-        font-size: 1em; /* You can adjust the size as needed */
-        background-color: #333;
+
+.section-title th {
+    text-align: center; /* Center the header text */
+    font-family: "OpenSansRegular", sans-serif;
+    font-weight: 600; /* Bold but not too heavy */
+    color: #333; /* Solid color for better readability */
+    background-color: #fff; /* White or off-white background for a clean look */
+    padding: 20px; /* Adequate padding for a spacious feel */
+    border-bottom: 2px solid #eaeaea; /* Light border for a subtle separation */
+    font-size: 1.4em; /* Slightly larger font size for headers */
+    letter-spacing: 0.5px; /* Increased letter-spacing for a modern feel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    margin: 0; /* Remove default margins */
+    box-sizing: border-box; /* Include padding in the width */
+    line-height: 1.4; /* Adjust line height for better readability */
 }
+
 .table-title {
-    font-family: "Poppins", sans-serif; /* Your chosen font family */
+    font-family: "Lato", sans-serif; /* Your chosen font family */
     font-weight: bold;
     color: #f6f6f6;
     font-size: 36px; /* Adjust the font size as needed */
 }
 
 .centered-table-title {
-    font-family:"Poppins";
+    font-family:"Lato";
     text-align: center;
     font-weight: bold;
     font-size: 36px;
@@ -503,34 +562,35 @@ h2 {
 }
 
 .Left-Align-table-title {
-    font-family:"Poppins";
-    text-align: left;
+    font-family:"Lato";
     font-weight: bold;
+    width: calc(100% - 30px);
     color:rgba(17, 17, 17, 17);
+    margin-top: 15px; /* Match the introduction card top margin */
+    margin-bottom: 15px; 
+    box-sizing: border-box;
+    text-align: left;
 }
 
 .Left-Align-table table {
     margin: 0 auto; /* Center the table horizontally */
-    width: 100%; /* Adjust the width to content */
+    width: calc(100% - 30px);
+    box-sizing: border-box;
     border-collapse: collapse; /* Optional: for a cleaner look */
 }
 
-.Left-Align-table td {
-    padding: 8px 12px;
-    text-align: left; /* Center the content for single-column layout */
-    border: 1px solid #ccc;
-}
 
-.Left-Align-table th, 
 .Left-Align-table td {
     text-align: left; /* Aligns the text to the left inside cells */
     border: 1px solid #ccc; /* Sets the border color and size */
     padding: 8px; /* Sets the padding inside the cells */
 }
 
+
 .header-with-image-html {
     display: flex; /* Use flexbox to place items side by side */
     align-items: center; /* Align items vertically in the center */
+    margin-top: 50;
     margin-bottom: 20px;
     justify-content: center; /* Align items to the center horizontally */
     gap: 0;
@@ -658,7 +718,6 @@ code[class*="language-"] strong {
 
 
 strong {
-    font-family: 'Poppins', sans-serif;
     font-weight: 700; /* This will use Poppins-Bold for strong emphasis */
 }
 
@@ -667,7 +726,7 @@ footer {
     color: #f6f6f6;
     padding: 20px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'OpenSans-Regular', sans-serif;
     line-height: 1.5;
     opacity: .9;
     font-size: .88em;
@@ -716,6 +775,7 @@ footer p {
     max-width: 1200px; /* Adjust to match the width of your content blocks */
     padding: 0 20px; /* Horizontal padding */
     margin: 0 auto; /* Center the container */
+    box-sizing: border-box;
 }
 
 .row {
@@ -854,6 +914,7 @@ body, footer {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
+    
 
     .row {
         flex-direction: column;
@@ -889,9 +950,14 @@ body, footer {
     }
     .header-with-image-js {
         justify-content: center; /* Center the items horizontally */
-    }
-
 }
+
+
+@media (hover: none) and (pointer: coarse) {
+    .tab:hover .dropdown-content {
+      display: none; /* Disable hover effect on touch devices */
+}
+
 
 @media (max-width: 480px) {
     .nav-card {

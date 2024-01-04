@@ -16,17 +16,42 @@
 <body>
     <header style="background-image: url('/images/Color-logo-with-background.png');">
         <nav class="tabs">
+            <!-- Home tab -->
             <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-            <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-            <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
+            
+            <!-- HTML tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-html5"></i>HTML</a>
+                <div class="dropdown-content">
+                    <a href="html.html">HTML Basics</a>
+                    <a href="html-examples.html">HTML Examples</a>
+                </div>
+            </div>
+            
+            <!-- CSS tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-css3-alt"></i>CSS</a>
+                <div class="dropdown-content">
+                    <a href="css.html">CSS Basics</a>
+                    <a href="css-examples.html">CSS Examples</a>
+                </div>
+            </div>
+            
+            <!-- JavaScript tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-js"></i>JavaScript</a>
+                <div class="dropdown-content">
+                    <a href="javascript.html">JavaScript Basics</a>
+                    <a href="javascript-examples.html">JavaScript Examples</a>
+                </div>
+            </div>
         </nav>
     </header>
 <div class="headerSpacer"></div>
 <div class="intro-section introduction-card">
     <br>
     <div class="header-with-image-html">
-        <h2 class="table-title"><i class="fa-solid fa-laptop-code"></i> Front-End Website Development</h2>
+        <h2 class="table-title"><i class="fa-solid fa-laptop-code"></i> Introduction to Front-End</h2>
     </div>
     <br>
     <p>Front-end website development shapes the interactive and visual aspects of the web.<br>
@@ -50,7 +75,7 @@
             <h3>HTML</h3>
             <br>
             <p>HTML is the backbone of web content.<br>
-            <br> It defines the website's structure with essential elements and ensures content is organized and web pages are navigable for a seamless user experience.</p>
+            <br> It lays the foundational framework for web pages by structuring content through elements like headings, paragraphs, and links, creating and organizing the user-interface.</p>
         </div>
         <div class="tech-card" id="css-card" data-tooltip="Discover CSS">
             <img src="images/CSS.png" alt="CSS Image">
@@ -58,7 +83,7 @@
             <br>
             <p>CSS provides style to HTML elements.<br>
             <br>
-            It's responsible for the layout and design that makes web pages aesthetically pleasing. CSS enables web pages to adapt to different screen sizes to ensure accessibility.</p>
+            It's responsible for the layout and design that makes web pages aesthetically pleasing. CSS also enables web pages to adapt to different screen sizes to ensure accessibility.</p>
         </div>
         <div class="tech-card" id="js-card" data-tooltip="Explore JavaScript">
             <img src="images/JavaScript.png" alt="JavaScript Image">

@@ -117,3 +117,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Rest of your code...
 });
+
+ // Get all the dropdown elements
+ const dropdowns = document.getElementsByClassName("tab");
+
+ // Loop through the dropdowns and add click event listeners
+ for (let i = 0; i < dropdowns.length; i++) {
+   dropdowns[i].addEventListener("click", function(event) {
+     // Prevent the click from affecting other elements
+     event.stopPropagation();
+ 
+     // Toggle the dropdown content
+     this.querySelector(".dropdown-content").classList.toggle("show");
+   });
+ }
+ 
+ // Close the dropdown if the user clicks outside of it
+ window.onclick = function(event) {
+   const dropdownContents = document.getElementsByClassName("dropdown-content");
+   for (let j = 0; j < dropdownContents.length; j++) {
+     let openDropdown = dropdownContents[j];
+     if (openDropdown.classList.contains('show')) {
+       openDropdown.classList.remove('show');
+     }
+   }
+ };
+

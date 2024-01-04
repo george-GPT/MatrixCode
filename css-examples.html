@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Code</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <script src="prism.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            padding-bottom: 50px;
+        }
+
+        .table-container {
+            display: block; /* Use block instead of flex to allow natural width */
+            margin: 0 auto; /* Center the table container */
+            overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: black;
+            margin: 0;
+            border-spacing: 2px 0;
+            font-family: 'lato', Times, serif;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+        }
+    
+
+        th {
+            background-color: #f6f6f6;
+            font-weight: bold; /* Make header text bold */
+            
+        }
+        td {
+            max-width: 250px; /* Set a max-width to control cell width */
+        }
+        
+        table tr td:first-child {
+            text-align: right; /* Aligns text to the right */
+            border: 1px solid black;
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip;
+        }
+        .section-header {
+            color: #f6f6f6;
+            font-weight: bold;
+            background-color: #333;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
+        }
+
+        .light-red {
+        background-color: #ffd8d8; /* A fainter shade of red */
+        }
+        
+        .light-orange {
+        background-color: #fde9d9;
+        }
+
+        .light-yellow {
+            background-color: #fff9cc;
+        }
+
+        .light-green {
+            background-color: #eef5ea;
+        }
+
+        .light-blue {
+            background-color: #e1eaf8;
+        }
+
+        .light-purple {
+            background-color: #ede7f6;
+        }
+        .white {
+            background-color: #f6f6f6;
+        }
+
+        @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
+        .table-container {
+            width: 130%; /* Set the table container to 120% width */
+            margin-left: -10%; /* Center the table container with negative margins */
+            margin-right: -10%;
+        }
+
+        table {
+            width: auto; /* Allow table to exceed the width of the table container */
+        }
+
+        th, td {
+            white-space: normal; /* Allow text to wrap */
+            overflow: visible; /* Show overflow */
+            text-overflow: clip; /* Default clipping text-overflow */
+            max-width: none; /* Remove max-width to allow content to determine cell width */
+        }
+
+        .section-header, .light-red, .light-orange, .light-yellow, .light-green, .light-blue, .light-purple {
+            /* Apply a style that ensures the background extends to the edge of the screen */
+            /* This is assuming you want to maintain the styles for each class on smaller screens */
+        }
+        }
+        </style>
+        </head>
+<body>
+    <header style="background-image: url('/images/Color-logo-with-background.png');">
+        <nav class="tabs">
+            <!-- Home tab -->
+            <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+            
+            <!-- HTML tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-html5"></i>HTML</a>
+                <div class="dropdown-content">
+                    <a href="html.html">HTML Basics</a>
+                    <a href="html-examples.html">HTML Examples</a>
+                </div>
+            </div>
+            
+            <!-- CSS tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-css3-alt"></i>CSS</a>
+                <div class="dropdown-content">
+                    <a href="css.html">CSS Basics</a>
+                    <a href="css-examples.html">CSS Examples</a>
+                </div>
+            </div>
+            
+            <!-- JavaScript tab with dropdown -->
+            <div class="tab dropdown">
+                <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-js"></i>JavaScript</a>
+                <div class="dropdown-content">
+                    <a href="javascript.html">JavaScript Basics</a>
+                    <a href="javascript-examples.html">JavaScript Examples</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+        <div class="headerSpacer"></div>
+</div>    
+<div class="table-container Left-Align-table">
+    <table >
+        <thead class="section-title">
+            <tr>
+                <tr class="section-header"></tr>
+                <th colspan="2"><i class="fa-solid fa-circle-info"></i> <strong>Examples of CSS</strong></th>
+            </tr>
+        </thead>               
+        <tbody>
+            <tr class="section-header"><td><strong>Example of a basic CSS tag</strong></td></tr>
+            <tr class="white"><td>body { background-color: #f7f7f7; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a selector</strong></td></tr>
+            <tr class="white"><td>.className { color: blue; }</td></tr>
+            
+            <tr class="section-header"><td><strong>example of a CSS property/value</strong></td></tr>
+            <tr class="white"><td>h1 { font-size: 2em; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of box model</strong></td></tr>
+            <tr class="white"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of flexbox</strong></td></tr>
+            <tr class="white"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of grid</strong></td></tr>
+            <tr class="white"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a pseudo-class</strong></td></tr>
+            <tr class="white"><td>a:hover { color: green; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a media queries</strong></td></tr>
+            <tr class="white"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a transition</strong></td></tr>
+            <tr class="white"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="white"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a unit</strong></td></tr>
+            <tr class="white"><td>.unit { margin: 5vh 10vw; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of positioning</strong></td></tr>
+            <tr class="white"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of transform</strong></td></tr>
+            <tr class="white"><td>.rotate { transform: rotate(45deg); }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of typography</strong></td></tr>
+            <tr class="white"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
+            <tr class="white"><td>ul { list-style-type: square; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="white"><td>.animate { animation: fadeIn 2s; }</td></tr>
+            
+            <tr class="section-header"><td><strong>Example of a CSS Comment</strong></td></tr>
+            <tr class="white"><td>/* This is a comment in CSS */</td></tr>    
+        </tbody>
+    </table>
+</div>
+</section>
+<footer>
+    <div class="footer-content"
+        <p><img src="images/Color-logo-with-background.png" alt="Info Icon" style="width: 25%; height: auto;">
+        <br>
+        A concise repository for front-end development knowledge.</p>
+        <div class="contact-links">
+            <a href="mailto:contact@matrixcode.ca"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="https://github.com/george-GPT"><i class="fa-brands fa-github"> </i> GitHub</a>
+        </div>
+    </div>
+    <div class="copyright-section">
+        <p>© 2024 MATRIX CODE. All rights reserved.</p>
+    </div>
+</footer>   
+</body>
+</html>

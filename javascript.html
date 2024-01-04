@@ -21,7 +21,6 @@
             display: block; /* Use block instead of flex to allow natural width */
             margin: 0 auto; /* Center the table container */
             overflow-x: auto; /* Adds horizontal scrolling if the table is wider than the screen */
-            padding: 20px; /* Remove padding if you don't need it */
         }
 
         table {
@@ -56,13 +55,14 @@
            text-align: right; /* Aligns text to the right */
            border: 1px solid black;
         }
+        
         .section-header {
             color: white;
             font-weight: bold;
             background-color: #333;
             font-size: 1em;
             border: 1px solid #ccc;
-            
+            font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
         }
 
         .light-red {
@@ -116,21 +116,49 @@
             /* This is assuming you want to maintain the styles for each class on smaller screens */
         }
         }
-        </style>
+    </style>
+    </head>
+<body>
+<div id="topofpage" class="content-section"></div>
 <header style="background-image: url('/images/Color-logo-with-background.png');">
-            <nav class="tabs">
-                <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-                <a class="tab" href="html.html"><i class="fab fa-html5"></i>HTML</a>
-                <a class="tab" href="css.html"><i class="fab fa-css3-alt"></i>CSS</a>
-                <a class="tab" href="javascript.html"><i class="fab fa-js"></i>JavaScript</a>
-            </nav>
-        </header>    
+    <nav class="tabs">
+        <!-- Home tab -->
+        <a class="tab" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+        
+        <!-- HTML tab with dropdown -->
+        <div class="tab dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-html5"></i>HTML</a>
+            <div class="dropdown-content">
+                <a href="html.html">HTML Basics</a>
+                <a href="html-examples.html">HTML Examples</a>
+            </div>
+        </div>
+        
+        <!-- CSS tab with dropdown -->
+        <div class="tab dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-css3-alt"></i>CSS</a>
+            <div class="dropdown-content">
+                <a href="css.html">CSS Basics</a>
+                <a href="css-examples.html">CSS Examples</a>
+            </div>
+        </div>
+        
+        <!-- JavaScript tab with dropdown -->
+        <div class="tab dropdown">
+            <a href="javascript:void(0)" class="dropbtn"><i class="fab fa-js"></i>JavaScript</a>
+            <div class="dropdown-content">
+                <a href="javascript.html">JavaScript Basics</a>
+                <a href="javascript-examples.html">JavaScript Examples</a>
+            </div>
+        </div>
+    </nav>
+</header>   
         <div class="headerSpacer"></div>
         </div>
         <div class="intro-section introduction-card">
           <br>
             <div class="header-with-image-js">
-                <h2 class="table-title"><i class="fab fa-js"></i> JS Fundamentals</h2>H
+                <h2 class="table-title"><i class="fab fa-js"></i> JavaScript Basics</h2>H
             </div>
             <br>
             <p>
@@ -146,24 +174,18 @@
             </p>
         </div>
         <br>
-        <br>
-        <div class="list-group"> 
-            <a href="#jsCheatSheet" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
-                <i class="fa-solid fa-computer-mouse"></i>   JS Cheat Sheet
-        </a>
-        <a href="#additionalExamples" class="list-group-item list-group-item-action rounded-0"> <!-- Added rounded-0 class for a modern look -->
-            <i class="fa-solid fa-computer-mouse"></i>  Additional Examples of JS Code
-        </a>
-    </div>
     <div id="jsCheatSheet" class="content-section"></div>
     <br>
     <br>
     <br>
-    <div class="header-with-image-js">
-        <h2 class="table-title">JS Cheat Sheet</h2>
-    </div>
-    <br>
     <div class="table-container">
+        <table>
+            <thead class="section-title">
+                <tr>
+                    <tr class="section-header"></tr>
+                    <th colspan="2"><i class="fa-solid fa-circle-info"></i> <strong>Cheat Sheet</strong></th>
+                </tr>
+            </thead>               
     <table>
     <tr class="section-header">
             <td>Variables</td>
@@ -427,78 +449,10 @@
     </table>
 </div>
 <br>
-<br>
-<br>
-<section id="additionalExamples" class="content-section"></section>
-<br>
-<br>
-<br>
-    <div class="header-with-image-js">
-        <h3 class="table-title">Additional Examples of JS Code</h3>
-    </div>
-<br>    
-<div class="table-container Left-Align-table">
-    <table>
-        <tbody>
-            <!-- Example of a variable -->
-            <tr class="section-header"><td><strong>Example of a variable</strong></td></tr>
-            <tr class="white"><td>let userName = 'John';</td></tr>
-        
-            <!-- Example of a data type -->
-            <tr class="section-header"><td><strong>Example of a data type</strong></td></tr>
-            <tr class="white"><td>let age = 30; // Number data type</td></tr>
-        
-            <!-- Example of an operator -->
-            <tr class="section-header"><td><strong>Example of an operator</strong></td></tr>
-            <tr class="white"><td>let isAdult = (age >= 18); // Comparison operator</td></tr>
-        
-            <!-- Example of a conditional statement -->
-            <tr class="section-header"><td><strong>Example of a conditional statement</strong></td></tr>
-            <tr class="white"><td>if (isAdult) { console.log(userName + ' is an adult.'); }</td></tr>
-        
-            <!-- Example of a loop -->
-            <tr class="section-header"><td><strong>Example of a loop</strong></td></tr>
-            <tr class="white"><td>let toDoList = ['shop', 'email', 'clean'];<br>toDoList.forEach(function(task) { console.log(userName + ' needs to ' + task + '.'); });</td></tr>
-        
-            <!-- Example of a function -->
-            <tr class="section-header"><td><strong>Example of a function</strong></td></tr>
-            <tr class="white"><td>function displayTask(task) { console.log(userName + ' needs to ' + task + '.'); }</td></tr>
-        
-            <!-- Example of event handling -->
-            <tr class="section-header"><td><strong>Example of event handling</strong></td></tr>
-            <tr class="white"><td>// Assuming there is a button element with id 'myButton' in the HTML<br>document.getElementById('myButton').addEventListener('click', function() { console.log(userName + ' clicked the button.'); });</td></tr>
-        
-            <!-- Example of DOM manipulation -->
-            <tr class="section-header"><td><strong>Example of DOM manipulation</strong></td></tr>
-            <tr class="white"><td>// Assuming there is a div element with id 'welcomeMessage' in the HTML<br>document.getElementById('welcomeMessage').textContent = 'Welcome, ' + userName + '!';</td></tr>
-        
-            <!-- Example of an array -->
-            <tr class="section-header"><td><strong>Example of an array</strong></td></tr>
-            <tr class="white"><td>let tasksCompleted = 0;<br>toDoList.push('exercise'); // Adds a new task</td></tr>
-        
-            <!-- Example of an object -->
-            <tr class="section-header"><td><strong>Example of an object</strong></td></tr>
-            <tr class="white"><td>let user = { name: 'John', age: 30, tasksCompleted: 0 };</td></tr>
-        
-            <!-- Example of a class -->
-            <tr class="section-header"><td><strong>Example of a class</strong></td></tr>
-            <tr class="white"><td>class User {<br>  constructor(name, age) {<br>    this.name = name;<br>    this.age = age;<br>    this.tasksCompleted = 0;<br>  }<br>}<br>let userJohn = new User('John', 30);</td></tr>
-        
-            <!-- Example of an ES6 feature -->
-            <tr class="section-header"><td><strong>Example of an ES6 feature</strong></td></tr>
-            <tr class="white"><td>let greeting = `Hello, ${user.name}! You have ${user.tasksCompleted} tasks completed.`;</td></tr>
-        
-            <!-- Example of error handling -->
-            <tr class="section-header"><td><strong>Example of error handling</strong></td></tr>
-            <tr class="white"><td>try {<br>  completeTask(user, 'email');<br>} catch (error) {<br>  console.error('Error completing task: ' + error.message);<br>}</td></tr>
-        
-            <!-- Example of a single-line JavaScript comment -->
-            <tr class="section-header"><td><strong>Example of a single-Line javaScript comment</strong></td></tr>
-            <tr class="white"><td>// this is a single-line comment in JavaScript</td></tr>
-        </tbody>
-    </table>
+<div class="list-group"> 
+    <a href="#topofpage" class="list-group-item list-group-item-action rounded-0" aria-current="true"> <!-- Added rounded-0 class for a modern look and changed aria-disabled to aria-current -->
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>  Top of Page</a>
 </div>
-</section>
 <footer>
     <div class="footer-content"
         <p><img src="images/Color-logo-with-background.png" alt="Info Icon" style="width: 25%; height: auto;">
