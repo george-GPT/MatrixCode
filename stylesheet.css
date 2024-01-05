@@ -267,9 +267,12 @@ header {
 
 /* Add CSS for spacing using a spacer class */
 .headerSpacer {
-    height: 130px; /* Adjust the height as needed */
+    height: 120px; /* Adjust the height as needed */
 }
 
+.css-code:before {
+    content: "h1 ";
+  }
 
 .tabs {
     display: flex;
@@ -280,7 +283,7 @@ header {
     position: relative;
     padding: 10px 0;
     z-index: 1;
-    top: 16.6rem; /* Add a top margin to push the tabs down */
+    top: 16rem; /* Add a top margin to push the tabs down */
     
 }
 
