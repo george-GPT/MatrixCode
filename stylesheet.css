@@ -1,4 +1,34 @@
 @font-face {
+    font-family: 'SourceCodePro';
+    src: url('/fonts/SourceCodePro-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceCodeProMedium';
+    src: url('/fonts/SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: 500; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SourceCodeProLight';
+    src: url('/fonts/SourceCodePro-Light.ttf') format('truetype');
+    font-weight: 300; /* Regular */
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Monaco';
+    src: url('/fonts/Monaco.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+
+@font-face {
     font-family: 'Poppins';
     src: url('/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: 400; /* Regular */
@@ -337,6 +367,8 @@ nav.tabs {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Adds a shadow */
     z-index: 1; /* Ensure it sits on top of other elements */
     top: 100%; /* Position the dropdown below the tab item */
+    border-radius: 4px;
+    border-radius: 4px;
     
 }
   
@@ -350,6 +382,8 @@ nav.tabs {
     font-family: 'Lato', monospace;
     text-transform: none;
     border: 1px solid white;
+    border-radius: 4px;
+    border-radius: 4px;
 }
   
   /* Change color of dropdown links on hover */

@@ -92,12 +92,15 @@
             background-color: #ede7f6;
         }
         .white {
-            background-color: #f6f6f6;
+            background-color: whitesmoke;
+            font-family: 'SourceCodeProMedium', Courier, monospace;
+            font-size: 92%;
         }
 
         .description {
-            background-color: #c4bebe;
-            color: #646464;
+            background-color: #c5c5c5;
+            color: rgb(48, 48, 48);
+            font-size: 92%;
         }
         
         .section-title {
@@ -150,6 +153,7 @@
                 <div class="dropdown-content">
                     <a href="css.html">CSS Basics</a>
                     <a href="css-examples.html">CSS Examples</a>
+                    <a href="css-libraries-frameworks.html">CSS Libraries & Frameworks</a>
                 </div>
             </div>
             <!-- JavaScript tab with dropdown -->
@@ -158,6 +162,7 @@
                 <div class="dropdown-content">
                     <a href="javascript.html">JavaScript Basics</a>
                     <a href="javascript-examples.html">JavaScript Examples</a>
+                    <a href="js-libraries-frameworks.html">JS Libraries & Frameworks</a>
                 </div>
             </div>
         </nav>
@@ -173,73 +178,73 @@
             </tr>
         </thead>               
         <tbody>
-            <tr class="section-header"><td><strong>Example of a basic CSS tag</strong></td></tr>
+            <tr class="section-header"><td><strong>Basic CSS tag</strong></td></tr>
             <tr class="white"><td>body { background-color: #f7f7f7; }</td></tr>
-            <tr class="description"><td><em>this sets the background color of the entire webpage to a light gray (hex color #f7f7f7)</em></td></tr>
+            <tr class="description"><td>this sets the background color of the entire webpage to a light gray (hex color #f7f7f7)</td></tr>
             
-            <tr class="section-header"><td><strong>Example of a selector</strong></td></tr>
+            <tr class="section-header"><td><strong>Selector</strong></td></tr>
             <tr class="white"><td>.className { color: blue; }</td></tr>
-            <tr class="description"><td><em>targets elements with the class .className and sets their text color to blue</em></td></tr>
+            <tr class="description"><td>targets elements with the class .className and sets their text color to blue</td></tr>
 
-            <tr class="section-header"><td><strong>example of a CSS property/value</strong></td></tr>
+            <tr class="section-header"><td><strong>CSS property/value</strong></td></tr>
             <tr class="white"><td>h1 { font-size: 2em; }</td></tr>
-            <tr class="description"><td><em>sets the font size of all &lt;h1&gt; headings to 2em, which is twice the size of the current font size context</em></td></tr>
+            <tr class="description"><td>sets the font size of all &lt;h1&gt; headings to 2em, which is twice the size of the current font size context</td></tr>
 
-            <tr class="section-header"><td><strong>Example of box model</strong></td></tr>
+            <tr class="section-header"><td><strong>Box model</strong></td></tr>
             <tr class="white"><td>.box { margin: 10px; padding: 20px; border: 1px solid #000; }</td></tr>
-            <tr class="description"><td><em>this rule gives elements with class .box a margin of 10 pixels on all sides, padding of 20 pixels inside the border, and a solid black border with a width of 1 pixel</em></td></tr>
+            <tr class="description"><td>this rule gives elements with class .box a margin of 10 pixels on all sides, padding of 20 pixels inside the border, and a solid black border with a width of 1 pixel</td></tr>
 
-            <tr class="section-header"><td><strong>Example of flexbox</strong></td></tr>
+            <tr class="section-header"><td><strong>Flexbox</strong></td></tr>
             <tr class="white"><td>.flex-container { display: flex; justify-content: space-between; }</td></tr>
             <tr class="description"><td><em>this makes the .flex-container a flexible box layout, distributing space between its children so that they are evenly spaced across the parent's main axis</em></td></tr>
 
-            <tr class="section-header"><td><strong>Example of grid</strong></td></tr>
+            <tr class="section-header"><td><strong>Grid</strong></td></tr>
             <tr class="white"><td>.grid-container { display: grid; grid-template-columns: repeat(3, 1fr); }</td></tr>
-            <tr class="description"><td><em>this turns the .grid-container into a grid layout with three columns of equal width</em></td></tr>
+            <tr class="description"><td>this turns the .grid-container into a grid layout with three columns of equal width</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a pseudo-class</strong></td></tr>
+            <tr class="section-header"><td><strong>Pseudo-class</strong></td></tr>
             <tr class="white"><td>a:hover { color: green; }</td></tr>
-            <tr class="description"><td><em>this rule changes the text color of links to green when the mouse pointer hovers over them</em></td></tr>
+            <tr class="description"><td>this rule changes the text color of links to green when the mouse pointer hovers over them</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a media queries</strong></td></tr>
+            <tr class="section-header"><td><strong>Media queries</strong></td></tr>
             <tr class="white"><td>@media (max-width: 600px) { .responsive { font-size: 14px; } }</td></tr>
-            <tr class="description"><td><em>this applies a font size of 14 pixels to elements with the .responsive class when the viewport width is 600 pixels or less</em></td></tr>
+            <tr class="description"><td>this applies a font size of 14 pixels to elements with the .responsive class when the viewport width is 600 pixels or less</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a transition</strong></td></tr>
+            <tr class="section-header"><td><strong>Transition</strong></td></tr>
             <tr class="white"><td>.transition { transition: background-color 0.5s ease; }</td></tr>
-            <tr class="description"><td><em>this rule adds an animation effect that gradually changes the background color of the element over half a second when it is altered</em></td></tr>
+            <tr class="description"><td>this rule adds an animation effect that gradually changes the background color of the element over half a second when it is altered</td></tr>
 
-            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="section-header"><td><strong>Animation</strong></td></tr>
             <tr class="white"><td>@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</td></tr>
-            <tr class="description"><td><em>this defines an animation named fadeIn that changes an element's opacity from fully transparent to fully opaque</em></td></tr>
+            <tr class="description"><td>this defines an animation named fadeIn that changes an element's opacity from fully transparent to fully opaque</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a unit</strong></td></tr>
+            <tr class="section-header"><td><strong>Unit</strong></td></tr>
             <tr class="white"><td>.unit { margin: 5vh 10vw; }</td></tr>
-            <tr class="description"><td><em>this sets the margin of an element using viewport height (vh) and viewport width (vw) units, which are relative to the size of the screen</em></td></tr>
+            <tr class="description"><td>this sets the margin of an element using viewport height (vh) and viewport width (vw) units, which are relative to the size of the screen</td></tr>
 
-            <tr class="section-header"><td><strong>Example of positioning</strong></td></tr>
+            <tr class="section-header"><td><strong>Positioning</strong></td></tr>
             <tr class="white"><td>.position { position: absolute; top: 50px; left: 100px; }</td></tr>
-            <tr class="description"><td><em>this positions an element absolutely at 50 pixels from the top and 100 pixels from the left of its nearest positioned ancestor</em></td></tr>
+            <tr class="description"><td>this positions an element absolutely at 50 pixels from the top and 100 pixels from the left of its nearest positioned ancestor</td></tr>
 
-            <tr class="section-header"><td><strong>Example of transform</strong></td></tr>
+            <tr class="section-header"><td><strong>Transform</strong></td></tr>
             <tr class="white"><td>.rotate { transform: rotate(45deg); }</td></tr>
-            <tr class="description"><td><em>this applies a transformation that rotates an element 45 degrees clockwise from its original position</em></td></tr>
+            <tr class="description"><td>this applies a transformation that rotates an element 45 degrees clockwise from its original position</td></tr>
 
-            <tr class="section-header"><td><strong>Example of typography</strong></td></tr>
+            <tr class="section-header"><td><strong>Typography</strong></td></tr>
             <tr class="white"><td>.typography { font-family: 'Open Sans', sans-serif; line-height: 1.6; }</td></tr>
-            <tr class="description"><td><em>this rule sets the typeface of the text to 'Open Sans' with a fallback to sans-serif font and a line height that is 1.6 times the size of the font</em></td></tr>
+            <tr class="description"><td>this rule sets the typeface of the text to 'Open Sans' with a fallback to sans-serif font and a line height that is 1.6 times the size of the font</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a list</strong></td></tr>
+            <tr class="section-header"><td><strong>List</strong></td></tr>
             <tr class="white"><td>ul { list-style-type: square; }</td></tr>
-            <tr class="description"><td><em>this changes the list item marker to a square instead of the default disc in an unordered list</em></td></tr>
+            <tr class="description"><td>this changes the list item marker to a square instead of the default disc in an unordered list</td></tr>
 
-            <tr class="section-header"><td><strong>Example of an animation</strong></td></tr>
+            <tr class="section-header"><td><strong>Animation</strong></td></tr>
             <tr class="white"><td>.animate { animation: fadeIn 2s; }</td></tr>
-            <tr class="description"><td><em>this applies the fadeIn animation to an element so it transitions from transparent to opaque over 2 seconds</em></td></tr>
+            <tr class="description"><td>this applies the fadeIn animation to an element so it transitions from transparent to opaque over 2 seconds</td></tr>
 
-            <tr class="section-header"><td><strong>Example of a CSS Comment</strong></td></tr>
+            <tr class="section-header"><td><strong>CSS Comment</strong></td></tr>
             <tr class="white"><td>/* This is a comment in CSS */</td></tr>    
-            <tr class="description"><td><em>this is a comment that explains or annotates CSS code. Comments are ignored by the browser and do not affect how the page is styled</em></td></tr>
+            <tr class="description"><td>this is a comment that explains or annotates CSS code. Comments are ignored by the browser and do not affect how the page is styled</td></tr>
         </tbody>
     </table>
 </div>
