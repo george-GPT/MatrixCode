@@ -280,7 +280,7 @@ header {
     position: relative;
     padding: 10px 0;
     z-index: 1;
-    top: 16.8rem; /* Add a top margin to push the tabs down */
+    top: 16.6rem; /* Add a top margin to push the tabs down */
     
 }
 
@@ -291,7 +291,7 @@ header {
     font-family: 'LatoBold', monospace;
     font-weight: 500;
     text-transform: uppercase;
-    font-size: 32px; /* Adjust as needed */
+    font-size: 1.9rem; /* Adjust as needed */
     display: flex; 
     align-items: center;/* Align tabs in a line */
     justify-content: center;
@@ -359,6 +359,7 @@ nav.tabs {
 
 html {
     overflow-y: scroll;
+    font-size: 17px;
 }
 
 .container { /* The parent element of header */
@@ -815,7 +816,7 @@ body, footer {
 
 @-o-keyframes flicker { /* Opera */
     0% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.5;}
     100% { opacity: 1; }
 }
     
@@ -825,14 +826,14 @@ body, footer {
     .h1, .h2, .h3, h1, h2, h3 {
         scale: 65%;
     }
-    .tabs {
-        flex-direction: column; /* Stack tabs vertically on smaller screens */
-        top: 9.8rem;
-      }
     .tab {
         margin: 5px 0; /* Adjust margin for stacked layout */
-        font-size: 20px;
-        padding: 5px 10px;
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+
+    html {
+        font-size: 14px; /* Scales down the base font size for smaller screens */
     }
 
     body {
