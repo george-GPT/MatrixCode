@@ -331,11 +331,13 @@ nav.tabs {
 .dropdown-content {
     display: none; /* Hide the dropdown content by default */
     position: absolute;
-    background-color: #333; /* Dark background to match the tab aesthetic */
+    background-image: url(images/MatrixSubtle.png);
+    /*background-color: #333;Dark background to match the tab aesthetic */
     min-width: 160px; /* Set a min-width if necessary */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Adds a shadow */
     z-index: 1; /* Ensure it sits on top of other elements */
     top: 100%; /* Position the dropdown below the tab item */
+    
 }
   
 .dropdown-content a {
@@ -344,7 +346,7 @@ nav.tabs {
     text-decoration: none;
     display: block;
     text-align: left;
-    font-size: 20px;
+    font-size: 19px;
     font-family: 'Lato', monospace;
     text-transform: none;
     border: 1px solid white;
@@ -352,8 +354,7 @@ nav.tabs {
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {
-    background-color: #ddd; /* Light background for hover */
-    color: #333; /* Dark text for contrast */
+    background-color: #222222; /* Light background for hover */
 }
   
 .tab, .tab a {
