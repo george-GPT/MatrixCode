@@ -143,3 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
    }
  };
 
+ $(document).ready(function(){
+    $(".tab").click(function(){
+        $(".dropdown-content").toggle();
+    });
+});

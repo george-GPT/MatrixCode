@@ -671,6 +671,11 @@ h2 {
 }
 
 
+.bulletSpacing
+{   
+    line-height: 2.0;
+}
+
 .iconClass {
     width: 52px; /* Adjust the width as necessary */
     height: auto; /* Keep the aspect ratio of the image */
