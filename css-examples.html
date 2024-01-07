@@ -93,7 +93,7 @@
         }
         .white {
             background-color: whitesmoke;
-            font-family: 'SourceCodeProMedium', Courier, monospace;
+            font-family: 'NeonMedium', Courier, monospace;
             font-size: 92%;
         }
 
@@ -107,29 +107,33 @@
         border: 1px solid black;
         }
 
-    @media (max-width: 768px) { /* This applies to screens that are tablet size and smaller */
-        .table-container {
-            width: 130%; /* Set the table container to 120% width */
-            margin-left: -10%; /* Center the table container with negative margins */
-            margin-right: -10%;
-        }
+@media (max-width: 768px) {
+    /* Allow the table container to scroll horizontally on small screens */
+    .table-container {
+        overflow-x: auto;
+        display: block;
+    }
 
-        table {
-            width: auto; /* Allow table to exceed the width of the table container */
-        }
+    table {
+        /* Set the table width to minimum 100% to cover the container width */
+        min-width: 100%;
+        border-collapse: collapse;
+    }
 
-        th, td {
-            white-space: normal; /* Allow text to wrap */
-            overflow: visible; /* Show overflow */
-            text-overflow: clip; /* Default clipping text-overflow */
-            max-width: none; /* Remove max-width to allow content to determine cell width */
-        }
+    th, td {
+        /* Make sure the text in cells can wrap and is not cut off */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: none;
+    }
 
-        .section-header, .light-red, .light-orange, .light-yellow, .light-green, .light-blue, .light-purple {
-            /* Apply a style that ensures the background extends to the edge of the screen */
-            /* This is assuming you want to maintain the styles for each class on smaller screens */
-        }
-        }
+    th, td {
+        /* Reset any specific styles for the first-child if they are not needed */
+        text-align: left;
+    }
+}
+
         </style>
         </head>
 <body>

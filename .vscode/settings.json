@@ -8,7 +8,13 @@
         "**/*.scss",
         "**/*.sass"
     ],
+    
     "liveServer.settings.file": "index.html",
     "liveServer.settings.wait": 100,
-    "editor.fontSize": 17
+    "editor.fontSize": 17,
+    "markdown.preview.fontSize": 15,
+    "chat.editor.fontSize": 15
+    "workbench.tree.fontSize": 16
+    "window.zoomLevel": 1
+    "editor.fontFamily": "Monospace Neon, Consolas, 'Courier New', monospace"
 }

@@ -1,4 +1,47 @@
 @font-face {
+    font-family: 'JetBrainsMonoSemiBold';
+    src: url('/fonts/JetBrainsMono-SemiBold.woff2') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: Medium;
+}
+
+@font-face {
+    font-family: 'JetBrainsMonoMedium';
+    src: url('/fonts/JetBrainsMono-Medium.woff2') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: Medium;
+}
+
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('/fonts/JetBrainsMono-Regular.woff2') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeonSemiBold';
+    src: url('/fonts/MonaspaceNeon-SemiBold.woff') format('truetype');
+    font-weight: 500; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeonMedium';
+    src: url('/fonts/MonaspaceNeon-Medium.woff') format('truetype');
+    font-weight: 500; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neon';
+    src: url('/fonts/MonaspaceNeon-Regular.woff') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'SourceCodePro';
     src: url('/fonts/SourceCodePro-Regular.ttf') format('truetype');
     font-weight: 400; /* Regular */
