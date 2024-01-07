@@ -132,19 +132,26 @@ document.addEventListener('DOMContentLoaded', function () {
    });
  }
  
- // Close the dropdown if the user clicks outside of it
- window.onclick = function(event) {
-   const dropdownContents = document.getElementsByClassName("dropdown-content");
-   for (let j = 0; j < dropdownContents.length; j++) {
-     let openDropdown = dropdownContents[j];
-     if (openDropdown.classList.contains('show')) {
-       openDropdown.classList.remove('show');
-     }
-   }
- };
+ document.addEventListener('DOMContentLoaded', function () {
+    // Toggle dropdown on click for mobile devices
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab) {
+        tab.addEventListener('click', function(event) {
+            let dropdown = this.querySelector('.dropdown-content');
+            if (dropdown) {
+                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                event.stopPropagation(); // Prevents document click from immediately hiding the dropdown
+            }
+        });
+    });
 
- $(document).ready(function(){
-    $(".tab").click(function(){
-        $(".dropdown-content").toggle();
+    // Close the dropdown if the user clicks outside of it
+    document.addEventListener('click', function(event) {
+        const dropdownContents = document.querySelectorAll('.dropdown-content');
+        dropdownContents.forEach(function(dropdown) {
+            if (!event.target.closest('.tab')) {
+                dropdown.style.display = 'none';
+            }
+        });
     });
 });
