@@ -133,17 +133,24 @@ document.addEventListener('DOMContentLoaded', function () {
  }
  
  document.addEventListener('DOMContentLoaded', function () {
-    // Toggle dropdown on click for mobile devices
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(function(tab) {
-        tab.addEventListener('click', function(event) {
-            let dropdown = this.querySelector('.dropdown-content');
-            if (dropdown) {
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-                event.stopPropagation(); // Prevents document click from immediately hiding the dropdown
-            }
+    // Function to check if the device is a touch device
+    function isTouchDevice() {
+        return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+    }
+
+    if (isTouchDevice()) {
+        // Apply click event listeners for touch devices
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function(event) {
+                let dropdown = this.querySelector('.dropdown-content');
+                if (dropdown) {
+                    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+                    event.stopPropagation(); // Prevents document click from immediately hiding the dropdown
+                }
+            });
         });
-    });
+    }
 
     // Close the dropdown if the user clicks outside of it
     document.addEventListener('click', function(event) {
@@ -155,3 +162,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+

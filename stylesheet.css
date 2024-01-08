@@ -396,7 +396,6 @@ nav.tabs {
     z-index: 2;
 }
 
-
 .tab:hover .dropdown-content {
     display: block;
 }
@@ -405,14 +404,11 @@ nav.tabs {
     display: none; /* Hide the dropdown content by default */
     position: absolute;
     background-image: url(images/MatrixSubtle.png);
-    /*background-color: #333;Dark background to match the tab aesthetic */
     min-width: 160px; /* Set a min-width if necessary */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Adds a shadow */
     z-index: 1; /* Ensure it sits on top of other elements */
     top: 100%; /* Position the dropdown below the tab item */
     border-radius: 4px;
-    border-radius: 4px;
-    
 }
   
 .dropdown-content a {
@@ -426,14 +422,12 @@ nav.tabs {
     text-transform: none;
     border: 1px solid white;
     border-radius: 4px;
-    border-radius: 4px;
 }
-  
-  /* Change color of dropdown links on hover */
+/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
     background-color: #222222; /* Light background for hover */
 }
-  
+ 
 .tab, .tab a {
     text-decoration: none;
 }
