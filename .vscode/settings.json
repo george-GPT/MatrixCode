@@ -1,5 +1,5 @@
 {
-  "liveServer.settings.root": "E://Desktop//MatrixCode",
+  "liveServer.settings.root": "E://Desktop/MatrixCode",
   "liveServer.settings.port": 5500,
   "liveServer.settings.host": "localhost",
   "liveServer.settings.open": true,
@@ -21,5 +21,8 @@
   "prettier.htmlWhitespaceSensitivity": "ignore",
   "prettier.bracketSameLine": true,
   "files.autoSave": "afterDelay",
-  "editor.formatOnPaste": true
+  "editor.formatOnPaste": true,
+  "cSpell.words": [
+    "autoprefixing"
+  ]
 }
