@@ -1,0 +1,15 @@
+{
+  "name": "matrixcode",
+  "version": "1.0.0",
+  "description": "This repository hosts a website designed as a beginner-friendly guide to front-end web development, providing a comprehensive introduction to the foundational technologies that shape the web: HTML, CSS, and JavaScript.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.1.1"
+  }
+}

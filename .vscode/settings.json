@@ -1,20 +1,25 @@
 {
-    "liveServer.settings.root": "E:\\Desktop\\MatrixCode",
-    "liveServer.settings.port": 5500,
-    "liveServer.settings.host": "localhost",
-    "liveServer.settings.open": true,
-    "liveServer.settings.ignoreFiles": [
-        ".vscode/**",
-        "**/*.scss",
-        "**/*.sass"
-    ],
-    
-    "liveServer.settings.file": "index.html",
-    "liveServer.settings.wait": 100,
-    "editor.fontSize": 17,
-    "markdown.preview.fontSize": 15,
-    "chat.editor.fontSize": 15
-    "workbench.tree.fontSize": 16
-    "window.zoomLevel": 1
-    "editor.fontFamily": "Monospace Neon, Consolas, 'Courier New', monospace"
+  "liveServer.settings.root": "E://Desktop//MatrixCode",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.host": "localhost",
+  "liveServer.settings.open": true,
+  "liveServer.settings.ignoreFiles": [".vscode/**", "**/*.scss", "**/*.sass"],
+  "liveServer.settings.file": "index.html",
+  "liveServer.settings.wait": 100,
+  "editor.fontSize": 19,
+  "markdown.preview.fontSize": 15,
+  "chat.editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "window.zoomLevel": 1,
+  "editor.fontFamily": "Monospace Neon, Consolas, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.bracketSameLine": true,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnPaste": true
 }

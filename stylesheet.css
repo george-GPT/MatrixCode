@@ -229,7 +229,7 @@ body {
 
 header {
     background-image: url(/images/Color-logo-with-background.png);
-    background-size: 85%; /* Scale the image as large as possible while maintaining aspect ratio */
+    background-size: 82%; /* Scale the image as large as possible while maintaining aspect ratio */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
     min-height: 260px; /* Adjust the height as needed */
@@ -340,7 +340,7 @@ header {
 
 /* Add CSS for spacing using a spacer class */
 .headerSpacer {
-    height: 120px; /* Adjust the height as needed */
+    height: 105px; /* Adjust the height as needed */
 }
 
 .css-code:before {
@@ -356,7 +356,7 @@ header {
     position: relative;
     padding: 10px 0;
     z-index: 1;
-    top: 16rem; /* Add a top margin to push the tabs down */
+    top: 15rem; /* Add a top margin to push the tabs down */
     
 }
 
@@ -371,7 +371,7 @@ header {
     display: flex; 
     align-items: center;/* Align tabs in a line */
     justify-content: center;
-    margin: 0px 20px;
+    margin: 0px 22px;
     transition: all 0.2s ease; /* Smooth transition for the hover effect */
 }
 
