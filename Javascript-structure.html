@@ -71,19 +71,105 @@
         <div class="header-with-image-html">
             <h2 class="table-title"><i class="fa-solid fa-circle-info"></i> Beginner JS Structure</h2>
         </div>
-        <br>   
-        <p><ol class="bulletSpacing">
-        <li><strong>DOM References as Variable Declarations:</strong><br>Define references to HTML elements for easy access throughout the script.</li>
-        <li><strong>[Global Scope] Variable Declarations:</strong><br>Declare variables that need to be accessed globally across functions.</li>
-        <li><strong>Function Definitions:</strong><br>Define the functions that encapsulate reusable logic.</li>
-        <li><strong>[Local Scope] Variable Declarations:</strong><br>Declare variables that are only needed locally within the function.</li>
-        <li><strong>DOM Manipulations:</strong><br>Modify or interact with the DOM elements.</li>
-        <li><strong>Event Listeners:</strong><br>Attach event listeners to DOM elements for interaction.</li>
-        <li><strong>Additional Initializations, such as Event Listeners:</strong><br>Perform any additional setup tasks, like setting up all event listeners in one place.</li>
-        <li><strong>Include Comments and Documentation:</strong><br>Maintains code clarity, especially as projects grow in complexity.</li>
-    </ol>
-    </p>
     </div>
+    <br>
+    <div class="intro-section introduction-card">
+            <h2>1. Dom References as Variables</h2>  
+        <p>
+                <!-- DOM References as Variable Declarations -->
+                    Define references to HTML elements for easy access throughout the script.
+                    <br>
+                    <br>
+                    <code class="code">const element = document.getElementById("elementId");</code><br>
+                    <code class="code">const elements = document.getElementsByClassName("className");</code><br>
+                    <code class="code">const elements = document.getElementsByTagName("tagName");</code><br>
+                    <code class="code">const element = document.querySelector("selector");</code></br>
+                    <code class="code">const elements = document.querySelectorAll("selector");</code>
+        </p>
+      </div>
+      <br>
+      <div class="intro-section introduction-card">
+            <h2>2. [Global Scope] Variable Declarations</h2>      
+               <p>
+             <!-- [Global Scope] Variable Declarations -->
+                    Declare variables that need to be accessed globally across functions.
+                    <br>
+                    <br>
+                    <code class="code">let globalVar = 42;</code>
+               </p>
+               </div>
+               <br>
+ <div class="intro-section introduction-card">
+            <h2>3. Function Definitions</h2>  
+                <!-- Function Definitions -->
+                <p>
+                    Define the functions that encapsulate reusable logic.
+                    <br>
+                    <br>
+                    <code class="code">
+                        function myFunction() {
+                             Your reusable logic here
+                        }
+                    </code>
+                  </p>
+                  </div>
+                  <br>
+ <div class="intro-section introduction-card">
+            <h2>4. [Local Scope] Variable Declarations</h2>  
+               <p>Declare variables that are only needed locally within the function.
+                    <br>
+                    <br>
+                    <code class="code">let localVar = 10;</code>
+                  </p>
+                  </div>
+                    <br>
+  <div class="intro-section introduction-card">
+            <h2>5. DOM Manipulations</h2>                
+                <p>
+                    Modify or interact with the DOM elements.
+                  <br>
+                  <br>
+                    <code class="code">element.innerText = "New text content"</code><br>
+                    <code class="code">element.innerHTML = "New HTML content"</code><br>
+                    <code class="code">parentElement.appendChild(newElement);</code><br>
+                    <code class="code">parentElement.removeChild(newElement);</code><br>
+                    <code class="code">element.setAttribute("src", "new-image.jpg");</code>
+                  </p>
+                  </div>
+                  <br>
+  <div class="intro-section introduction-card">
+            <h2>6. Event Listeners</h2>                
+                <p>
+                    Attach event listeners to DOM elements for interaction.
+                    <br>
+                    <br>
+                    <code class="code">
+                    addEventListener("click", function() {
+                            // event handling code here
+                        });
+                    </code>
+                </p>
+                </div>
+                <br>
+   <div class="intro-section introduction-card">
+            <h2>7. Initialize code such as event listeners </h2>                
+                <p>
+                    Perform any additional setup tasks, like setting up all event listeners in one place.
+                    <br>
+                    <br>
+                    <code class="code">
+                        setUpEventListeners();
+                    </code>
+                </p>
+                </div>
+                <br>
+  <div class="intro-section introduction-card">
+            <h2>8. Include Comments and Documentation</h2>                
+                <p>
+                    Maintain code clarity, especially as projects grow in complexity.
+              </p>
+            </div>
+    <br>
     <br>
     <br>
     <br>

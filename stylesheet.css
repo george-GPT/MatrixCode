@@ -717,6 +717,10 @@ h2 {
     line-height: 2.0;
 }
 
+.code {
+    font-family: 'JetBrainsMonoSemiBold', 'Courier New', Courier, monospace;
+} 
+
 .iconClass {
     width: 52px; /* Adjust the width as necessary */
     height: auto; /* Keep the aspect ratio of the image */
