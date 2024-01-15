@@ -321,6 +321,10 @@ header {
     background-color: #d9d2e9;
 }
 
+.intermediate-step {
+    color: #111caf; /* Change text color to a dark gray */
+}
+
 .demo-wrap {
     position: relative;
 }
