@@ -912,7 +912,11 @@ body, footer {
 
 @media (max-width: 768px) {
 
-     body.content-full-screen .entry .alignfull {
+    html, body {
+    overflow-x: hidden;
+    }
+ 
+    body.content-full-screen .entry .alignfull {
         margin-left: 0 !important;
     }
 
