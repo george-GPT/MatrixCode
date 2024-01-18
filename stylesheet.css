@@ -149,7 +149,7 @@
     font-style: normal; /* Normal style */
 }
 
-/* ... and so on for each font file */
+
 @font-face {
     font-family: 'Lato';
     src: url('/fonts/Lato-Black.ttf') format('truetype');
@@ -157,7 +157,7 @@
     font-style: normal; /* Normal style */
 }
 
-/* ... continue for each Lato variant */
+
 
 @font-face {
     font-family: 'OpenSansCondensed';
@@ -166,7 +166,7 @@
     font-style: normal; /* Normal style */
 }
 
-/* ... continue for each OpenSans Condensed variant */
+
 
 @font-face {
     font-family: 'RobotoCondensed';
@@ -175,7 +175,7 @@
     font-style: normal; /* Normal style */
 }
 
-/* ... continue for each Roboto Condensed variant */
+
 * {
     box-sizing: border-box; /* Better box sizing model */
     margin: 0; /* Reset margins */
@@ -719,6 +719,7 @@ h2 {
 
 .code {
     font-family: 'JetBrainsMonoSemiBold', 'Courier New', Courier, monospace;
+    color: rgba(17, 17, 17, 1);
 } 
 
 .iconClass {
@@ -911,13 +912,21 @@ body, footer {
 
 @media (max-width: 768px) {
 
+    html, body {
+    overflow-x: hidden;
+    }
+ 
+    body.content-full-screen .entry .alignfull {
+        margin-left: 0 !important;
+    }
+
     .h1, .h2, .h3, h1, h2, h3 {
         scale: 65%;
     }
     .tab {
         margin: 5px 10px;/* Adjust margin for stacked layout */
-        font-size: 1.6rem;
-        padding: 5px 8px;
+        font-size: 1.9rem;
+        padding: 5px 12px;
     }
 
     .tabs {
@@ -1058,7 +1067,7 @@ body, footer {
 
     .tab {
         font-size: 0.875rem;
-        padding: 0.5rem; 
+        padding: .9rem; 
         margin: 0.125rem;
     }
 
