@@ -98,11 +98,6 @@ function openPage(pageName) {
     fetchData();
   }
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Fetch CSV data
-  fetchData();
-
   // Add event listeners for all items within the list-group
   const listGroupItems = document.querySelectorAll('.list-group a');
 
@@ -130,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
 
 
 // Get all the dropdown elements
