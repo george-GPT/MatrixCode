@@ -84,48 +84,54 @@ function redirectToUrl(url) {
 
 // Function to open a page by name
 function openPage(pageName) {
-  var tabContent = document.getElementsByClassName('tab-content')
-  for (var i = 0; i < tabContent.length; i++) {
-    tabContent[i].style.display = 'none'
+  const tabContent = document.getElementsByClassName('tab-content');
+  for (let i = 0; i < tabContent.length; i++) {
+    tabContent[i].style.display = 'none';
   }
-  var pageElement = document.getElementById(pageName)
+  const pageElement = document.getElementById(pageName);
   if (pageElement) {
-    pageElement.style.display = 'block'
+    pageElement.style.display = 'block';
   }
 
   // Fetch CSV data when a tab is opened
   if (pageName === 'csvDataTab') {
-    fetchData()
+    fetchData();
   }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   // Fetch CSV data
-  fetchData()
+  fetchData();
 
   // Add event listeners for all items within the list-group
-  const listGroupItems = document.querySelectorAll('.list-group a')
+  const listGroupItems = document.querySelectorAll('.list-group a');
 
   listGroupItems.forEach(function (item) {
     item.addEventListener('click', function (event) {
       // Prevent default anchor click behavior
-      event.preventDefault()
+      event.preventDefault();
 
       // Get the target section's ID (e.g., #htmlCheatSheet)
-      var target = this.hash
+      const target = this.getAttribute('href').substring(1); // Remove the "#" character
 
-      // Use jQuery's animate() function to smoothly scroll to the target
-      $('html, body').animate(
-        {
-          scrollTop: $(target).offset().top,
-        },
-        800
-      ) // 800 milliseconds for the scroll animation duration
-    })
-  })
+      // Find the target element by its ID
+      const targetElement = document.getElementById(target);
 
-  // Rest of your code...
-})
+      // Check if the target element exists
+      if (targetElement) {
+        // Calculate the distance to scroll
+        const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+
+        // Scroll smoothly to the target element
+        window.scrollTo({
+          top: offset,
+          behavior: 'smooth', // Use smooth scrolling behavior
+        });
+      }
+    });
+  });
+});
+
 
 // Get all the dropdown elements
 const dropdowns = document.getElementsByClassName('tab')

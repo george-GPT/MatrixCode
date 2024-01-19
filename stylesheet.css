@@ -711,6 +711,69 @@ h2 {
     /* Optionally, you can add some top margin to align it with the icon if needed */
 }
 
+.quiz-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Question style */
+.question {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Options style */
+.options {
+  list-style-type: none;
+  padding: 0;
+}
+
+.options li {
+  margin: 8px 0;
+}
+
+/* Answer option style */
+.option {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Result message style */
+.result {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Button style */
+.Quizbutton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.Quizbutton:hover {
+  background-color: #0056b3;
+}
+
 
 .bulletSpacing
 {   
