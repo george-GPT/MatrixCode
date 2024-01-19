@@ -177,3 +177,24 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 
+
+
+// Declare variables for HTML elements (question, nextButton, finalScore, optionsList)
+
+// Declare currentQuestionIndex and quizQuestions array
+
+// Initialize user score
+
+// Function to load and display the current question and its child
+
+// Function to disable nextButton
+
+// Function to handle the "Next" button click
+
+// Check if there are more questions > call loadQuestion > otherwise call finalScore + display completion message + hide next button
+
+// Function to display the final score
+
+// Function to set up event listeners
+
+// Call initializers for the first question, event listeners, and disabling next button
