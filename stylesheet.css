@@ -711,36 +711,35 @@ h2 {
     /* Optionally, you can add some top margin to align it with the icon if needed */
 }
 
-.quiz-container {
+/* Container for the entire quiz */
+#quizContainer {
+  display: none;    
   background-color: #f2f2f2;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-/* Question style */
-.question {
+/* Style for the current question text */
+#currentQuestion {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
   color: #333;
 }
 
-/* Options style */
-.options {
+/* Style for the list of options */
+#optionsList {
   list-style-type: none;
   padding: 0;
 }
 
-.options li {
-  margin: 8px 0;
-}
-
-/* Answer option style */
+/* Style for each option */
 .option {
   background-color: #fff;
+  color: #000;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -752,14 +751,14 @@ h2 {
   background-color: #f0f0f0;
 }
 
-/* Result message style */
-.result {
+/* Style for the final score display */
+#finalScore {
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* Button style */
-.Quizbutton {
+/* Style for the Next and Restart buttons */
+.QuizButton {
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -770,10 +769,45 @@ h2 {
   margin-top: 20px;
 }
 
-.Quizbutton:hover {
+.QuizButton:hover {
   background-color: #0056b3;
 }
 
+.QuizButton:disabled {
+  background-color: grey;
+}
+
+/* Hide the restart button initially */
+#restartButton {
+  display: none;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column; /* Stack flex items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+
+.start-quiz-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.option.selected {
+   background-color: #4497ee 
+}
+
+.final-score {
+    color: black;
+}
 
 .bulletSpacing
 {   
@@ -1142,4 +1176,5 @@ body, footer {
         /* Even less shadow for a cleaner look on the smallest screens */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
+}
 }

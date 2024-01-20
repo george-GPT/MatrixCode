@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,32 +48,39 @@
             <a href="javascript.html">JavaScript Basics</a>
             <a href="javascript-examples.html">JavaScript Examples</a>
             <a href="Javascript-structure.html">JavaScript Structure</a>
+            <a href="JSQuiz.html">JavaScript Quiz</a>
             <a href="js-libraries-frameworks.html">JS Libraries & Frameworks</a>
             <a href="js-preprocessors.html">JS Preprocessors</a>
           </div>
         </div>
       </nav>
-    </header>
-    <div class="headerSpacer"></div>
-    <div class="intro-section introduction-card">
-      <br />
-      <div class="header-with-image-html">
-        <h2 class="table-title">
-          <i class="fa-solid fa-laptop-code"></i>
-          JavaScript Fundamentals Quiz
-        </h2>
-      </div>
-      <br />
-    <div id="quizContainer">
-      <p id="question"></p>
-      <ul id="optionsList"></ul>
-      <button id="nextButton">Next</button>
-      <p id="finalScore"></p>
-      <button id="restartButton"</button>
-    </div>
-    <script src="script.js"></script>
-  </body>
-    <footer>
+</header>
+<div class="headerSpacer"></div>
+<div class="intro-section introduction-card">
+  <br />
+  <div class="header-with-image-html">
+    <h2 class="table-title">
+      <i class="fa-solid fa-laptop-code"></i>
+      JavaScript Fundamentals Quiz
+    </h2>
+  </div>
+</div>
+<br />
+<br>
+<br>
+<div id="welcomePage" class="welcome-container">
+  <h2>Test your knowledge on JavaScript Fundamentals.</h2>
+ <br>
+  <button id="startQuiz" class="start-quiz-btn"><strong>Start Quiz</strong></button>
+</div>
+<div id="quizContainer" class="quiz-container">
+  <p id="currentQuestion" class="question"></p>
+  <ul id="optionsList"></ul>
+  <button id="nextButton" class="QuizButton">Next</button>
+  <p id="finalScore" class="final-score"></p>
+  <button id="restartButton" class="QuizButton">Restart Quiz</button>
+</div>
+<footer>
       <div class="footer-content">
         <p>
           <img
@@ -97,5 +106,9 @@
         <p>© 2024 MATRIX CODE. All rights reserved.</p>
       </div>
     </footer>
+  <script src="script.js"></script>
+  <script>
+  window.onload = jsQuiz;
+</script>
   </body>
 </html>
