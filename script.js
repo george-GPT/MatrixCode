@@ -98,9 +98,19 @@ function openPage(pageName) {
     fetchData();
   }
 }
-  // Add event listeners for all items within the list-group
-  const listGroupItems = document.querySelectorAll('.list-group a');
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to check if the device is a touch device
+  function isTouchDevice() {
+    return (
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    );
+  }
+
+  // Apply click event listeners for all items within the list-group
+  const listGroupItems = document.querySelectorAll('.list-group a');
   listGroupItems.forEach(function (item) {
     item.addEventListener('click', function (event) {
       // Prevent default anchor click behavior
@@ -126,57 +136,49 @@ function openPage(pageName) {
     });
   });
 
+  // Get all the dropdown elements
+  const dropdowns = document.getElementsByClassName('tab');
 
-// Get all the dropdown elements
-const dropdowns = document.getElementsByClassName('tab')
+  // Loop through the dropdowns and add click event listeners
+  for (let i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener('click', function (event) {
+      // Prevent the click from affecting other elements
+      event.stopPropagation();
 
-// Loop through the dropdowns and add click event listeners
-for (let i = 0; i < dropdowns.length; i++) {
-  dropdowns[i].addEventListener('click', function (event) {
-    // Prevent the click from affecting other elements
-    event.stopPropagation()
-
-    // Toggle the dropdown content
-    this.querySelector('.dropdown-content').classList.toggle('show')
-  })
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Function to check if the device is a touch device
-  function isTouchDevice() {
-    return (
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    )
+      // Toggle the dropdown content
+      this.querySelector('.dropdown-content').classList.toggle('show');
+    });
   }
 
   if (isTouchDevice()) {
-    // Apply click event listeners for touch devices
-    const tabs = document.querySelectorAll('.tab')
+    // Apply specific click event listeners for touch devices
+    const tabs = document.querySelectorAll('.tab');
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function (event) {
-        let dropdown = this.querySelector('.dropdown-content')
+        let dropdown = this.querySelector('.dropdown-content');
         if (dropdown) {
-          dropdown.style.display =
-            dropdown.style.display === 'block' ? 'none' : 'block'
-          event.stopPropagation() // Prevents document click from immediately hiding the dropdown
+          // Toggle dropdown display for touch devices
+          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+          event.stopPropagation(); // Prevents document click from immediately hiding the dropdown
         }
-      })
-    })
+      });
+    });
+  } else {
+    // Desktop-specific event handling can be added here if needed
   }
 
   // Close the dropdown if the user clicks outside of it
   document.addEventListener('click', function (event) {
-    const dropdownContents = document.querySelectorAll('.dropdown-content')
+    const dropdownContents = document.querySelectorAll('.dropdown-content');
     dropdownContents.forEach(function (dropdown) {
       if (!event.target.closest('.tab')) {
-        dropdown.style.display = 'none'
+        dropdown.style.display = 'none';
       }
-    })
-  })
-})
+    });
+  });
 
+});
+  
 function jsQuiz() {
 
 const question = document.getElementById("currentQuestion");
