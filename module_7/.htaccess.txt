@@ -1,0 +1,7 @@
+Order deny,allow
+Deny from all
+# Allow from GitHub's IP addresses
+# (List the actual IP addresses or ranges used by GitHub)
+Allow from 192.30.252.0/22
+Allow from 185.199.108.0/22
+Allow from 140.82.112.0/20
