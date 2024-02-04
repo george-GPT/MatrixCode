@@ -404,33 +404,79 @@ nav.tabs {
     display: block;
 }
 
+/* Main tab hover - shows the direct dropdown-content */
+.tab:hover .dropdown-content {
+  display: block;
+}
+
+/* Initial state of the dropdown content is hidden */
 .dropdown-content {
-    display: none; /* Hide the dropdown content by default */
-    position: absolute;
-    background-image: url(images/MatrixSubtle.png);
-    min-width: 160px; /* Set a min-width if necessary */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Optional: Adds a shadow */
-    z-index: 1; /* Ensure it sits on top of other elements */
-    top: 100%; /* Position the dropdown below the tab item */
-    border-radius: 4px;
+  display: none;
+  position: absolute;
+  background-image: url(images/MatrixSubtle.png);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  border-radius: 4px;
 }
-  
+
+/* Style dropdown links */
 .dropdown-content a {
-    color: #f6f6f6; /* Match the tab text color */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-size: 18px;
-    font-family: 'Lato', monospace;
-    text-transform: none;
-    border: 1px solid white;
-    border-radius: 4px;
+  color: #f6f6f6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Lato', monospace;
+  text-transform: none;
+  border: 1px solid white;
+  border-radius: 4px;
 }
-/* Change color of dropdown links on hover */
+
+/* Hover state for dropdown links */
 .dropdown-content a:hover {
-    background-color: #222222; /* Light background for hover */
+  background-color: #222222;
 }
+
+/* Hide submenu content by default */
+.submenu-content {
+  display: none;
+  position: absolute;
+  left: 100%; /* Position the submenu to the right of the parent item */
+  top: 0;
+  background-image: url(images/MatrixSubtle.png); /* Match the main dropdown */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  border: 1px solid white; /* Match the main dropdown */
+  z-index: 2; /* Ensure it sits on top of other dropdowns */
+}
+
+/* Show submenu content when the submenu parent is hovered over */
+.submenu:hover .submenu-content {
+  display: block;
+}
+
+/* Add some additional styling for submenu links if necessary */
+.submenu-content a {
+  color: #f6f6f6;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Lato', monospace;
+  text-transform: none;
+  border-radius: 4px;
+}
+
+/* Change color of submenu links on hover */
+.submenu-content a:hover {
+  background-color: #222222; /* Light background for hover */
+}
+
  
 .tab, .tab a {
     text-decoration: none;
@@ -540,7 +586,6 @@ h2 {
     vertical-align: middle;
     
 }
-
 
 .list-group-item {
     border: 1px solid #bbb;
@@ -988,6 +1033,62 @@ body, footer {
     padding-bottom: 13px;
 }
 
+/* Hamburger Icon */
+.hamburger {
+  display: none; /* Hidden by default, shown in tablet & mobile view */
+  cursor: pointer;
+  scale: 300%
+}
+
+/* Close button inside sidebar */
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: #ffddcb
+}
+
+/* Adjustments for close button visibility */
+.sidebar {
+  padding-top: 0; /* Remove padding-top to adjust the position of the close button */
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%;
+  width: 0; /* Sidebar hidden by default */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111; /* Sidebar background */
+  overflow-x: hidden; /* Hide horizontal scroll */
+  transition: 0.5s; /* Smooth transition */
+  padding-top: 0; /* Space for top content */
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #d6d1d5;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.dropdown-container {
+  display: none; /* Hide dropdown content */
+  padding-left: 15px;
+}
+
+
 @-webkit-keyframes flicker { /* Safari and Chrome */
     0% { opacity: 1; }
     50% { opacity: 0.5; }
@@ -1005,10 +1106,56 @@ body, footer {
     50% { opacity: 0.5;}
     100% { opacity: 1; }
 }
-    
 
+
+/* Larger screens */
+@media (min-width: 1024px) {
+  .nav-tabs {
+    /* Styles for larger screens */
+    font-size: 1em; /* Example: Adjust font-size */
+  }
+}
+
+/* Medium devices (tablets, less than 1024px) */
+@media (max-width: 1024px) {
+    .tab {
+        font-size: 1.5rem; /* Scale down font size */
+        padding: 8px 12px; /* Reduce padding */
+        margin: 0 15px; /* Adjust margin */
+    }
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 768px) {
+.hamburger {
+    display: block; /* Show hamburger icon */
+    position: absolute;
+    top: 80%; /* Move it below the header */
+    left: 8%;
+    transform: translateY(10px); /* Adjust the Y translation to position it exactly where you want */
+    padding: 15px;
+    z-index: 5%; /* Ensure it's above other content */
+  }
+
+  /* Adjust the header height and padding to reduce space */
+  header {
+    min-height: 100px; /* Adjust the height as needed for mobile */
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* Optionally adjust the logo size for mobile */
+.header-logo {
+    width: 60%; /* Adjust the width as needed for mobile */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 0 auto; /* Center the logo */
+  }
+}
+
+/* Apply media query for mobile devices */
 @media (max-width: 768px) {
-
+    /* Only show the menu icon on mobile */
     html, body {
     overflow-x: hidden;
     }
@@ -1020,15 +1167,12 @@ body, footer {
     .h1, .h2, .h3, h1, h2, h3 {
         scale: 65%;
     }
-    .tab {
-        margin: 5px 10px;/* Adjust margin for stacked layout */
-        font-size: 1.9rem;
-        padding: 5px 12px;
-    }
-
+   
     .tabs {
-        font-size: 2rem; /* Remove default margin */
+        display: none; /* Hide tabs for mobile */
     }
+    
+
     html {
         font-size: 14px; /* Scales down the base font size for smaller screens */
     }
@@ -1037,15 +1181,7 @@ body, footer {
         margin: 0;
         padding:0;
     }
-    
-    header {
-        width: 100%;
-        padding-top: 1rem;
-        margin: 0;
-        top: 0;
-        height: auto;
-        position: relative;
-    }
+
 
     footer .row {
         flex-direction: column;
@@ -1133,7 +1269,7 @@ body, footer {
         /* Your styles for mobile navigation */
         /* ... */
       }
-    }
+    
     .table-title, .centered-table-title, .Left-Align-table-title, .section-headertwo {
         font-size: 24px; /* Smaller font size */
         margin-left:10px; /* Smaller margin */
@@ -1148,14 +1284,21 @@ body, footer {
     }
     .header-with-image-js {
         justify-content: center; /* Center the items horizontally */
+    }
+
 }
-
-
 @media (hover: none) and (pointer: coarse) {
     .tab:hover .dropdown-content {
       display: none; /* Disable hover effect on touch devices */
+    }
 }
 
+@media (max-width: 767px) {
+  .nav-tabs {
+    /* Styles for small screens */
+    display: none; /* Hide the tabs */
+  }
+}
 
 @media (max-width: 480px) {
     .nav-card {
@@ -1177,4 +1320,5 @@ body, footer {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     }
 }
-}
+ 
+

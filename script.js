@@ -178,7 +178,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-  
+
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebarMenu");
+  if (sidebar.style.width === "250px") {
+    sidebar.style.width = "0";
+  } else {
+    sidebar.style.width = "250px";
+  }
+}
+
+function toggleDropdown(dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+  } else {
+    dropdown.style.display = "block";
+  }
+}
+
+
 function jsQuiz() {
 
 const question = document.getElementById("currentQuestion");

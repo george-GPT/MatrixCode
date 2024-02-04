@@ -1,19 +1,17 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matrix Code</title>
-    <link rel="icon" href="/favicon/favicon-32x32.png" />
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
-    <script src="script.js"></script> 
-  </head>
-<body>
-<header style="background-image: url('/images/Color-logo-with-background.png')">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Code</title>
+<link rel="icon" href="/favicon/favicon-32x32.png"> 
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css"/>
+<script src="../../script.js"></script>
+</head>
+    <body>
+     <header style="background-image: url('/images/Color-logo-with-background.png')">
   <nav class="tabs">
     <!-- Home tab -->
     <a class="tab" href="index.html">
@@ -124,115 +122,61 @@
 </div>
 </header>
     <div class="headerSpacer"></div>
+    </div> 
+
     <div class="intro-section introduction-card">
-      <br />
-      <div class="header-with-image-html">
-        <h2 class="table-title">
-          <i class="fa-solid fa-laptop-code"></i>
-          Introduction to Front-End
-        </h2>
-      </div>
-      <br />
-      <p>
-        Front-end website development shapes the interactive and visual aspects
-        of the web.
-        <br />
-        It ensures a site is user-friendly and aesthetically pleasing.
-      </p>
-      <br />
-      <ul class="bulletSpacing">
-        <li>
-          <strong>HTML</strong>
-          for structure
-        </li>
-        <li>
-          <strong>CSS</strong>
-          for styling
-        </li>
-        <li>
-          <strong>JavaScript</strong>
-          for interactivity
-        </li>
-      </ul>
-      <br />
-      <p>
-        These three technologies are the essential tools in a web developer's
-        toolbox.
-        <br />
-        They work together to create websites that are both attractive and
-        user-friendly.
-        <br />
-        Combining style and functionality seamlessly.
-      </p>
-    </div>
-    <br />
-    <br />
-    <div class="tech-container">
-      <div class="tech-card" id="html-card" data-tooltip="Learn about HTML">
-        <img src="images/HTML.png" alt="HTML Image" />
-        <h3>HTML</h3>
-        <br />
-        <p>
-          HTML is the backbone of web content.
-          <br />
-          <br />
-          It lays the foundational framework for web pages by structuring
-          content through elements like headings, paragraphs, and links,
-          creating and organizing the user-interface.
-        </p>
-      </div>
-      <div class="tech-card" id="css-card" data-tooltip="Discover CSS">
-        <img src="images/CSS.png" alt="CSS Image" />
-        <h3>CSS</h3>
-        <br />
-        <p>
-          CSS provides style to HTML elements.
-          <br />
-          <br />
-          It's responsible for the layout and design that makes web pages
-          aesthetically pleasing. CSS also enables web pages to adapt to
-          different screen sizes to ensure accessibility.
-        </p>
-      </div>
-      <div class="tech-card" id="js-card" data-tooltip="Explore JavaScript">
-        <img src="images/JavaScript.png" alt="JavaScript Image" />
-        <h3>JavaScript</h3>
-        <br />
-        <p>
-          JavaScript brings life to web pages.
-          <br />
-          <br />
-          It enables interactive features and dynamic content changes that react
-          to user interactions, enhancing the overall functionality and user
-          experience of the site.
-        </p>
-      </div>
-    </div>
-    <footer>
-      <div class="footer-content">
-        <p>
-          <img
-            src="images/Color-logo-with-background.png"
-            alt="Info Icon"
-            style="width: 25%; height: auto" />
-          <br />
-          A concise repository for front-end development knowledge.
-        </p>
-        <br />
-        <div class="contact-links">
-          <a href="mailto:contact@matrixcode.ca">
-            <i class="fa-solid fa-envelope"></i>
-            Contact
-          </a>
-          <a href="https://github.com/george-GPT">
-            <i class="fa-brands fa-github"></i>
-            GitHub
-          </a>
+        <br>
+        <div class="header-with-image-html">
+            <h2 class="table-title"><i class="fa-brands fa-js"></i> JavaScript Preprocessors</h2>
         </div>
-      </div>
-      <div class="copyright-section">
+        <br>
+        <p>JavaScript preprocessors are tools that extend the capabilities of standard JavaScript.<br>
+        They add new features and syntactic sugar, allowing developers to write more powerful, concise, and maintainable code that is then compiled into standard JavaScript.</p>
+        <br>    
+        <p>These tools introduce functionalities such as type checking, classes, and interfaces, often seen in more traditional programming languages. Popular preprocessors include TypeScript, Babel, and CoffeeScript.</p>
+        <br>    
+        <p><u>When to Use a JavaScript Preprocessor:</u></p>
+        <ul class="bulletSpacing">
+            <li>When the project complexity requires stronger type-checking and object-oriented programming features.</li>
+            <li>For teams focusing on future-proofing JavaScript code and using the latest ECMAScript features.</li>
+            <li>When there is a need to simplify JavaScript syntax and improve readability and maintainability.</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="intro-section introduction-card">
+        <br>
+        <div class="header-with-image-html">
+            <h2 class="table-title"><i class="fa-solid fa-cogs"></i> Main JavaScript Preprocessors</h2>
+        </div>
+        <br>
+        <h2>Key JavaScript Preprocessors and Their Advantages</h2>
+        <ul class="bulletSpacing">
+            <li><strong>TypeScript:</strong> Best for large-scale applications due to its robust typing system. Developed by Microsoft.</li>
+            <li><strong>Babel:</strong> Essential for modern web development, ensuring browser compatibility while using next-gen JavaScript.</li>
+            <li><strong>CoffeeScript:</strong> Offers a more elegant and concise way to write JavaScript, simplifying the syntax.</li>
+        </ul>
+        <br>
+        <p>Choosing a preprocessor depends on the project needs and the development team's preferences, with each offering unique strengths.</p>
+    </div>
+
+</div>
+</div>
+<footer>
+    <div class="footer-content">
+        <p><img src="images/Color-logo-with-background.png" alt="Info Icon" style="width: 25%; height: auto;">
+        <br>
+        A concise repository for front-end development knowledge.</p>
+        <br>
+        <div class="contact-links">
+            <a href="mailto:contact@matrixcode.ca"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="https://github.com/george-GPT"><i class="fa-brands fa-github"> </i> GitHub</a>
+        </div>
+    </div>
+    <div class="copyright-section">
         <p>© 2024 MATRIX CODE. All rights reserved.</p>
-      </div>
-    </footer>
-  </body>
+    </div>
+</footer>   
+</body>
 </html>
