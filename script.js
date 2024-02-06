@@ -662,3 +662,72 @@ document.getElementById("startQuiz").addEventListener('click', startQuizFunction
 // Initial setup
 displayQuestion();
 }
+
+
+
+function BMICalulator() {
+
+  // Locating DOM Elements
+  const weight =  document.getElementById("weight");
+  const heightFeet = document.getElementById("heightFeet");
+  const heightInches = document.getElementById("heightInches");
+  const convertButton = document.getElementById("convertButton");
+  const checkBMIButton = document.getElementById("checkBMIButton");
+  const resultsDisplay = document.getElementById("resultsDisplay");
+
+  // Initiale set up 
+  let userWeight =;
+  let userFeet =;
+  let userInches =;
+  let convertedWeight =;
+  let convertedHeight =;
+  
+ 
+// function convert weight in lbs to kilos
+  function lbsToKilos() {
+    userWeight = weight.value;
+    if (userWeight === "") {
+    resultsDisplay.innerText = "Please add a valid number for your weight in lbs.";
+    } else {
+    let kilos = (userWeight * 0.453592);
+    userWeight = kilos;  
+    }
+  }
+    // Convert feet & inches into just inches, then inches to meters
+  function heightInMeters() {
+    userFeet = heightFeet.value;
+    userInches = heightInches.value;
+    if (userFeet === "" || userInches === "") {
+    resultsDisplay.innerText = "Please add a valid number for your height in feet & inches.";
+    } else {
+    convertedHeight = (userFeet / 12) + (userFeet); 
+    convertedHeight = (totalInches / 39.37);
+  }
+}
+  
+  function calculateBMI(convertedWeight, convertedHeight) {
+    lbsToKilos();
+    heightInMeters();
+    let BMI = ((convertedHeight * convertedHeight) / convertedWeight);
+    BMI = BMI.toFixed(2)
+  }
+
+  function displayResults(BMI) {
+    calculateBMI();
+    resultsDisplay.innerText = `Based off your calculations of ${convertedWeight} kilograms & ${convertedWeight} Meters,/n your BMI(body mass index) is ${BMI};.`;
+    if (BMI < 18.5) {
+      resultsDisplay.innerText = "\nAccording to your BMI you are underweight.";
+    } else if (BMI >= 18.5 && BMI < 25) {
+      resultsDisplay.innerText = "\nAccording to your BMI you are at a normal & healthy weight.";
+    } else if (BMI >=25 && BMI < 30) {
+      resultsDisplay.innerText = "\nAccording to your BMI you are overweight.";
+    } else {
+      results.Display.innerText = "\nAccording to your BMI you are obese.";
+    }
+  }
+  
+  // event listeners
+    convertButton.addEventListener("click", calculateBMI);
+    checkBMIButton.addEventListener("click", displayResults(BMI));
+
+}
