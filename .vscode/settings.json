@@ -6,7 +6,7 @@
   "liveServer.settings.ignoreFiles": [".vscode/**", "**/*.scss", "**/*.sass"],
   "liveServer.settings.file": "index.html",
   "liveServer.settings.wait": 100,
-  "editor.fontSize": 20,
+  "editor.fontSize": 17,
   "markdown.preview.fontSize": 15,
   "chat.editor.fontSize": 16,
   "terminal.integrated.fontSize": 16,

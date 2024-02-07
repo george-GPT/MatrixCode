@@ -747,4 +747,84 @@ function BMICalculator() {
 }
 
 
+function quoteGenerator() {
+  // DOM elements
+  const motivationalButton = document.getElementById("motivationalButton");
+  const wisdomButton = document.getElementById("wisdomButton");
+  const interpersonalButton = document.getElementById("interpersonalButton");
+  const randomButton = document.getElementById("randomButton");
+  const quoteDisplay = document.getElementById("quoteDisplay");
 
+  // Quotes by category
+  const categories = {
+    motivational: [
+      "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+      "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+      "Your limitation—it’s only your imagination. - Unknown"
+    ],
+    wisdom: [
+      "The only true wisdom is in knowing you know nothing. - Socrates",
+      "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+      "Knowing yourself is the beginning of all wisdom. - Aristotle"
+    ],
+    interpersonal: [
+      "The greatest gift of life is friendship, and I have received it. - Hubert H. Humphrey",
+      "To handle yourself, use your head; to handle others, use your heart. - Eleanor Roosevelt",
+      "The only way to have a friend is to be one. - Ralph Waldo Emerson"
+    ]
+  };
+
+  // Function to get a quote
+  function getQuote(category) { // Removed the unused `quoteDisplay` parameter
+    const quotes = categories[category];
+    if (!quotes || quotes.length === 0) {
+      quoteDisplay.innerText = "No quotes available for this category";
+      return ""; // Returning an empty string when no quotes are available
+    }
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  }
+
+  // Function to display motivational quotes
+  function getMotivationalQuote() {
+    const motivationalQuote = getQuote("motivational");
+    if (motivationalQuote) {
+      quoteDisplay.innerText = motivationalQuote;
+    }
+  }
+
+  // Function to display wisdom quotes
+  function getWisdomQuote() {
+    const wisdomQuote = getQuote("wisdom");
+    if (wisdomQuote) {
+      quoteDisplay.innerText = wisdomQuote;
+    }
+  }
+
+  // Function to display interpersonal quotes
+  function getInterpersonalQuote() {
+    const interpersonalQuote = getQuote("interpersonal");
+    if (interpersonalQuote) {
+      quoteDisplay.innerText = interpersonalQuote;
+    }
+  }
+
+  // Function to display a random quote
+  function getRandomQuote() {
+    const categoryNames = Object.keys(categories); // Array of category names
+    const randomCategoryIndex = Math.floor(Math.random() * categoryNames.length); // Random index for selecting a category
+    const randomCategory = categoryNames[randomCategoryIndex]; // Random category name
+    const randomQuote = getQuote(randomCategory); // Random quote from the selected category
+    if (randomQuote) {
+      quoteDisplay.innerText = randomQuote;
+    }
+  }
+
+  // Event listeners for buttons
+  motivationalButton.addEventListener("click", getMotivationalQuote);
+  wisdomButton.addEventListener("click", getWisdomQuote);
+  interpersonalButton.addEventListener("click", getInterpersonalQuote);
+  randomButton.addEventListener("click", getRandomQuote);
+}
+
+quoteGenerator();
