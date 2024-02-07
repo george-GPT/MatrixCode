@@ -665,7 +665,7 @@ displayQuestion();
 
 
 
-function BMICalulator() {
+function BMICalculator() {
 
   // Locating DOM Elements
   const weight =  document.getElementById("weight");
@@ -675,14 +675,21 @@ function BMICalulator() {
   const checkBMIButton = document.getElementById("checkBMIButton");
   const resultsDisplay = document.getElementById("resultsDisplay");
 
-  // Initiale set up 
-  let userWeight =;
-  let userFeet =;
-  let userInches =;
-  let convertedWeight =;
-  let convertedHeight =;
+  // Initial set up 
+  let userWeight = 0;
+  let userFeet = 0;
+  let userInches = 0;
+  let convertedWeight = 0;
+  let convertedHeight = 0;
+  let totalInches = 0;
   
- 
+  // Function to enable/disable the convertButton based on input validity
+  function updateButtonStatus() {
+    // Check if all fields have values (and optionally, are valid numbers)
+    const allFieldsFilled = weight.value.trim() !== "" && heightFeet.value.trim() !== "" && heightInches.value.trim() !== "";
+    convertButton.disabled = !allFieldsFilled; // Enable button if all fields are filled, disable otherwise
+  }
+  updateButtonStatus();
 // function convert weight in lbs to kilos
   function lbsToKilos() {
     userWeight = weight.value;
@@ -690,7 +697,7 @@ function BMICalulator() {
     resultsDisplay.innerText = "Please add a valid number for your weight in lbs.";
     } else {
     let kilos = (userWeight * 0.453592);
-    userWeight = kilos;  
+    convertedWeight = kilos; 
     }
   }
     // Convert feet & inches into just inches, then inches to meters
@@ -700,21 +707,23 @@ function BMICalulator() {
     if (userFeet === "" || userInches === "") {
     resultsDisplay.innerText = "Please add a valid number for your height in feet & inches.";
     } else {
-    convertedHeight = (userFeet / 12) + (userFeet); 
-    convertedHeight = (totalInches / 39.37);
+    totalInches = (userFeet * 12) + userInches; 
+    convertedHeight = totalInches * 0.0254;
   }
 }
   
-  function calculateBMI(convertedWeight, convertedHeight) {
+  function calculateBMI() {
     lbsToKilos();
     heightInMeters();
-    let BMI = ((convertedHeight * convertedHeight) / convertedWeight);
-    BMI = BMI.toFixed(2)
+    if (convertedWeight > 0 && convertedHeight > 0) {
+    let BMI = convertedWeight / (convertedHeight * convertedHeight);
+    BMI = BMI.toFixed(2);
+    resultsDisplay.innerText = `Your weight of ${userWeight} pounds has been converted to ${convertedWeight} Kilograms.\nYour height of ${totalInches} inches, has been converted to ${convertedHeight}.`;
+    }
   }
 
   function displayResults(BMI) {
-    calculateBMI();
-    resultsDisplay.innerText = `Based off your calculations of ${convertedWeight} kilograms & ${convertedWeight} Meters,/n your BMI(body mass index) is ${BMI};.`;
+    resultsDisplay.innerText = `Based off your calculations of ${convertedWeight} kilograms & ${convertedeight} Meters,\n your BMI(body mass index) is ${BMI};.`;
     if (BMI < 18.5) {
       resultsDisplay.innerText = "\nAccording to your BMI you are underweight.";
     } else if (BMI >= 18.5 && BMI < 25) {
@@ -722,12 +731,20 @@ function BMICalulator() {
     } else if (BMI >=25 && BMI < 30) {
       resultsDisplay.innerText = "\nAccording to your BMI you are overweight.";
     } else {
-      results.Display.innerText = "\nAccording to your BMI you are obese.";
+      resultsDisplay.innerText = "\nAccording to your BMI you are obese.";
     }
   }
   
   // event listeners
     convertButton.addEventListener("click", calculateBMI);
-    checkBMIButton.addEventListener("click", displayResults(BMI));
-
+    checkBMIButton.addEventListener("click", displayResults);
+    weight.addEventListener("input", updateButtonStatus);
+    heightFeet.addEventListener("input", updateButtonStatus);
+    heightInches.addEventListener("input", updateButtonStatus);
+  
+    // initializations  
+    BMICalculator();
 }
+
+
+
