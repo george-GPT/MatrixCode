@@ -828,3 +828,18 @@ function quoteGenerator() {
 }
 
 quoteGenerator();
+
+function toDoList() {
+// add task function
+
+// display task function
+
+// delete task function
+
+// mark task as completed
+
+
+
+
+
+}
