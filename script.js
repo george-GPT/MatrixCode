@@ -830,13 +830,22 @@ function quoteGenerator() {
 quoteGenerator();
 
 function toDoList() {
-// add task function
 
-// display task function
+const taskInput = document.getElementById("taskInput");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const taskList = document.getElementById("taskList");
 
-// delete task function
-
-// mark task as completed
+function addTask() {
+  let taskText = taskInput.value.trim();
+  if (taskText !== "") {
+    let listItem = document.createElement("li");
+    let deleteButton = document.createElement("delete");
+    deleteButton.classList.add("Delete");
+    deleteButton.addEventListener("click", function() {
+      deleteTask
+    }
+  }
+}
 
 
 
