@@ -1118,7 +1118,6 @@ body, footer {
 }
 
 
-
 @-webkit-keyframes flicker { /* Safari and Chrome */
     0% { opacity: 1; }
     50% { opacity: 0.5; }
