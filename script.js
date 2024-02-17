@@ -760,7 +760,8 @@ function quoteGenerator() {
     motivational: [
       "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
       "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
-      "Your limitation—it’s only your imagination. - Unknown"
+      "Your limitation—it’s only your imagination. - Unknown",
+      "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.” ―Helen Keller",
     ],
     wisdom: [
       "The only true wisdom is in knowing you know nothing. - Socrates",
@@ -843,12 +844,7 @@ function addTask() {
     deleteButton.classList.add("Delete");
     deleteButton.addEventListener("click", function() {
       deleteTask
+
+
+
     }
-  }
-}
-
-
-
-
-
-}

@@ -1088,6 +1088,36 @@ body, footer {
   padding-left: 15px;
 }
 
+.image-container {
+    max-width: 1000px; /* Set your desired maximum width */
+    width: 100%; /* Ensure it takes up the full width of its container */
+    margin: 0 auto; /* Center the image horizontally */
+    text-align: center; /* Center the image within its container */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure the image stays within the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper centering and spacing */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.image-container-small {
+    max-width: 40vw; /* Adjust the maximum width to be relative to the viewport width */
+    width: 100%; /* Ensure it takes up the full width of its container */
+    margin: 0 auto; /* Center the image horizontally */
+    text-align: center; /* Center the image within its container */
+}
+
+.image-container-small img {
+    max-width: 100%; /* Ensure the image stays within the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure proper centering and spacing */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
 
 @-webkit-keyframes flicker { /* Safari and Chrome */
     0% { opacity: 1; }

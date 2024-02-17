@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix Code</title>
+    <link rel="icon" href="/favicon/favicon-32x32.png" />
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="script.js"></script> 
+  </head>
+<body>
+<header style="background-image: url('/images/Color-logo-with-background.png')">
+  <nav class="tabs">
+    <!-- Home tab -->
+    <a class="tab" href="index.html">
+      <i class="fa-solid fa-house"></i>Home</a>
+
+    <!-- Learning tab with dropdown -->
+    <div class="tab dropdown">
+      <a href="javascript:void(0)" class="dropbtn">
+        <i class="fa-solid fa-graduation-cap"></i>Learning</a>
+      <div class="dropdown-content">
+        <!-- HTML Submenu -->
+        <div class="submenu">
+          <a href="javascript:void(0)" class="sub-toggle"><i class="fab fa-html5"></i>HTML</a>
+          <div class="submenu-content">
+            <a href="learning/html/html.html">HTML Basics</a>
+            <a href="learning/html/html-examples.html">HTML Examples</a>
+          </div>
+        </div>
+        <!-- CSS Submenu -->
+        <div class="submenu">
+          <a href="javascript:void(0)" class="sub-toggle"><i class="fab fa-css3-alt"></i>CSS</a>
+          <div class="submenu-content">
+            <a href="learning/css/css.html">CSS Basics</a>
+            <a href="learning/css/css-examples.html">CSS Examples</a>
+            <a href="learning/css/css-libraries-frameworks.html">CSS Libraries & Frameworks</a>
+            <a href="learning/css/css-preprocessors.html">CSS Preprocessors</a>
+          </div>
+        </div>
+        <!-- JavaScript Submenu -->
+        <div class="submenu">
+          <a href="javascript:void(0)" class="sub-toggle"><i class="fab fa-js"></i></i>JavaScript</a>
+          <div class="submenu-content">
+            <a href="learning/javascript/javascript.html">JavaScript Basics</a>
+            <a href="learning/javascript/javascript-examples.html">JavaScript Examples</a>
+            <a href="learning/javascript/Javascript-structure.html">JavaScript Structure</a>
+            <a href="learning/javascript/js-libraries-frameworks.html">JS Libraries & Frameworks</a>
+            <a href="learning/javascript/js-preprocessors.html">JS Preprocessors</a>
+          </div>
+        </div>
+      </div>
+    </div>
+       <!-- Tools tab -->
+    <div class="tab">
+      <a href="tools/tools-index.html" class="dropbtn">
+        <i class="fa-solid fa-tools"></i>Tools</a>
+    </div>
+
+    <!-- Games tab -->
+    <div class="tab">
+      <a href="games/games-index.html" class="dropbtn">
+        <i class="fa-solid fa-gamepad"></i>Games</a>
+    </div>
+</div>
+  </nav>
+<!-- Hamburger Icon -->
+<div class="hamburger" onclick="toggleSidebar()">
+  <i class="fa fa-bars"></i>
+</div>
+<!-- Sidebar Menu -->
+<div id="sidebarMenu" class="sidebar">
+  <!-- Close Icon -->
+  <div class="closebtn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-circle-xmark"></i> <!-- Represents a multiplication sign (×) which is commonly used as a close icon -->
+  </div>
+
+  <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+  <!-- Learning Dropdown -->
+  <a href="javascript:void(0)" class="sidebarItem" onclick="toggleDropdown('learningDropdown')">
+    <i class="fa-solid fa-graduation-cap"></i> Learning
+  </a>
+  <div id="learningDropdown" class="dropdown-container">
+    <!-- HTML Dropdown -->
+    <a href="javascript:void(0)" class="sidebarItem" onclick="toggleDropdown('htmlDropdown')">
+      <i class="fab fa-html5"></i> HTML
+    </a>
+    <div id="htmlDropdown" class="dropdown-container">
+      <a href="learning/html/html.html">HTML Basics</a>
+      <a href="learning/html/html-examples.html">HTML Examples</a>
+    </div>
+    <!-- CSS Dropdown -->
+    <a href="javascript:void(0)" class="sidebarItem" onclick="toggleDropdown('cssDropdown')">
+      <i class="fab fa-css3-alt"></i> CSS
+    </a>
+    <div id="cssDropdown" class="dropdown-container">
+      <a href="learning/css/css.html">CSS Basics</a>
+      <a href="learning/css/css-examples.html">CSS Examples</a>
+      <a href="learning/css/css-libraries-frameworks.html">CSS Libraries & Frameworks</a>
+      <a href="learning/css/css-preprocessors.html">CSS Preprocessors</a>
+    </div>
+    <!-- JavaScript Dropdown -->
+    <a href="javascript:void(0)" class="sidebarItem" onclick="toggleDropdown('jsDropdown')">
+      <i class="fab fa-js"></i> JavaScript
+    </a>
+    <div id="jsDropdown" class="dropdown-container">
+      <a href="learning/javascript/javascript.html">JavaScript Basics</a>
+      <a href="learning/javascript/javascript-examples.html">JavaScript Examples</a>
+      <a href="learning/javascript/Javascript-structure.html">JavaScript Structure</a>
+      <a href="learning/javascript/js-libraries-frameworks.html">JS Libraries & Frameworks</a>
+      <a href="learning/javascript/js-preprocessors.html">JS Preprocessors</a>
+    </div>
+  </div>
+
+  <!-- Tools tab -->
+  <a href="tools/tools-index.html"><i class="fa-solid fa-tools"></i> Tools</a>
+
+  <!-- Games tab -->
+  <a href="games/games-index.html"><i class="fa-solid fa-gamepad"></i> Games</a>
+</div>
+</header>
+    <div class="headerSpacer"></div>
+    <div class="image-container">
+      <img src="/images/js-cheatsheet1.jpg" alt="JavasScript CheatSheet Part 1">
+      <img src="/images/js-cheatsheet2.jpg" alt="JavasScript CheatSheet Part 2">
+    </div>
+    <br>
+    <br>
+    <div class="image-container-small">
+      <img src="/images/arrays-cheatsheet.jpg" alt="JS Array CheatSheet">
+    </div>
+    <footer>
+      <div class="footer-content">
+        <p>
+          <img
+            src="/images/Color-logo-with-background.png"
+            alt="Info Icon"
+            style="width: 25%; height: auto" />
+          <br />
+          A concise repository for front-end development knowledge.
+        </p>
+        <br />
+        <div class="contact-links">
+          <a href="mailto:contact@matrixcode.ca">
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+          </a>
+          <a href="https://github.com/george-GPT">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="copyright-section">
+        <p>© 2024 MATRIX CODE. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
