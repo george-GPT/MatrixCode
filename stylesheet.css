@@ -1089,7 +1089,7 @@ body, footer {
 }
 
 .image-container {
-    max-width: 1000px; /* Set your desired maximum width */
+    max-width: 1500px; /* Set your desired maximum width */
     width: 100%; /* Ensure it takes up the full width of its container */
     margin: 0 auto; /* Center the image horizontally */
     text-align: center; /* Center the image within its container */
