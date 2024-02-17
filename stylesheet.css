@@ -1104,7 +1104,7 @@ body, footer {
 
 
 .image-container-small {
-    max-width: 40vw; /* Adjust the maximum width to be relative to the viewport width */
+    max-width: 30vw; /* Adjust the maximum width to be relative to the viewport width */
     width: 100%; /* Ensure it takes up the full width of its container */
     margin: 0 auto; /* Center the image horizontally */
     text-align: center; /* Center the image within its container */
