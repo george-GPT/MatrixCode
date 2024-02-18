@@ -100,102 +100,53 @@ function openPage(pageName) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Function to check if the device is a touch device
-  function isTouchDevice() {
-    return (
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    );
-  }
+    // Function to toggle the sidebar menu
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebarMenu");
+        sidebar.style.width = (sidebar.style.width === "250px") ? "0" : "250px";
+    }
 
-  // Apply click event listeners for all items within the list-group
-  const listGroupItems = document.querySelectorAll('.list-group a');
-  listGroupItems.forEach(function (item) {
-    item.addEventListener('click', function (event) {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+    // Function to toggle dropdowns in the sidebar
+    function toggleDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
 
-      // Get the target section's ID (e.g., #htmlCheatSheet)
-      const target = this.getAttribute('href').substring(1); // Remove the "#" character
+    // Enhanced function to check if the device is a touch device
+    function isTouchDevice() {
+        return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+    }
 
-      // Find the target element by its ID
-      const targetElement = document.getElementById(target);
+    // Event listener for the hamburger icon
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+        const eventType = isTouchDevice() ? 'touchstart' : 'click';
+        hamburger.addEventListener(eventType, toggleSidebar);
+    }
 
-      // Check if the target element exists
-      if (targetElement) {
-        // Calculate the distance to scroll
-        const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-
-        // Scroll smoothly to the target element
-        window.scrollTo({
-          top: offset,
-          behavior: 'smooth', // Use smooth scrolling behavior
+    // Event listeners for dropdown toggles in the sidebar
+    const sidebarItems = document.querySelectorAll('.sidebarItem');
+    sidebarItems.forEach(item => {
+        item.addEventListener('click', function () {
+            const dropdownId = this.getAttribute('onclick').split("'")[1];
+            toggleDropdown(dropdownId);
         });
-      }
     });
-  });
 
-  // Get all the dropdown elements
-  const dropdowns = document.getElementsByClassName('tab');
-
-  // Loop through the dropdowns and add click event listeners
-  for (let i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].addEventListener('click', function (event) {
-      // Prevent the click from affecting other elements
-      event.stopPropagation();
-
-      // Toggle the dropdown content
-      this.querySelector('.dropdown-content').classList.toggle('show');
-    });
-  }
-
-  if (isTouchDevice()) {
-    // Apply specific click event listeners for touch devices
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function (event) {
-        let dropdown = this.querySelector('.dropdown-content');
-        if (dropdown) {
-          // Toggle dropdown display for touch devices
-          dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-          event.stopPropagation(); // Prevents document click from immediately hiding the dropdown
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function (event) {
+        if (!event.target.matches('.dropbtn, .dropbtn *')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
         }
-      });
     });
-  } else {
-    // Desktop-specific event handling can be added here if needed
-  }
-
-  // Close the dropdown if the user clicks outside of it
-  document.addEventListener('click', function (event) {
-    const dropdownContents = document.querySelectorAll('.dropdown-content');
-    dropdownContents.forEach(function (dropdown) {
-      if (!event.target.closest('.tab')) {
-        dropdown.style.display = 'none';
-      }
-    });
-  });
-
 });
 
-function toggleSidebar() {
-  const sidebar = document.getElementById("sidebarMenu");
-  if (sidebar.style.width === "250px") {
-    sidebar.style.width = "0";
-  } else {
-    sidebar.style.width = "250px";
-  }
-}
-
-function toggleDropdown(dropdownId) {
-  const dropdown = document.getElementById(dropdownId);
-  if (dropdown.style.display === "block") {
-    dropdown.style.display = "none";
-  } else {
-    dropdown.style.display = "block";
-  }
-}
 
 
 function jsQuiz() {
