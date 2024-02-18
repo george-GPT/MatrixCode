@@ -1093,6 +1093,7 @@ body, footer {
     width: 100%; /* Ensure it takes up the full width of its container */
     margin: 0 auto; /* Center the image horizontally */
     text-align: center; /* Center the image within its container */
+    overflow-x: auto; /* Allows horizontal scrolling */
 }
 
 .image-container img {
@@ -1108,6 +1109,7 @@ body, footer {
     width: 100%; /* Ensure it takes up the full width of its container */
     margin: 0 auto; /* Center the image horizontally */
     text-align: center; /* Center the image within its container */
+    overflow-x: auto; /* Allows horizontal scrolling */
 }
 
 .image-container-small img {
@@ -1226,6 +1228,19 @@ body, footer {
      /* Adjust list group margin on smaller screens */
      .list-group {
         margin: 20px 15px;
+    }
+    
+    .image-container, .image-container-small {
+        max-width: 100vw; /* Use 100% of the viewport width */
+    }
+
+    .image-container-small {
+        max-width: 50vw; /* Adjust for smaller containers */
+    }
+
+    .image-container img, .image-container-small img {
+        max-width: 100%;
+        height: auto;
     }
     
     .card-navigation {
