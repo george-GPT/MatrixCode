@@ -1,0 +1,313 @@
+/* CSS file or <style> tag in your HTML document */
+
+/* Style for the 'No' button */
+#no {
+  background-color: #ff6666; /* Red background */
+  color: white; /* White text */
+  border: 5px solid black;
+  padding: 10px 20px; /* Padding around the text */
+  margin: 5px; /* Margin around the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Mouse pointer changes to a hand symbol */
+  font-size: 16px; /* Font size */
+}
+
+/* Style for the 'Yes' button */
+#yes {
+  background-color: #66cc66; /* Green background */
+  color: white; /* White text */
+  border: 5px solid black;
+  padding: 10px 20px; /* Padding around the text */
+  margin: 5px; /* Margin around the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Mouse pointer changes to a hand symbol */
+  font-size: 16px; /* Font size */
+}
+
+/* Hover effect for both buttons */
+#no:hover,
+#yes:hover {
+  opacity: 0.88; /* Slightly see-through when hovering */
+}
+
+/* Focus effect for both buttons, useful for accessibility */
+#no:focus,
+#yes:focus {
+  outline: 2px solid #333; /* Dark outline when the button is focused */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh; /* Ensure minimum height of the viewport */
+  background-image: url('keith1.jpg'); /* The path to your background image */
+  background-repeat: repeat;
+  background-attachment: fixed; /* Keep the background fixed in place when scrolling */
+  font-size: 20px;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.75); /* White background with 75% opacity */
+  z-index: -1;
+}
+#buttons {
+  display: flex;
+  flex-direction: column; /* Stack children of #buttons vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+#questionDisplay {
+  margin-bottom: 30px; /* Adds some space between the question and the buttons */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  padding: 20px; /* Padding inside the div for the text */
+  border: 5px solid black; /* 5px thick solid black border */
+  font-family: 'Poppins', sans-serif;
+  font-size: x-large;
+  text-align: center;
+}
+
+#infoDisplayTwo {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  background-color: whitesmoke;
+  border: 5px solid black;
+  width: 60%;
+  display: none;
+  position: fixed; /* Set position to fixed */
+  top: 40%; /* Position it at 50% from the top */
+  left: 50%; /* Position it at 50% from the left */
+  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+}
+
+#infoDisplayThree {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  background-color: whitesmoke;
+  border: 5px solid black;
+  width: 60%;
+  display: none;
+  position: fixed; /* Set position to fixed */
+  top: 40%; /* Position it at 50% from the top */
+  left: 50%; /* Position it at 50% from the left */
+  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+}
+
+#infoDisplayFour {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  background-color: whitesmoke;
+  border: 5px solid black;
+  width: 60%;
+  display: none;
+  position: fixed; /* Set position to fixed */
+  top: 40%; /* Position it at 50% from the top */
+  left: 50%; /* Position it at 50% from the left */
+  transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+}
+
+.buttons-row {
+  display: flex; /* Display buttons in a row */
+  justify-content: center; /* Center buttons horizontally */
+  transform: scale(2); /* Enlarge buttons */
+}
+
+.gif-container {
+  display: inline-block; /* Allows us to apply scaling */
+  transform: scale(0.8); /* Scales the GIFs to 50% of their original size */
+  transform-origin: center; /* Ensures the scaling is centered */
+}
+
+.gif-container.right {
+  float: right; /* Moves the second GIF to the right */
+}
+
+#gifDisplay {
+  display: flex;
+  justify-content: center; /* Centers children horizontally */
+  flex-wrap: wrap; /* Allows multiple items to wrap if necessary */
+}
+
+.gif-container.center {
+  /* No additional properties needed for centering if gifDisplay is a flex container */
+}
+
+#infoDisplay {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  background-color: whitesmoke;
+  border: 5px solid black;
+  width: 60%;
+  display: none;
+}
+
+.collage-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 700px; /* Adjusted for larger images and less spread */
+  scale: 75%;
+}
+
+.collage-image {
+  position: absolute;
+  width: 250px; /* Double the original size */
+  height: 250px; /* Double the original size */
+  object-fit: cover;
+}
+
+#image1 {
+  top: 30px;
+  left: -250px;
+  z-index: 1;
+}
+#image2 {
+  top: 30px;
+  left: 50px; /* Slightly reduced spacing */
+  z-index: 2;
+  transform: rotate(6deg);
+}
+#image3 {
+  top: 70px; /* Slightly reduced spacing */
+  left: 350px; /* Slightly reduced spacing */
+  z-index: 3;
+  transform: rotate(-3deg);
+}
+#image4 {
+  top: 50px; /* Slightly reduced spacing */
+  left: 650px; /* Slightly reduced spacing */
+  z-index: 4;
+  transform: rotate(4deg);
+}
+
+#image5 {
+  top: 50px; /* Slightly reduced spacing */
+  left: 950px; /* Slightly reduced spacing */
+  z-index: 4;
+  transform: rotate(4deg);
+}
+
+/* Container styles to center the button */
+.button-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+#continueButton {
+  padding: 20px 40px; /* Bigger size */
+  font-size: 40px; /* Larger text */
+  background-color: #007bff; /* Example blue background */
+  color: #ffffff; /* White text */
+  border: 4px black; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease; /* Smooth transition for press effect and hover */
+  display: none; /* Hide the button by default */
+  position: fixed; /* Set position to fixed */
+  bottom: 20px; /* Adjust as needed to position the button higher */
+  left: 40px; /* Adjust as needed to position the button higher */
+  bottom: 40px;
+}
+
+#continueButton:hover {
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.5); /* Larger shadow on hover */
+  transform: scale(1.25);
+}
+
+#continueButton:active {
+  transform: scale(0.95); /* Slightly reduce size when pressed */
+}
+
+#continueButtonTwo {
+  padding: 20px 40px; /* Bigger size */
+  font-size: 50px; /* Larger text */
+  background-color: #007bff; /* Example blue background */
+  color: #ffffff; /* White text */
+  border: 4px black; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: box-shadow 0.3s ease; /* Smooth transition for press effect and hover */
+  display: none; /* Hide the button by default */
+  position: fixed; /* Set position to fixed */
+  bottom: 0px; /* Adjust as needed to position the button */
+  left: 50%; /* Align horizontally at 50% from the left */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+#continueButtonTwo:hover {
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.5); /* Larger shadow on hover */
+}
+
+#continueButtonThree {
+  padding: 20px 40px; /* Bigger size */
+  font-size: 50px; /* Larger text */
+  background-color: #007bff; /* Example blue background */
+  color: #ffffff; /* White text */
+  border: 4px black; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: box-shadow 0.3s ease; /* Smooth transition for press effect and hover */
+  display: none; /* Hide the button by default */
+  position: fixed; /* Set position to fixed */
+  bottom: 250px; /* Adjust as needed to position the button */
+  left: 50%; /* Align horizontally at 50% from the left */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+#continueButtonThree:hover {
+  box-shadow: 0 8px 24px rgba(0, 123, 255, 0.5); /* Larger shadow on hover */
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* This ensures the icon and text are aligned nicely */
+}
+
+.icon {
+  width: 48px; /* Set the width of the icon */
+  height: 48px; /* Set the height of the icon */
+  margin-right: 10px; /* Add some space between the icon and the text */
+}
+
+#finalScreen {
+  font-size: 22px;
+  text-align: center;
+  display: none; /* Hide #finalScreen by default */
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#finalYes {
+  transform: scale(1.5);
+  margin: 0 5px 0 0;
+}
