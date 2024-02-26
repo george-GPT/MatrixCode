@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Raccoon Tycoon</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Popup styling */
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 4px solid #ff00ff;
+        padding: 50px;
+        max-width: 80%;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+      }
+
+      /* Fun CSS styling */
+      .popup h2 {
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Comic sans-serif;
+        color: #ff00ff;
+        margin-bottom: 10px;
+      }
+
+      .popup p {
+        font-size: 24px;
+      }
+
+      .popup button {
+        background-color: #ff00ff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 45px;
+        cursor: pointer;
+        margin-top: 250px;
+        border-radius: 5px;
+      }
+
+      .popup button:hover {
+        background-color: #e600e6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Popup Window -->
+    <div class="popup" id="popup">
+      <h2>Welcome to Raccoon Tycoon!</h2>
+      <br />
+      <p>Rojee is hungry and wants a little snack.</p>
+      <p>
+        Help her collect as many snacks as possible before the time runs out!
+      </p>
+      <button onclick="closePopup()">Start Game</button>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script>
+      // Function to close the popup
+      function closePopup() {
+        var popup = document.getElementById('popup')
+        popup.style.display = 'none'
+      }
+    </script>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
