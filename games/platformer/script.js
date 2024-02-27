@@ -27,11 +27,10 @@ function playCoinSound() {
 // Set canvas size
 canvas.width = 800
 canvas.height = 600
-canvas.style.border = '5px solid black';
-
+canvas.style.border = '5px solid black'
 
 // Define initial player speed
-const initialPlayerSpeed = 4.4
+const initialPlayerSpeed = 4
 
 // Function to calculate vertical difference between game canvas and visible screen
 const verticalDifference = (canvas.height - window.innerHeight) / 2
@@ -40,8 +39,8 @@ function generateObstacles() {
   // Clear any existing obstacles
   obstacles.length = 0
 
-const staticObstacles = [
-  // Existing grey stone obstacles
+  const staticObstacles = [
+    // Existing grey stone obstacles
     [90, 100, 100, 30],
     [200, 210, 150, 30],
     [320, 140, 30, 80],
@@ -53,20 +52,18 @@ const staticObstacles = [
     [110, 500, 100, 30],
     [420, 510, 30, 120],
     [560, 420, 140, 30],
-    [80, 100, 30, 90],   
-    [0, 340, 110, 30], 
-    [300, 340, 30, 180], 
+    [80, 100, 30, 90],
+    [0, 340, 110, 30],
+    [300, 340, 30, 180],
     [560, 440, 30, 90],
     [500, 70, 30, 30],
     [540, 100, 30, 30],
     [240, 0, 30, 30],
     [730, 210, 80, 30],
+  ]
 
-];
-
-// (X) Horizontal ->, (Y) Vertical, Width, Height 
-// +Vertical is down
-
+  // (X) Horizontal ->, (Y) Vertical, Width, Height
+  // +Vertical is down
 
   // Loop through the defined obstacles and add them to the obstacles array
   staticObstacles.forEach((obstacle) => {
@@ -323,7 +320,7 @@ function endGame() {
   // Update the button text and onclick event
   const playAgainButton = document.createElement('button')
   playAgainButton.textContent = 'Play Again' // Set the button text
-  playAgainButton.classList.add('play-again-button'); // Add class to the button
+  playAgainButton.classList.add('play-again-button') // Add class to the button
   playAgainButton.onclick = function () {
     document.body.removeChild(popup)
     popupClosed = true // Update the variable to indicate the popup is closed
@@ -334,14 +331,13 @@ function endGame() {
   popup.appendChild(heading)
   popup.appendChild(scoreText)
   popup.appendChild(highScoreText)
-  
 
   if (isNewHighScore) {
-  const newHighScoreText = document.createElement('h2')
-  newHighScoreText.textContent = "NEW HIGH SCORE!!!"
-  newHighScoreText.style.color = 'gold';
-  newHighScoreText.style.fontWeight = 'bold';
-  newHighScoreText.style.fontSize = '55';
+    const newHighScoreText = document.createElement('h2')
+    newHighScoreText.textContent = 'NEW HIGH SCORE!!!'
+    newHighScoreText.style.color = 'gold'
+    newHighScoreText.style.fontWeight = 'bold'
+    newHighScoreText.style.fontSize = '55'
 
     popup.appendChild(newHighScoreText)
   }
@@ -390,7 +386,7 @@ const player = {
   y: canvas.height / 2,
   width: 65,
   height: 65,
-  speed: 4.4,
+  speed: 4.0,
   dx: 0,
   dy: 0,
   powerUpActive: false, // New property to track if power-up is active
@@ -407,7 +403,7 @@ const powerUp = {
   isVisible: true, // Make sure this is uncommented and used
   effectDuration: 6000, // 8 seconds in milliseconds
   speedDuration: 6000,
-  speedBoost: 6.4, // The increased speed when the power-up is collected
+  speedBoost: 6.0, // The increased speed when the power-up is collected
 }
 
 // Coin properties
@@ -418,37 +414,37 @@ const coin = {
   height: 45,
   isVisible: true,
 }
-let scoreAnimationActive = false;
-let scoreAnimationSize = 28; // Starting font size
-let scoreAnimationColor = '#FFA07A'; // Starting color
+let scoreAnimationActive = false
+let scoreAnimationSize = 28 // Starting font size
+let scoreAnimationColor = '#FFA07A' // Starting color
 
 function drawScore() {
   if (scoreAnimationActive) {
     // Animate by increasing the font size and changing color
-    scoreAnimationSize += 2; // Increase size for pop effect
-    scoreAnimationColor = '#FFD700'; // Change color to gold for emphasis
+    scoreAnimationSize += 2 // Increase size for pop effect
+    scoreAnimationColor = '#FFD700' // Change color to gold for emphasis
 
-    if (scoreAnimationSize >= 36) { // Check if it reaches the max size
-      scoreAnimationActive = false; // Stop the animation
+    if (scoreAnimationSize >= 36) {
+      // Check if it reaches the max size
+      scoreAnimationActive = false // Stop the animation
     }
   } else {
     // Reset to original size and color after animation
-    scoreAnimationSize = scoreAnimationSize > 28 ? scoreAnimationSize - 1 : 28;
-    scoreAnimationColor = scoreAnimationSize > 28 ? '#FFD700' : '#FFA07A';
+    scoreAnimationSize = scoreAnimationSize > 28 ? scoreAnimationSize - 1 : 28
+    scoreAnimationColor = scoreAnimationSize > 28 ? '#FFD700' : '#FFA07A'
   }
 
-  ctx.font = `bold ${scoreAnimationSize}px Comic Sans MS`; // Use animated font size
-  ctx.fillStyle = scoreAnimationColor; // Use animated color
-  ctx.shadowOffsetX = 2;
-  ctx.shadowOffsetY = 2;
-  ctx.shadowBlur = 3;
-  ctx.shadowColor = 'rgba(0, 0, 0, .8)';
-  ctx.fillText('Treats: ' + score, canvas.width - 480, 35);
-  ctx.shadowOffsetX = 0;
-  ctx.shadowOffsetY = 0;
-  ctx.shadowBlur = 0;
+  ctx.font = `bold ${scoreAnimationSize}px Comic Sans MS` // Use animated font size
+  ctx.fillStyle = scoreAnimationColor // Use animated color
+  ctx.shadowOffsetX = 2
+  ctx.shadowOffsetY = 2
+  ctx.shadowBlur = 3
+  ctx.shadowColor = 'rgba(0, 0, 0, .8)'
+  ctx.fillText('Treats: ' + score, canvas.width - 480, 35)
+  ctx.shadowOffsetX = 0
+  ctx.shadowOffsetY = 0
+  ctx.shadowBlur = 0
 }
-
 
 function drawCoin() {
   if (coin.isVisible) {
@@ -487,7 +483,7 @@ function drawPowerUp() {
 }
 
 function applySpeedBoost() {
-  player.speed = 6.4 // Set the boosted speed
+  player.speed = 6.0 // Set the boosted speed
 
   // Set a flag and record the start time of the boost
   player.powerUpActive = true
@@ -627,8 +623,8 @@ function checkCollision() {
     playCoinSound()
     randomizeCoinPosition() // Reposition the coin
     score += 1 // Increase score by 1 for each coin collected
-    scoreAnimationActive = true; // Activate animation
-    scoreAnimationSize = 28; // Reset animation size to start value
+    scoreAnimationActive = true // Activate animation
+    scoreAnimationSize = 28 // Reset animation size to start value
   }
 
   // Check collision with power-up
