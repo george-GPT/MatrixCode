@@ -53,3 +53,21 @@ canvas {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
   border-radius: 20px;
 }
+
+.play-again-button {
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  position: absolute; /* Added property */
+  bottom: 130px; /* Adjust this value to move higher up from the bottom */
+  font-size: 45px;
+  cursor: pointer;
+  border-radius: 8px;
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Adjust horizontal centering taking button width into account */
+}
+
+.play-again-button:hover {
+  background-color: #e600e6;
+}

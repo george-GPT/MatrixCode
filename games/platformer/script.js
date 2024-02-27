@@ -305,7 +305,7 @@ function endGame() {
   // Update the button text and onclick event
   const playAgainButton = document.createElement('button')
   playAgainButton.textContent = 'Play Again' // Set the button text
-  playAgainButton.style.display = 'hidden'
+  playAgainButton.classList.add('play-again-button'); // Add class to the button
   playAgainButton.onclick = function () {
     document.body.removeChild(popup)
     popupClosed = true // Update the variable to indicate the popup is closed
