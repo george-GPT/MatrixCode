@@ -38,17 +38,33 @@ function generateObstacles() {
   // Clear any existing obstacles
   obstacles.length = 0
 
-  // Define static obstacles
-  // Example layout: [x, y, width, height]
-  const staticObstacles = [
-    [50, 100, 100, 30],
-    [200, 200, 150, 30],
-    [400, 300, 200, 30],
-    [600, 100, 100, 30],
-    [150, 450, 150, 30],
-    [350, 550, 200, 30],
-    [550, 400, 100, 30],
-  ]
+const staticObstacles = [
+  // Existing grey stone obstacles
+    [90, 100, 100, 30],
+    [200, 210, 150, 30],
+    [320, 140, 30, 80],
+    [450, 300, 200, 30],
+    [550, 220, 30, 80],
+    [500, 100, 200, 30],
+    [180, 420, 150, 30],
+    [180, 440, 30, 80],
+    [110, 500, 100, 30],
+    [420, 510, 30, 120],
+    [560, 420, 140, 30],
+    [80, 100, 30, 90],   
+    [0, 340, 110, 30], 
+    [300, 340, 30, 180], 
+    [560, 440, 30, 90],
+    [500, 70, 30, 30],
+    [540, 100, 30, 30],
+    [240, 0, 30, 30],
+    [730, 210, 80, 30],
+
+];
+
+// (X) Horizontal ->, (Y) Vertical, Width, Height 
+// +Vertical is down
+
 
   // Loop through the defined obstacles and add them to the obstacles array
   staticObstacles.forEach((obstacle) => {
@@ -370,8 +386,8 @@ function drawPlayer() {
 const player = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  width: 62,
-  height: 62,
+  width: 65,
+  height: 65,
   speed: 4,
   dx: 0,
   dy: 0,
