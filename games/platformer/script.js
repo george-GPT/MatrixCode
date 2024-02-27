@@ -6,7 +6,7 @@ coinSound.preload = 'auto' // Preload the sound file
 const backgroundMusic = new Audio()
 backgroundMusic.src = 'pokemon.mp3' // Load background music
 backgroundMusic.loop = true // Loop the background music
-backgroundMusic.volume = 0.15 // Set volume to 70%
+backgroundMusic.volume = 0.14 // Set volume to 70%
 const textureImage = new Image()
 textureImage.src = 'wall.jpg'
 const obstacles = []
@@ -27,9 +27,11 @@ function playCoinSound() {
 // Set canvas size
 canvas.width = 800
 canvas.height = 600
+canvas.style.border = '5px solid black';
+
 
 // Define initial player speed
-const initialPlayerSpeed = 4
+const initialPlayerSpeed = 4.4
 
 // Function to calculate vertical difference between game canvas and visible screen
 const verticalDifference = (canvas.height - window.innerHeight) / 2
@@ -109,7 +111,7 @@ powerUpPlayer.src = 'hedgehog.png' // Path to your sparkle image
 
 // New game state variables
 let gameRunning = false
-let timeLeft = 25 // 30 seconds to play the game
+let timeLeft = 30 // 30 seconds to play the game
 let gameTimer
 let highScore = 0
 
@@ -241,7 +243,7 @@ function startGame() {
   }
   playBackgroundMusic()
   gameRunning = true
-  timeLeft = 25 // Reset time left
+  timeLeft = 30 // Reset time left
   score = 0 // Reset score
   powerUpActive = false
   powerUpActiveTwo = false
@@ -388,7 +390,7 @@ const player = {
   y: canvas.height / 2,
   width: 65,
   height: 65,
-  speed: 4,
+  speed: 4.4,
   dx: 0,
   dy: 0,
   powerUpActive: false, // New property to track if power-up is active
@@ -405,7 +407,7 @@ const powerUp = {
   isVisible: true, // Make sure this is uncommented and used
   effectDuration: 6000, // 8 seconds in milliseconds
   speedDuration: 6000,
-  speedBoost: 6, // The increased speed when the power-up is collected
+  speedBoost: 6.4, // The increased speed when the power-up is collected
 }
 
 // Coin properties
@@ -416,20 +418,37 @@ const coin = {
   height: 45,
   isVisible: true,
 }
+let scoreAnimationActive = false;
+let scoreAnimationSize = 28; // Starting font size
+let scoreAnimationColor = '#FFA07A'; // Starting color
 
 function drawScore() {
-  ctx.font = 'bold 28px Comic Sans MS' // Bold Comic Sans font
-  ctx.fillStyle = '#FFA07A' // Light salmon color for a gentle, fun vibe
-  ctx.shadowOffsetX = 2
-  ctx.shadowOffsetY = 2
-  ctx.shadowBlur = 3
-  ctx.shadowColor = 'rgba(0, 0, 0, .8)' // Consistent shadow styling
-  ctx.fillText('Treats Secured: ' + score, canvas.width - 520, 35) // Provide more room for text
-  // Reset shadow after drawing
-  ctx.shadowOffsetX = 0
-  ctx.shadowOffsetY = 0
-  ctx.shadowBlur = 0
+  if (scoreAnimationActive) {
+    // Animate by increasing the font size and changing color
+    scoreAnimationSize += 2; // Increase size for pop effect
+    scoreAnimationColor = '#FFD700'; // Change color to gold for emphasis
+
+    if (scoreAnimationSize >= 36) { // Check if it reaches the max size
+      scoreAnimationActive = false; // Stop the animation
+    }
+  } else {
+    // Reset to original size and color after animation
+    scoreAnimationSize = scoreAnimationSize > 28 ? scoreAnimationSize - 1 : 28;
+    scoreAnimationColor = scoreAnimationSize > 28 ? '#FFD700' : '#FFA07A';
+  }
+
+  ctx.font = `bold ${scoreAnimationSize}px Comic Sans MS`; // Use animated font size
+  ctx.fillStyle = scoreAnimationColor; // Use animated color
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  ctx.shadowBlur = 3;
+  ctx.shadowColor = 'rgba(0, 0, 0, .8)';
+  ctx.fillText('Treats: ' + score, canvas.width - 480, 35);
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  ctx.shadowBlur = 0;
 }
+
 
 function drawCoin() {
   if (coin.isVisible) {
@@ -468,7 +487,7 @@ function drawPowerUp() {
 }
 
 function applySpeedBoost() {
-  player.speed = 6 // Set the boosted speed
+  player.speed = 6.4 // Set the boosted speed
 
   // Set a flag and record the start time of the boost
   player.powerUpActive = true
@@ -608,6 +627,8 @@ function checkCollision() {
     playCoinSound()
     randomizeCoinPosition() // Reposition the coin
     score += 1 // Increase score by 1 for each coin collected
+    scoreAnimationActive = true; // Activate animation
+    scoreAnimationSize = 28; // Reset animation size to start value
   }
 
   // Check collision with power-up

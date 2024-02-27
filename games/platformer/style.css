@@ -23,9 +23,12 @@ html {
   bottom: 0;
   background-image: url('keith.jpg');
   background-repeat: repeat;
-  opacity: 0.58; /* This creates the 50% opacity effect */
-  z-index: -1; /* Ensures this overlay doesn't interfere with content visibility */
+  opacity: 0.58;
+  background-color: #60a3c6; /* Blue color */
+  mix-blend-mode: multiply; /* Blend mode */
+  z-index: -1;
 }
+
 
 canvas {
   background-color: #000;
