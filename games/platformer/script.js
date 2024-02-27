@@ -370,7 +370,7 @@ function drawPlayer() {
 
   if (player.powerUpActive) {
     // Apply glow effect
-    ctx.shadowBlur = 30 // Adjust the glow size
+    ctx.shadowBlur = 50 // Adjust the glow size
     ctx.shadowColor = 'gold' // Choose glow color
   }
 
@@ -434,7 +434,7 @@ function drawScore() {
 function drawCoin() {
   if (coin.isVisible) {
     // Simplified glow effect
-    ctx.shadowBlur = 20 // Reduced blur radius for better performance
+    ctx.shadowBlur = 30 // Reduced blur radius for better performance
     ctx.shadowColor = 'rgba(255, 215, 0, 0.8)' // Gold-yellow glow to match a typical coin color
 
     // Draw the coin image with a simplified glow effect
@@ -449,7 +449,7 @@ function drawCoin() {
 function drawPowerUp() {
   if (powerUp.isVisible) {
     // Simplified glow effect
-    ctx.shadowBlur = 20 // Reduced blur radius for better performance
+    ctx.shadowBlur = 30 // Reduced blur radius for better performance
     ctx.shadowColor = 'rgba(255, 215, 0, 0.8)' // Gold-yellow glow to match a typical coin color
 
     // Draw the coin image with a simplified glow effect
