@@ -6,7 +6,7 @@ coinSound.preload = 'auto' // Preload the sound file
 const backgroundMusic = new Audio()
 backgroundMusic.src = 'pokemon.mp3' // Load background music
 backgroundMusic.loop = true // Loop the background music
-backgroundMusic.volume = 0.14 // Set volume to 70%
+backgroundMusic.volume = 0.1 // Set volume to 70%
 const textureImage = new Image()
 textureImage.src = 'wall.jpg'
 const obstacles = []
@@ -18,6 +18,8 @@ let scoreAnimationDuration = 0.5 // Duration in seconds
 let scoreAnimationTime = 0
 let popupClosed = false
 let score = 0 // Use let if the score will change, or const if it will remain constant.
+let lastFrameTime = 0
+const frameInterval = 1000 / 90 // 60 frames per second
 
 function playCoinSound() {
   coinSound.currentTime = 0 // Reset sound to the beginning to allow repeated play
@@ -368,7 +370,7 @@ function drawPlayer() {
 
   if (player.powerUpActive) {
     // Apply glow effect
-    ctx.shadowBlur = 50 // Adjust the glow size
+    ctx.shadowBlur = 45 // Adjust the glow size
     ctx.shadowColor = 'gold' // Choose glow color
   }
 
@@ -384,9 +386,9 @@ function drawPlayer() {
 const player = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  width: 65,
-  height: 65,
-  speed: 4.0,
+  width: 64,
+  height: 64,
+  speed: initialPlayerSpeed,
   dx: 0,
   dy: 0,
   powerUpActive: false, // New property to track if power-up is active
@@ -644,27 +646,37 @@ function checkCollision() {
   }
 }
 
-function gameLoop() {
-  if (gameRunning) {
-    clear()
-    update()
-    checkCollision() // Check coin collision
-    drawPlayer()
-    drawCoin()
-    drawPowerUp()
-    drawObstacles() // Draw obstacles
-    drawScore()
-    drawTimer()
+function gameLoop(currentTime) {
+  if (!gameRunning) {
+    return // Stop the loop if the game is not running
+  }
 
-    requestAnimationFrame(gameLoop)
+  requestAnimationFrame(gameLoop) // Continue to request the next frame
+
+  const deltaTime = currentTime - lastFrameTime
+
+  if (deltaTime >= frameInterval) {
+    lastFrameTime = currentTime - (deltaTime % frameInterval)
+
+    // Your existing game logic and rendering calls
+    clear() // Clear the canvas for the new frame
+    update() // Update game objects
+    checkCollision() // Check for collisions
+    drawPlayer() // Draw the player
+    drawCoin() // Draw the coin
+    drawPowerUp() // Draw the power-up
+    drawObstacles() // Draw obstacles
+    drawScore() // Display the score
+    drawTimer() // Display the timer
 
     // Check if time is up
     if (timeLeft <= 0) {
       endGame()
     }
 
+    // Handle power-up visibility and repositioning
     if (!powerUp.isVisible && Date.now() > player.powerUpEndTime) {
-      randomizePowerUpPosition() // This will reposition the power-up
+      randomizePowerUpPosition() // Reposition the power-up
       powerUp.isVisible = true // Make the power-up visible again for collection
     }
   }
