@@ -367,8 +367,8 @@ function drawPlayer() {
 const player = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  width: 50,
-  height: 50,
+  width: 60,
+  height: 60,
   speed: 4,
   dx: 0,
   dy: 0,
@@ -381,8 +381,8 @@ const player = {
 const powerUp = {
   x: Math.random() * (canvas.width - 35),
   y: Math.random() * (canvas.height - 35),
-  width: 45,
-  height: 45,
+  width: 50,
+  height: 50,
   isVisible: true, // Make sure this is uncommented and used
   effectDuration: 6000, // 8 seconds in milliseconds
   speedDuration: 6000,
@@ -393,8 +393,8 @@ const powerUp = {
 const coin = {
   x: Math.random() * (canvas.width - 35),
   y: Math.random() * (canvas.height - 35),
-  width: 40,
-  height: 40,
+  width: 45,
+  height: 45,
   isVisible: true,
 }
 
