@@ -301,6 +301,7 @@ function endGame() {
 
   const highScoreText = document.createElement('p')
   highScoreText.textContent = `High Score: ${highScore}`
+  highScoreText.style.paddingBottom = '20px';
 
 
   // Update the button text and onclick event
@@ -324,7 +325,7 @@ function endGame() {
   newHighScoreText.textContent = "NEW HIGH SCORE!!!"
   newHighScoreText.style.color = 'gold';
   newHighScoreText.style.fontWeight = 'bold';
-  newHighScoreText.style.fontSize = '50';
+  newHighScoreText.style.fontSize = '55';
 
     popup.appendChild(newHighScoreText)
   }
