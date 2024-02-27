@@ -301,6 +301,15 @@ function endGame() {
   const highScoreText = document.createElement('p')
   highScoreText.textContent = `High Score: ${highScore}`
 
+  // Create a new paragraph element for the high score text
+  const newHighScoreText = document.createElement('p');
+  newHighScoreText.textContent = "NEW HIGH SCORE!!!";
+  // Apply CSS styles similar to the canvas drawing style
+  newHighScoreText.style.font = 'bold 48px Comic Sans MS';
+  newHighScoreText.style.color = 'gold'; // Use 'color' for text in HTML elements
+
+
+
   // Update the button text and onclick event
   const playAgainButton = document.createElement('button')
   playAgainButton.textContent = 'Play Again' // Set the button text
@@ -315,18 +324,11 @@ function endGame() {
   popup.appendChild(heading)
   popup.appendChild(scoreText)
   popup.appendChild(highScoreText)
+  popup.appendChild(newHighScoreText)
   popup.appendChild(playAgainButton)
 
   // Append the popup to the document body
   document.body.appendChild(popup)
-}
-
-function drawNewHighScore() {
-  ctx.font = 'bold 48px Comic Sans MS' // Example font, adjust as needed
-  ctx.fillStyle = 'gold' // Example color, adjust as needed
-  ctx.textAlign = 'center'
-  // Adjust the Y position to move the text higher up on the screen
-  ctx.fillText('NEW HIGHSCORE!!!', canvas.width / 2, 80) // Adjust Y position as needed
 }
 
 function drawTimer() {
