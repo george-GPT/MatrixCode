@@ -301,8 +301,6 @@ function endGame() {
 
   const highScoreText = document.createElement('p')
   highScoreText.textContent = `High Score: ${highScore}`
-  highScoreText.style.paddingBottom = '20px';
-
 
   // Update the button text and onclick event
   const playAgainButton = document.createElement('button')
