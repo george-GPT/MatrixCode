@@ -227,6 +227,8 @@ function startGame() {
   gameRunning = true
   timeLeft = 25 // Reset time left
   score = 0 // Reset score
+  powerUpActive = false
+  powerUpActiveTwo = false
   player.speed = initialPlayerSpeed // Set player speed to initialPlayerSpeed
   startButton.style.display = 'none' // Ensure the button is hidden when the game starts
   let validPlayerPosition = false
@@ -280,7 +282,6 @@ function endGame() {
   let isNewHighScore = score > highScore
   if (isNewHighScore) {
     highScore = score // Update the high score if the current score is greater
-    drawNewHighScore()
   }
   // Delay the popup display to ensure the high score message is seen first
   setTimeout(function () {
@@ -301,14 +302,6 @@ function endGame() {
   const highScoreText = document.createElement('p')
   highScoreText.textContent = `High Score: ${highScore}`
 
-  // Create a new paragraph element for the high score text
-  const newHighScoreText = document.createElement('p');
-  newHighScoreText.textContent = "NEW HIGH SCORE!!!";
-  // Apply CSS styles similar to the canvas drawing style
-  newHighScoreText.style.font = 'bold 35px Comic Sans MS';
-  newHighScoreText.style.color = 'gold'; // Use 'color' for text in HTML elements
-
-
 
   // Update the button text and onclick event
   const playAgainButton = document.createElement('button')
@@ -321,19 +314,24 @@ function endGame() {
   }
 
   // Append elements to the popup
-popup.appendChild(heading);
-popup.appendChild(scoreText);
-popup.appendChild(highScoreText);
+  popup.appendChild(heading)
+  popup.appendChild(scoreText)
+  popup.appendChild(highScoreText)
+  
 
-// Only append newHighScoreText if currentScore equals highScore
-if (score === highScore) {
-  popup.appendChild(newHighScoreText);
+  if (isNewHighScore) {
+  const newHighScoreText = document.createElement('p')
+  newHighScoreText.textContent = "NEW HIGH SCORE!!!"
+  newHighScoreText.style.color = 'gold';
+  newHighScoreText.style.fontWeight = 'bold';
+  newHighScoreText.style.fontSize = '50';
+
+    popup.appendChild(newHighScoreText)
+  }
+  popup.appendChild(playAgainButton)
+  // Append the popup to the document body
+  document.body.appendChild(popup)
 }
-
-popup.appendChild(playAgainButton);
-// Append the popup to the document body
-document.body.appendChild(popup);
-
 
 function drawTimer() {
   ctx.font = 'bold 28px Comic Sans MS' // Bold Comic Sans font with size 28
@@ -357,7 +355,7 @@ function drawPlayer() {
 
   if (player.powerUpActive) {
     // Apply glow effect
-    ctx.shadowBlur = 20 // Adjust the glow size
+    ctx.shadowBlur = 30 // Adjust the glow size
     ctx.shadowColor = 'gold' // Choose glow color
   }
 
@@ -373,8 +371,8 @@ function drawPlayer() {
 const player = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  width: 60,
-  height: 60,
+  width: 62,
+  height: 62,
   speed: 4,
   dx: 0,
   dy: 0,
@@ -421,7 +419,7 @@ function drawScore() {
 function drawCoin() {
   if (coin.isVisible) {
     // Simplified glow effect
-    ctx.shadowBlur = 10 // Reduced blur radius for better performance
+    ctx.shadowBlur = 20 // Reduced blur radius for better performance
     ctx.shadowColor = 'rgba(255, 215, 0, 0.8)' // Gold-yellow glow to match a typical coin color
 
     // Draw the coin image with a simplified glow effect
@@ -436,7 +434,7 @@ function drawCoin() {
 function drawPowerUp() {
   if (powerUp.isVisible) {
     // Simplified glow effect
-    ctx.shadowBlur = 15 // Reduced blur radius for better performance
+    ctx.shadowBlur = 20 // Reduced blur radius for better performance
     ctx.shadowColor = 'rgba(255, 215, 0, 0.8)' // Gold-yellow glow to match a typical coin color
 
     // Draw the coin image with a simplified glow effect
