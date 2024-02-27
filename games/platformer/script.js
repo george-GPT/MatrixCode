@@ -29,7 +29,7 @@ canvas.width = 800
 canvas.height = 600
 
 // Define initial player speed
-const initialPlayerSpeed = 4
+const initialPlayerSpeed = 2
 
 // Function to calculate vertical difference between game canvas and visible screen
 const verticalDifference = (canvas.height - window.innerHeight) / 2
@@ -369,7 +369,7 @@ const player = {
   y: canvas.height / 2,
   width: 45,
   height: 45,
-  speed: 4,
+  speed: 2,
   dx: 0,
   dy: 0,
   powerUpActive: false, // New property to track if power-up is active
@@ -386,7 +386,7 @@ const powerUp = {
   isVisible: true, // Make sure this is uncommented and used
   effectDuration: 6000, // 8 seconds in milliseconds
   speedDuration: 6000,
-  speedBoost: 6.5, // The increased speed when the power-up is collected
+  speedBoost: 4, // The increased speed when the power-up is collected
 }
 
 // Coin properties
@@ -449,7 +449,7 @@ function drawPowerUp() {
 }
 
 function applySpeedBoost() {
-  player.speed = 6.5 // Set the boosted speed
+  player.speed = 4 // Set the boosted speed
 
   // Set a flag and record the start time of the boost
   player.powerUpActive = true
