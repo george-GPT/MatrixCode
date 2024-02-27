@@ -367,8 +367,8 @@ function drawPlayer() {
 const player = {
   x: canvas.width / 2,
   y: canvas.height / 2,
-  width: 45,
-  height: 45,
+  width: 50,
+  height: 50,
   speed: 4,
   dx: 0,
   dy: 0,
