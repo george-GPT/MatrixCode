@@ -320,7 +320,7 @@ function endGame() {
   
 
   if (isNewHighScore) {
-  const newHighScoreText = document.createElement('p')
+  const newHighScoreText = document.createElement('h2')
   newHighScoreText.textContent = "NEW HIGH SCORE!!!"
   newHighScoreText.style.color = 'gold';
   newHighScoreText.style.fontWeight = 'bold';
