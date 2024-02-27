@@ -305,7 +305,7 @@ function endGame() {
   const newHighScoreText = document.createElement('p');
   newHighScoreText.textContent = "NEW HIGH SCORE!!!";
   // Apply CSS styles similar to the canvas drawing style
-  newHighScoreText.style.font = 'bold 48px Comic Sans MS';
+  newHighScoreText.style.font = 'bold 35px Comic Sans MS';
   newHighScoreText.style.color = 'gold'; // Use 'color' for text in HTML elements
 
 
@@ -321,15 +321,19 @@ function endGame() {
   }
 
   // Append elements to the popup
-  popup.appendChild(heading)
-  popup.appendChild(scoreText)
-  popup.appendChild(highScoreText)
-  popup.appendChild(newHighScoreText)
-  popup.appendChild(playAgainButton)
+popup.appendChild(heading);
+popup.appendChild(scoreText);
+popup.appendChild(highScoreText);
 
-  // Append the popup to the document body
-  document.body.appendChild(popup)
+// Only append newHighScoreText if currentScore equals highScore
+if (score === highScore) {
+  popup.appendChild(newHighScoreText);
 }
+
+popup.appendChild(playAgainButton);
+// Append the popup to the document body
+document.body.appendChild(popup);
+
 
 function drawTimer() {
   ctx.font = 'bold 28px Comic Sans MS' // Bold Comic Sans font with size 28
