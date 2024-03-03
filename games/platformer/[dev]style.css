@@ -1,0 +1,76 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+#gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; /* This makes it a reference point for absolutely positioned pseudo-elements */
+}
+
+#gameContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('keith.jpg');
+  background-repeat: repeat;
+  opacity: 0.58;
+  background-color: #60a3c6; /* Blue color */
+  mix-blend-mode: multiply; /* Blend mode */
+  z-index: -1;
+}
+
+
+canvas {
+  background-color: #000;
+}
+
+#gameCanvas {
+  width: 800px;
+  height: 600px;
+  z-index: 1;
+  position: relative;
+  background-image: url('grass2.jpg');
+  background-size: cover;
+}
+
+.popup {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url('raccoontwo.jpg'); /* Adjust opacity here */
+  background-size: cover; /* Cover the entire area of the popup */
+  background-position: center; /* Center the background image */
+  color: white; /* Adjust text color for better visibility */
+  padding: 5px; /* Add some padding inside the popup */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+  border-radius: 20px;
+}
+
+.play-again-button {
+  background-color: #ff00ff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  position: absolute; /* Added property */
+  bottom: 130px; /* Adjust this value to move higher up from the bottom */
+  font-size: 45px;
+  cursor: pointer;
+  border-radius: 8px;
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Adjust horizontal centering taking button width into account */
+}
+
+.play-again-button:hover {
+  background-color: #e600e6;
+}
