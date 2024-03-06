@@ -7,8 +7,8 @@ const backgroundMusic = new Audio()
 backgroundMusic.src = 'pokemon.mp3' // Load background music
 backgroundMusic.loop = true // Loop the background music
 backgroundMusic.volume = 0.1 // Set volume to 70%
-const textureImage = new Image()
-textureImage.src = 'wall.jpg'
+loadingScreen.style.display = 'block';
+
 const obstacles = []
 // Define a buffer margin around the coin for safer positioning
 const coinBufferMargin = 10 // Increase this value as needed
@@ -18,7 +18,9 @@ let scoreAnimationDuration = 0.5 // Duration in seconds
 let scoreAnimationTime = 0
 let popupClosed = false
 let score = 0 // Use let if the score will change, or const if it will remain constant.
+let lives = 3;
 let lastFrameTime = 0
+let currentLevel = 1;
 const frameInterval = 1000 / 90 // 60 frames per second
 
 function playCoinSound() {
@@ -32,91 +34,56 @@ canvas.height = 600
 canvas.style.border = '5px solid black'
 
 // Define initial player speed
-const initialPlayerSpeed = 4
+const initialPlayerSpeed = 4.0
 
 // Function to calculate vertical difference between game canvas and visible screen
 const verticalDifference = (canvas.height - window.innerHeight) / 2
 
-function generateObstacles() {
+const levelOneMap = [
+  // Original obstacle data for Level One
+  [90, 100, 100, 30],
+  [200, 210, 150, 30],
+  [320, 140, 30, 80],
+  [450, 300, 200, 30],
+  [550, 220, 30, 80],
+  [500, 100, 200, 30],
+  [180, 420, 150, 30],
+  [180, 440, 30, 80],
+  [110, 500, 100, 30],
+  [420, 510, 30, 120],
+  [560, 420, 140, 30],
+  [80, 100, 30, 90],
+  [0, 340, 110, 30],
+  [300, 340, 30, 180],
+  [560, 440, 30, 90],
+  [500, 70, 30, 30],
+  [540, 100, 30, 30],
+  [240, 0, 30, 30],
+  [730, 210, 80, 30],
+];
+
+const levelTwoMap = levelOneMap.map(obstacle => {
+    const newX = obstacle[0]; // X position remains the same
+    const newY = 600 - obstacle[1] - obstacle[3]; // Flip Y position
+    return [newX, newY, obstacle[2], obstacle[3]];
+});
+
+
+function generateObstacles(obstacleData) {
   // Clear any existing obstacles
-  obstacles.length = 0
-
-  const staticObstacles = [
-    // Existing grey stone obstacles
-    [90, 100, 100, 30],
-    [200, 210, 150, 30],
-    [320, 140, 30, 80],
-    [450, 300, 200, 30],
-    [550, 220, 30, 80],
-    [500, 100, 200, 30],
-    [180, 420, 150, 30],
-    [180, 440, 30, 80],
-    [110, 500, 100, 30],
-    [420, 510, 30, 120],
-    [560, 420, 140, 30],
-    [80, 100, 30, 90],
-    [0, 340, 110, 30],
-    [300, 340, 30, 180],
-    [560, 440, 30, 90],
-    [500, 70, 30, 30],
-    [540, 100, 30, 30],
-    [240, 0, 30, 30],
-    [730, 210, 80, 30],
-  ]
-
-  // (X) Horizontal ->, (Y) Vertical, Width, Height
-  // +Vertical is down
+  obstacles.length = 0;
 
   // Loop through the defined obstacles and add them to the obstacles array
-  staticObstacles.forEach((obstacle) => {
+  obstacleData.forEach((obstacle) => {
     obstacles.push({
       x: obstacle[0],
       y: obstacle[1],
       width: obstacle[2],
       height: obstacle[3],
-    })
-  })
+    });
+  });
 }
 
-// Call generateObstacles() here to ensure it's done once and the obstacles layout is static
-generateObstacles()
-
-function generateSecondObstacles() {
-  // Clear any existing obstacles for the new level
-  obstacles.length = 0
-
-  const staticObstacles = [
-    [90, 100, 100, 30],
-    [200, 210, 150, 30],
-    [320, 140, 30, 80],
-    [450, 300, 200, 30],
-    [550, 220, 30, 80],
-    [500, 100, 200, 30],
-    [180, 420, 150, 30],
-    [180, 440, 30, 80],
-    [110, 500, 100, 30],
-    [420, 510, 30, 120],
-    [560, 420, 140, 30],
-    [80, 100, 30, 90],
-    [0, 340, 110, 30],
-    [300, 340, 30, 180],
-    [560, 440, 30, 90],
-    [500, 70, 30, 30],
-    [540, 100, 30, 30],
-    [240, 0, 30, 30],
-    [730, 210, 80, 30],
-  ]
-
-  // Loop through the defined obstacles and add them to the obstacles array, flipped 180 degrees
-  staticObstacles.forEach((obstacle) => {
-    obstacles.push({
-      x: canvas.width - obstacle[0] - obstacle[2], // Flip X position
-      y: canvas.height - obstacle[1] - obstacle[3], // Flip Y position
-      width: obstacle[2],
-      height: obstacle[3],
-    })
-  })
-}
 
 // Function to draw obstacles on the canvas
 function drawObstacles() {
@@ -132,58 +99,70 @@ function drawObstacles() {
   })
 }
 
+function hideLoadingOverlay() {
+  const loadingOverlay = document.getElementById('loadingScreen');
+  loadingOverlay.style.display = 'none';
+}
+
+// Function to check if all images are loaded
+function checkAllImagesLoaded() {
+  imagesLoaded += 1;
+  if (imagesLoaded === totalImages) {
+    hideLoadingOverlay(); // Hide the loading overlay when all images are loaded
+    initializeGame(); // Initialize the game
+  }
+}
+
+
+const totalImages = 5; // The total number of images you're loading
+let imagesLoaded = 0; // Counter for the loaded images
+
+function imageLoaded() {
+    imagesLoaded += 1;
+    // If all images are loaded, start the game
+    if (imagesLoaded === totalImages) {
+        // Hide the loading screen
+        document.getElementById('loadingScreen').style.display = 'none';
+        // Call the function to start the game
+        initializeGame();
+    }
+}
+
+
+// Load texture image
+const textureImage = new Image();
+textureImage.onload = imageLoaded;
+textureImage.src = 'wall.jpg';
+
 // Load player image
-const playerImage = new Image()
-playerImage.src = 'raccoon.png' // Adjust the path to match where your image is located
+const playerImage = new Image();
+playerImage.onload = imageLoaded;
+playerImage.src = 'raccoon.png';
 
-const coinImage = new Image()
-coinImage.src = 'coin.png' // Adjust the path to match where your image is located
+// Load coin image
+const coinImage = new Image();
+coinImage.onload = imageLoaded;
+coinImage.src = 'coin.png';
 
-const powerUpImage = new Image()
-powerUpImage.src = 'coke.png' // Replace with the path to your power-up image
+// Load power-up image
+const powerUpImage = new Image();
+powerUpImage.onload = imageLoaded;
+powerUpImage.src = 'coke.png';
 
-const powerUpPlayer = new Image()
-powerUpPlayer.src = 'hedgehog.png' // Path to your sparkle image
+// Load power-up player image
+const powerUpPlayer = new Image();
+powerUpPlayer.onload = imageLoaded;
+powerUpPlayer.src = 'hedgehog.png';
 
 // New game state variables
 let gameRunning = false
 let timeLeft = 30 // 30 seconds to play the game
 let gameTimer
 let highScore = 0
-let powerUpActive = false
-
-const player = {
-  x: canvas.width / 2,
-  y: canvas.height / 2,
-  width: 64,
-  height: 64,
-  speed: initialPlayerSpeed,
-  dx: 0,
-  dy: 0,
-  powerUpActive: false,
-}
-
-const powerUp = {
-  x: Math.random() * (canvas.width - 35),
-  y: Math.random() * (canvas.height - 35),
-  width: 50,
-  height: 50,
-  isVisible: true,
-  effectDuration: 6000,
-  speedBoost: 6.0,
-}
-
-const coin = {
-  x: Math.random() * (canvas.width - 35),
-  y: Math.random() * (canvas.height - 35),
-  width: 45,
-  height: 45,
-  isVisible: true,
-}
 
 // Start Game button element
 const startButton = document.createElement('button')
-startButton.textContent = 'Play Again'
+startButton.textContent = 'Try Again'
 startButton.style.position = 'absolute'
 startButton.onclick = startGame
 document.body.appendChild(startButton)
@@ -302,39 +281,29 @@ function isWithinCanvas(x, y, width, height) {
   )
 }
 
-function startGame() {
+function startInitialGame() {
+  // Ensure the popup and other game setup logic is correctly initialized
   if (!popupClosed) {
     return // Make sure to return early if necessary conditions are not met
+  }
+
+   // Clear existing game timer interval before setting a new one
+  if (gameTimer !== undefined) {
+    clearInterval(gameTimer);
   }
   playBackgroundMusic()
   gameRunning = true
   timeLeft = 30 // Reset time left
   score = 0 // Reset score
   powerUpActive = false
-  powerUpActiveTwo = false // Ensure this is used or remove it if unnecessary
+  powerUpActiveTwo = false
   player.speed = initialPlayerSpeed // Set player speed to initialPlayerSpeed
   startButton.style.display = 'none' // Ensure the button is hidden when the game starts
+  
+  const currentLevelMap = currentLevel === 1 ? levelOneMap : levelTwoMap;
 
-  findValidPlayerPosition() // Find a valid position for the player
-
-  // Randomize coin position safely away from obstacles
-  randomizeCoinPosition()
-  randomizePowerUpPosition()
-
-  // Start the game timer
-  clearInterval(gameTimer) // Clear any existing timers to avoid multiple instances
-  gameTimer = setInterval(function () {
-    timeLeft--
-    if (timeLeft <= 0) {
-      endGame()
-    }
-  }, 1000)
-
-  // Call game loop
-  gameLoop()
-}
-
-function findValidPlayerPosition() {
+  
+  generateObstacles(currentLevelMap); // Use Level One data
   let validPlayerPosition = false
   const maxPlayerAttempts = 1000
   let playerAttempts = 0
@@ -361,75 +330,243 @@ function findValidPlayerPosition() {
       'Failed to place the player in a valid position after many attempts.'
     )
   }
+
+  // Randomize coin position safely away from obstacles
+  randomizeCoinPosition()
+  randomizePowerUpPosition()
+
+  // Start the game timer
+  gameTimer = setInterval(function () {
+    timeLeft--
+    if (timeLeft <= 0) {
+      endGame()
+    }
+  }, 1000)
+
+  // Call game loop
+  gameLoop()
 }
+
+
+
+function startGame() {
+  // Ensure the popup and other game setup logic is correctly initialized
+  if (!popupClosed) {
+    return // Make sure to return early if necessary conditions are not met
+  }
+
+   // Clear existing game timer interval before setting a new one
+  if (gameTimer !== undefined) {
+    clearInterval(gameTimer);
+  }
+
+  playBackgroundMusic()
+  gameRunning = true
+  timeLeft = 30 // Reset time left
+  score = 0 // Reset score
+  powerUpActive = false
+  powerUpActiveTwo = false
+  player.speed = initialPlayerSpeed // Set player speed to initialPlayerSpeed
+  startButton.style.display = 'none' // Ensure the button is hidden when the game starts
+  
+  const currentLevelMap = currentLevel === 1 ? levelOneMap : levelTwoMap;
+
+  
+  generateObstacles(currentLevelMap); // Use Level One data
+  let validPlayerPosition = false
+  const maxPlayerAttempts = 1000
+  let playerAttempts = 0
+
+  while (!validPlayerPosition && playerAttempts < maxPlayerAttempts) {
+    player.x = Math.random() * (canvas.width - player.width)
+    player.y = Math.random() * (canvas.height - player.height)
+
+    if (
+      !checkCollisionWithObstacles(
+        player.x,
+        player.y,
+        player.width,
+        player.height
+      )
+    ) {
+      validPlayerPosition = true
+    }
+    playerAttempts++
+  }
+
+  if (playerAttempts >= maxPlayerAttempts) {
+    console.error(
+      'Failed to place the player in a valid position after many attempts.'
+    )
+  }
+
+  // Randomize coin position safely away from obstacles
+  randomizeCoinPosition()
+  randomizePowerUpPosition()
+
+  // Start the game timer
+  gameTimer = setInterval(function () {
+    timeLeft--
+    if (timeLeft <= 0) {
+      endGame()
+    }
+  }, 1000)
+
+  // Call game loop
+  gameLoop()
+}
+
+function levelTwo() {
+  // Ensure the popup and other game setup logic is correctly initialized
+  if (!popupClosed) {
+    return; // Make sure to return early if necessary conditions are not met
+  }
+
+  // Clear existing game timer interval before setting a new one
+  if (gameTimer !== undefined) {
+    clearInterval(gameTimer);
+  }
+  
+  gameCanvas.style.backgroundImage = "url('beach.jpg')";
+  textureImage.src = 'walltwo.jpeg';
+  coinImage.src = 'cointwo.png';
+  generateObstacles(levelTwoMap); 
+  currentLevel = 2;
+  playBackgroundMusic();
+  gameRunning = true;
+  timeLeft = 30; // Reset time left for level two
+  score = 0; // Reset score for level two
+  powerUpActive = false;
+  powerUpActiveTwo = false;
+  player.speed = 3.95; // Reset player speed to initial speed
+  startButton.style.display = 'none'; // Ensure the button is hidden when the game starts
+// Use Level Two data for generating obstacles
+
+  // Attempt to place the player in a valid position away from obstacles
+  let validPlayerPosition = false;
+  const maxPlayerAttempts = 1000;
+  let playerAttempts = 0;
+
+  while (!validPlayerPosition && playerAttempts < maxPlayerAttempts) {
+    player.x = Math.random() * (canvas.width - player.width);
+    player.y = Math.random() * (canvas.height - player.height);
+
+    if (!checkCollisionWithObstacles(player.x, player.y, player.width, player.height)) {
+      validPlayerPosition = true;
+    }
+    playerAttempts++;
+  }
+
+  if (playerAttempts >= maxPlayerAttempts) {
+    console.error('Failed to place the player in a valid position after many attempts.');
+  }
+
+  // Randomize positions of coin and power-up safely away from obstacles
+  randomizeCoinPosition();
+  randomizePowerUpPosition();
+
+  // Start the game timer
+  gameTimer = setInterval(function () {
+    timeLeft--;
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+
+  // Call game loop to start level two
+  gameLoop();
+}
+
 
 function endGame() {
-  stopBackgroundMusic()
-  gameRunning = false
-  clearInterval(gameTimer) // Ensure the game timer is stopped to prevent further updates
+  lives--
+  if (lives === 0) {
+    gameOver();
+    return;
+  } // Stop the game timer
+  stopBackgroundMusic();
+  gameRunning = false;
+  clearInterval(gameTimer);
 
-  let isNewHighScore = score > highScore
-  if (isNewHighScore) {
-    highScore = score // Update the high score if the current score is greater
-  }
+  // Create and style the popup
+  const popup = document.createElement('div');
+  popup.className = 'popup';
 
-  // Immediately create and display the end game popup without a delay
-  const popup = document.createElement('div')
-  popup.className = 'popup'
-  popup.style.position = 'relative' // The popup is positioned relative to its parent
+  const heading = document.createElement('h2');
+  heading.textContent = 'Time is Up!';
+  heading.style.color = '#ff00ff'; // Match the specified style
 
-  const heading = document.createElement('h2')
-  heading.textContent = 'Time is Up!'
-  heading.style.color = '#ff00ff' // Style as per your requirements
+  const scoreText = document.createElement('p');
+  scoreText.textContent = `Rojee collected ${score} treats!`;
 
-  const scoreText = document.createElement('p')
-  scoreText.textContent = `Rojee collected ${score} treats!`
+  // Create "Play Again" button
+  const playAgainButton = document.createElement('button');
+  playAgainButton.textContent = 'Play Again'; // Set the button text
+  playAgainButton.classList.add('play-again-button'); // Add class to the button
+  playAgainButton.onclick = function() {
+    document.body.removeChild(popup);
+    popupClosed = true; // Update the variable to indicate the popup is closed
+    startGame(); // Restart the game
+  };
 
-  const highScoreText = document.createElement('p')
-  highScoreText.textContent = `High Score: ${highScore}`
-
-  const playAgainButton = document.createElement('button')
-  playAgainButton.textContent = 'Play Again'
-  playAgainButton.classList.add('play-again-button')
-  playAgainButton.onclick = function () {
-    document.body.removeChild(popup)
-    popupClosed = true // Update the variable to indicate the popup is closed
-    startGame() // Restart the game
-  }
-
+  // Create "Next Level" button
+  const nextLevelButton = document.createElement('button');
+  nextLevelButton.textContent = 'Next Level';
+  nextLevelButton.classList.add('next-level-button');
+  nextLevelButton.disabled = score < 12; // Enable only if score is >= 12
+  nextLevelButton.onclick = function() {
+    document.body.removeChild(popup);
+    popupClosed = true; // Update the variable to indicate the popup is closed
+    levelTwo(); // level two
+  };
+  
   // Append elements to the popup
-  popup.appendChild(heading)
-  popup.appendChild(scoreText)
-  popup.appendChild(highScoreText)
+  popup.appendChild(heading);
+  popup.appendChild(scoreText);
 
-  if (isNewHighScore) {
-    const newHighScoreText = document.createElement('h2')
-    newHighScoreText.textContent = 'NEW HIGH SCORE!!!'
-    newHighScoreText.style.color = 'gold'
-    newHighScoreText.style.fontWeight = 'bold'
-    newHighScoreText.style.fontSize = '55px' // Ensure you include 'px' for font size
-    popup.appendChild(newHighScoreText)
-  }
-
-  popup.appendChild(playAgainButton)
-
-  // Append the "Next Level" button if the score is high enough
-  if (score >= 12) {
-    const nextLevelButton = document.createElement('button')
-    nextLevelButton.textContent = 'Next Level'
-    nextLevelButton.className = 'next-level-button' // Use a class for styling
-    nextLevelButton.onclick = function () {
-      document.body.removeChild(popup)
-      popupClosed = true
-      levelTwo() // Start level two
-    }
-    // Position the button just below the play again button
-    playAgainButton.insertAdjacentElement('afterend', nextLevelButton)
-  }
+  // Create a div to hold the buttons next to each other
+  const buttonRow = document.createElement('div');
+  buttonRow.className = 'button-row'; // Add the button-row class here
+  buttonRow.appendChild(playAgainButton);
+  buttonRow.appendChild(nextLevelButton); 
+  popup.appendChild(buttonRow); // Append the button row to the popup
 
   // Append the popup to the document body
-  document.body.appendChild(popup)
+  document.body.appendChild(popup);
 }
+
+
+function gameOver() {
+  stopBackgroundMusic();
+  gameRunning = false;
+  clearInterval(gameTimer); // Stop the game timer
+
+  // Create and style the popup
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+
+  const heading = document.createElement('h2');
+  heading.textContent = 'You have run out of lives.';
+  heading.style.color = '#ff0000'; // Set the color to red
+
+  // Create "Start Over" button
+  const startOverButton = document.createElement('button');
+  startOverButton.textContent = 'Start Over'; // Set the button text
+  startOverButton.classList.add('start-over-button'); // Add class to the button
+  startOverButton.onclick = function() {
+    document.body.removeChild(popup);
+    popupClosed = true; // Update the variable to indicate the popup is closed
+    startInitialGame(); // Restart the game
+  };
+
+  // Append elements to the popup
+  popup.appendChild(heading);
+  popup.appendChild(startOverButton);
+
+  // Append the popup to the document body
+  document.body.appendChild(popup);
+}
+
 
 function drawTimer() {
   ctx.font = 'bold 28px Comic Sans MS' // Bold Comic Sans font with size 28
@@ -466,6 +603,39 @@ function drawPlayer() {
   }
 }
 
+const player = {
+  x: canvas.width / 2,
+  y: canvas.height / 2,
+  width: 64,
+  height: 64,
+  speed: initialPlayerSpeed,
+  dx: 0,
+  dy: 0,
+  powerUpActive: false, // New property to track if power-up is active
+  powerUpActiveTwo: false,
+  powerUpEndTime: 0, // When the power-up effect should end
+  powerUpEndTimeTwo: 0,
+}
+
+const powerUp = {
+  x: Math.random() * (canvas.width - 35),
+  y: Math.random() * (canvas.height - 35),
+  width: 50,
+  height: 50,
+  isVisible: true, // Make sure this is uncommented and used
+  effectDuration: 6000, // 8 seconds in milliseconds
+  speedDuration: 6000,
+  speedBoost: 6.2, // The increased speed when the power-up is collected
+}
+
+// Coin properties
+const coin = {
+  x: Math.random() * (canvas.width - 35),
+  y: Math.random() * (canvas.height - 35),
+  width: 45,
+  height: 45,
+  isVisible: true,
+}
 let scoreAnimationActive = false
 let scoreAnimationSize = 28 // Starting font size
 let scoreAnimationColor = '#FFA07A' // Starting color
@@ -497,6 +667,25 @@ function drawScore() {
   ctx.shadowOffsetY = 0
   ctx.shadowBlur = 0
 }
+
+function drawLives() {
+  // Define properties of the life icon
+  const lifeIconSize = 35; // Size of each life icon
+  const iconSpacing = 5; // Spacing between each life icon
+  const startX = 10; // Starting X coordinate
+  const startY = 10; // Y coordinate for all icons
+
+  // Loop through the number of lives and draw the icons
+  for (let i = 0; i < lives; i++) {
+    // Calculate the position for each icon
+    const x = startX + i * (lifeIconSize + iconSpacing);
+    const y = startY;
+
+    // Draw the life icon
+    ctx.drawImage(playerImage, x, y, lifeIconSize, lifeIconSize);
+  }
+}
+
 
 function drawCoin() {
   if (coin.isVisible) {
@@ -535,7 +724,7 @@ function drawPowerUp() {
 }
 
 function applySpeedBoost() {
-  player.speed = 6.0 // Set the boosted speed
+  player.speed = 6.2 // Set the boosted speed
 
   // Set a flag and record the start time of the boost
   player.powerUpActive = true
@@ -654,6 +843,11 @@ function playBackgroundMusic() {
   backgroundMusic.play()
 }
 
+function playBackgroundMusic() {
+  backgroundMusic.currentTime = 0 // Reset music to the beginning
+  backgroundMusic.play()
+}
+
 function stopBackgroundMusic() {
   backgroundMusic.pause()
 }
@@ -718,6 +912,7 @@ function gameLoop(currentTime) {
     drawObstacles() // Draw obstacles
     drawScore() // Display the score
     drawTimer() // Display the timer
+    drawLives()
 
     // Check if time is up
     if (timeLeft <= 0) {
@@ -732,53 +927,11 @@ function gameLoop(currentTime) {
   }
 }
 
-function levelTwo() {
-  if (!popupClosed) {
-    return // Return early if the end game popup is still active
-  }
-  // Reset game state as necessary for a new level
-  gameRunning = true
-  score = 0
-  timeLeft = 30
-  powerUpActive = false
-  player.speed = initialPlayerSpeed
-  obstacles.length = 0 // Clear existing obstacles
-
-  generateSecondObstacles() // Use the second set of obstacles
-
-  // Similar logic to startGame for player positioning and power-ups
-  findValidPlayerPosition()
-  randomizeCoinPosition()
-  randomizePowerUpPosition()
-
-  // Restart the game timer
-  clearInterval(gameTimer)
-  gameTimer = setInterval(function () {
-    timeLeft--
-    if (timeLeft <= 0) {
-      endGame()
-    }
-  }, 1000)
-
-  requestAnimationFrame(gameLoop) // Start or continue the game loop
-}
-
-// Call startGame to initially load the game
-startGame()
 
 function initializeGame() {
-  requestAnimationFrame(gameLoop) // Starts the game loop
-}
+    // Call startGame here to setup the game
+    startGame();
 
-// Call initializeGame() after all images are loaded and the DOM is ready.
-window.onload = function () {
-  playerImage.onload = function () {
-    // Make sure all images are loaded before starting the game.
-    coinImage.onload = function () {
-      powerUpImage.onload = function () {
-        // Now all images are ready, we can initialize the game.
-        initializeGame()
-      }
-    }
-  }
+    // Then start the game loop
+    requestAnimationFrame(gameLoop);
 }

@@ -66,14 +66,22 @@
     <div id="gameContainer">
       <canvas id="gameCanvas"></canvas>
     </div>
+<div id="loadingScreen">
+    <h1>Loading...</h1>
+    <!-- You can add a loading animation or progress bar here -->
+</div>
+<script>
+  // Function to close the popup and start the game
+  function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
 
-    <script>
-      // Function to close the popup
-      function closePopup() {
-        var popup = document.getElementById('popup')
-        popup.style.display = 'none'
-      }
-    </script>
+    // Start the game only if it's not already running
+   
+      startInitialGame();
+  }
+</script>
+
 
     <!-- Script -->
     <script src="[dev]script.js"></script>
