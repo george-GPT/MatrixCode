@@ -29,7 +29,6 @@ html {
   z-index: -1;
 }
 
-
 canvas {
   background-color: #000;
 }
@@ -48,29 +47,85 @@ canvas {
   height: 600px;
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-    url('raccoontwo.jpg'); /* Adjust opacity here */
-  background-size: cover; /* Cover the entire area of the popup */
-  background-position: center; /* Center the background image */
-  color: white; /* Adjust text color for better visibility */
-  padding: 5px; /* Add some padding inside the popup */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+    url('raccoontwo.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align horizontally */
+  justify-content: space-around; /* Even spacing */
 }
 
-.play-again-button {
+.button-row {
+  /* Container for buttons */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center align horizontally */
+  align-items: center; /* Center align vertically */
+  margin-top: -60px;
+}
+
+.play-again-button,
+.next-level-button {
   background-color: #ff00ff;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  position: absolute; /* Added property */
-  bottom: 130px; /* Adjust this value to move higher up from the bottom */
   font-size: 45px;
   cursor: pointer;
   border-radius: 8px;
-  left: 50%; /* Centers the button horizontally */
-  transform: translateX(-50%); /* Adjust horizontal centering taking button width into account */
+  margin: 0 12.5px; /* Half of the desired spacing on each side of the button */
 }
 
-.play-again-button:hover {
+.play-again-button:hover,
+.next-level-button:hover {
   background-color: #e600e6;
+}
+
+.next-level-button {
+  background-color: #00ff00; /* Differentiate from the Play Again button */
+  /* Disabled state styles if you need */
+  opacity: 0.5; /* Set opacity for disabled state */
+}
+
+.next-level-button:enabled {
+  opacity: 1; /* Full opacity when enabled */
+}
+
+/* Add any additional styling for the high score text if needed */
+.new-high-score {
+  color: gold;
+  font-weight: bold;
+  font-size: 55px;
+  text-align: center;
+  margin-top: 0; /* Ensure no extra space above */
+  margin-bottom: 30px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#loadingScreen {
+  width: 800px; /* Set to match the game canvas width */
+  height: 600px; /* Set to match the game canvas height */
+  position: fixed; /* Ensure it stays fixed on the screen */
+  top: 50%; /* Position at the vertical center */
+  left: 50%; /* Position at the horizontal center */
+  transform: translate(-50%, -50%); /* Center the loading screen */
+  background-color: #000; /* Black background color */
+  color: #fff; /* White text color */
+  font-family: 'Press Start 2P', sans-serif; /* Retro gaming font */
+  font-size: 24px; /* Font size */
+  text-align: center; /* Center align text */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 2px; /* Add letter spacing */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+  z-index: 999; /* Ensure it's above other elements */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  border-radius: 20px; /* Add border radius for rounded corners */
 }

@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Raccoon Tycoon</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon-32x32.png" />
+    <link rel="stylesheet" href="[dev]style.css" />
     <style>
       /* Popup styling */
       .popup {
@@ -25,12 +25,12 @@
       .popup h2 {
         font-size: 48px;
         font-weight: bold;
-        font-family: "Comic Sans", "Comic Sans MS", cursive;
+        font-family: 'Comic Sans', 'Comic Sans MS', cursive;
         color: #ff00ff;
       }
 
       .popup p {
-        font-family: "Comic Sans", "Comic Sans MS", cursive;
+        font-family: 'Comic Sans', 'Comic Sans MS', cursive;
         font-size: 24px;
       }
 
@@ -66,16 +66,23 @@
     <div id="gameContainer">
       <canvas id="gameCanvas"></canvas>
     </div>
-
+    <div id="loadingScreen">
+      <h1>Loading...</h1>
+      <!-- You can add a loading animation or progress bar here -->
+    </div>
     <script>
-      // Function to close the popup
+      // Function to close the popup and start the game
       function closePopup() {
         var popup = document.getElementById('popup')
         popup.style.display = 'none'
+
+        // Start the game only if it's not already running
+
+        startInitialGame()
       }
     </script>
 
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="[dev]script.js"></script>
   </body>
 </html>
