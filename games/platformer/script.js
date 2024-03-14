@@ -34,7 +34,7 @@ canvas.height = 600
 canvas.style.border = '5px solid black'
 
 // Define initial player speed
-const initialPlayerSpeed = 4.0
+const initialPlayerSpeed = 4.2
 
 // Function to calculate vertical difference between game canvas and visible screen
 const verticalDifference = (canvas.height - window.innerHeight) / 2
@@ -480,11 +480,16 @@ function levelTwo() {
 }
 
 function endGame() {
-  lives--
+  // Check if the score is less than 12
+  if (score < 12) {
+    lives-- // Reduce lives by 1
+  }
+
+  // Check if lives are 0 after potentially reducing them
   if (lives === 0) {
-    gameOver()
-    return
-  } // Stop the game timer
+    gameOver() // Call the gameOver function
+    return // Exit the function to ensure no further code is executed
+  }
   stopBackgroundMusic()
   gameRunning = false
   clearInterval(gameTimer)
@@ -514,7 +519,7 @@ function endGame() {
   const nextLevelButton = document.createElement('button')
   nextLevelButton.textContent = 'Next Level'
   nextLevelButton.classList.add('next-level-button')
-  nextLevelButton.disabled = score < 13 // Enable only if score is >= 12
+  nextLevelButton.disabled = score < 12 // Enable only if score is >= 12
   nextLevelButton.onclick = function () {
     document.body.removeChild(popup)
     popupClosed = true // Update the variable to indicate the popup is closed
@@ -624,7 +629,7 @@ const powerUp = {
   isVisible: true, // Make sure this is uncommented and used
   effectDuration: 6000, // 8 seconds in milliseconds
   speedDuration: 6000,
-  speedBoost: 6.2, // The increased speed when the power-up is collected
+  speedBoost: 6.4, // The increased speed when the power-up is collected
 }
 
 // Coin properties
