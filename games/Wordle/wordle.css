@@ -1,0 +1,19 @@
+.rightLetterRightSpot {
+    /* Style for correct letter in correct position */
+    background-color: green;
+    color: white;
+}
+
+.rightLetterWrongSpot {
+    /* Style for correct letter in wrong position */
+    background-color: yellow;
+    color: black;
+}
+
+.wrongLetterWrongSpot {
+    /* Style for incorrect letter */
+    background-color: grey;
+    color: white;
+}
+
+/* Assuming you want to use a different style for rightLetterWrongSpot */
