@@ -1,22 +1,22 @@
 // initialize HTML elements
-const gameDisplay = document.getElementByID("gameDisplay");
-const userGuess = document.getElementByID("userGuess");
-const correctWord = document.getElementById('correctWord')
-const newWordButton = document.getElementByID("newWordButton");
-const submitButton = document.getElementByID('submitButton');
+const gameDisplay = document.getElementById("gameDisplay");
+const userGuess = document.getElementById("userGuess");
+const restartButton = document.getElementById("restartButton");
+const submitButton = document.getElementById('submitButton');
 const guessData = document.getElementById('guessData');
-const attemptNumber = document.getElementById('attemptNumber');
+const attemptDisplay= document.getElementById('attemptDisplay');
 
 // initialize game display
 userGuess.innerText ="";
 
 
 // initialize game logic 
+let correctWord = ''
 let currentGuess = userGuess.innerText 
 let currentAttempt = 1;
 let attemptNumber = ""
-attemptNumber.innerHTML = ``Attempt ${currentAttempt}/6``
-
+attemptDisplay.innerHTML = ``Attempt ${currentAttempt}/6``
+wordGenerator()
 
 const wordArray = [
   "world",
@@ -429,7 +429,7 @@ const wordArray = [
 
 //function for CPU to come up with 5 letter word
 function wordGenerator(){
-const randomIndex = Math.floor(Math.random() * items.length);
+const randomIndex = Math.floor(Math.random() * wordArray.length);
 const randomWord = wordArray[randomIndex];
 correctWord = randomWord;
 return correctWord;
@@ -440,7 +440,7 @@ function guessResults(correctWord, userGuess, guessData) {
     // Split both the correct word and the user guess into arrays of characters
     const correctWordArray = correctWord.split('');
     const userGuessArray = userGuess.split('');
-
+    currentAttempt++;
     // Create a new table row
     const newRow = document.createElement('tr');
     // Iterate over the userGuessArray to populate the table and apply logic
@@ -461,32 +461,47 @@ function guessResults(correctWord, userGuess, guessData) {
             // Incorrect letter
             newCell.classList.add('wrongLetterWrongSpot');
         }
-
+        
         // Append the new cell to the row
         newRow.appendChild(newCell);
-        currentAttempt++;
 
         // Append the new row to the table or table body
         guessData.appendChild(newRow);
-        if (correctWordArray === userGuessArray) {
+        if (correctWord === userGuess) {
           gameOverCorrect()
         }
-        if (currentAttempt === 6 && userGuessArray !== correctWordArray) {
+        if (currentAttempt === 6 && userGuess !== correctWord) {
           gameOverIncorrect()
-        }
+        }    
  });
-
-
+}
 
 // gameOver screen once all guesses are made and user loses
 function gameOverIncorrect(){
-You have run out of guesses!
+alert("You have run out of guesses! Press Restart to play again.");
 }
 
-
 // correctGuess screen once the word has been guessed within 6 or less attempts
-function gameOverCorrect
-
+function gameOverCorrect(){
+  alert(`That is the correct word! You guessed it in ${currentAttempt} tries!`);
+}
 
 // new game / start over function
-function newGame
+function newGame() {
+  document.getElementById('guessData').innerHTML = '';  
+  wordGenerator()
+  currentGuess = "";
+  currentGuess = userGuess.innerText 
+  currentAttempt = 1;
+  attemptNumber = ""
+  attemptDisplay.innerHTML = `Attempt ${currentAttempt}/6`
+}
+
+// event listeners
+submitButton.addEventListener("click", function(){
+  guessResults(correctWord, userGuess, guessData);
+});
+
+restartButton.addEventListener("click", function(){
+  newGame();
+});
