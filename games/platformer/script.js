@@ -503,7 +503,7 @@ function endGame() {
   heading.style.color = '#ff00ff' // Match the specified style
 
   const scoreText = document.createElement('p')
-  scoreText.textContent = `Rojee collected ${score} treats!`
+  scoreText.textContent = `Racoon collected ${score} treats!`
 
   // Create "Play Again" button
   const playAgainButton = document.createElement('button')
